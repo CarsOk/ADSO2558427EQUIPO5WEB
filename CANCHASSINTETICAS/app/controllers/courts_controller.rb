@@ -7,14 +7,14 @@ class CourtsController < ApplicationController
   def new
     court = Court.new
   end
-def create
-  @court = Court.new(court_params)
-  if @court.save
-    redirect_to court_path(@court)
-  else
-    render :new
+  def create
+    @court = Court.new(court_params)
+    if @court.save
+      redirect_to court_path(@court)
+    else
+      render :new
+    end
   end
-end
   def show
     court = Court.find(params[:id])
   end
@@ -25,8 +25,10 @@ end
   def update
     @court = Court.find(court_params)
     if @court.update
-      redirect_to court_path
+      redirect_to court_path(@court)
     else 
+      render :edit
+    end
   end
 
   private
