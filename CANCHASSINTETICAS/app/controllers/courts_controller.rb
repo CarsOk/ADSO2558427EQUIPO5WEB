@@ -1,4 +1,5 @@
 class CourtsController < ApplicationController
+  before_action :authenticate_user!
   def index
     courts = Court.all 
   end
@@ -6,14 +7,14 @@ class CourtsController < ApplicationController
   def new
     court = Court.new
   end
-def create
-  @court = Court.new
-  if @court.save
-    redirect_to court_path(@court)
-  else
-    render :new
+  def create
+    @court = Court.new(court_params)
+    if @court.save
+      redirect_to court_path(@court)
+    else
+      render :new
+    end
   end
-end
   def show
     court = Court.find(params[:id])
   end
@@ -22,6 +23,12 @@ end
     court = Court.find(params[:id])
   end
   def update
+    @court = Court.find(params[:id])
+    if @court.update(court_params)
+      redirect_to court_path(@court)
+    else 
+      render :edit
+    end
   end
 
   private
