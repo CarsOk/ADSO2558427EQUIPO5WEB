@@ -23,8 +23,8 @@ class CourtsController < ApplicationController
     court = Court.find(params[:id])
   end
   def update
-    @court = Court.find(court_params)
-    if @court.update
+    @court = Court.find(params[:id])
+    if @court.update(court_params)
       redirect_to court_path(@court)
     else 
       render :edit
