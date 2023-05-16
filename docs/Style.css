@@ -1,0 +1,28 @@
+div ul li{
+    width: 150px;
+}
+header{
+  color: black;
+  font-size: 35px;
+  padding: 20px;
+  float: left;
+  width: 700px;
+  height: 100px;
+}
+.navbar{
+    justify-content: flex-end;
+    float: right;
+    padding-top: 25px;
+    width: 450px;
+}
+.navbar-brand{
+    width: 100px;
+}
+#navbarNa{
+    width: 125px;
+}
+section{
+    display: block;
+    padding-top: 100px;
+}
+
