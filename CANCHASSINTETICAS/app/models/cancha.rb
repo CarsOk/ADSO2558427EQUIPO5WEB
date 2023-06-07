@@ -1,0 +1,2 @@
+class Cancha < ApplicationRecord
+end

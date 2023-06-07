@@ -10,7 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_05_06_225914) do
+ActiveRecord::Schema.define(version: 2023_06_07_041722) do
+
+  create_table "canchas", force: :cascade do |t|
+    t.string "nombre"
+    t.string "tamanio"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "clientes", force: :cascade do |t|
+    t.string "identificacion"
+    t.string "nombre"
+    t.string "apellido"
+    t.string "telefono"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "courts", force: :cascade do |t|
     t.integer "tamaño"
