@@ -1,11 +1,10 @@
 class CourtsController < ApplicationController
-  before_action :authenticate_user!
   def index
-    courts = Court.all 
+    @courts = Court.all 
   end
 
   def new
-    court = Court.new
+    @court = Court.new
   end
   def create
     @court = Court.new(court_params)
@@ -16,11 +15,11 @@ class CourtsController < ApplicationController
     end
   end
   def show
-    court = Court.find(params[:id])
+    @court = Court.find(params[:id])
   end
 
   def edit
-    court = Court.find(params[:id])
+    @court = Court.find(params[:id])
   end
   def update
     @court = Court.find(params[:id])

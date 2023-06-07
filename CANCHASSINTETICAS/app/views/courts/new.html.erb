@@ -1,2 +1,5 @@
 <h1>Courts#new</h1>
-<p>Find me in app/views/courts/new.html.erb</p>
+<%= simple_form_for @court do |f| %>
+    <%= f.input :tamaño %>
+    <%= f.button :submit %>
+  <% end %>
