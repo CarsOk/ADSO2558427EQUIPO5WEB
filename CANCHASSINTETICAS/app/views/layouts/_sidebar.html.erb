@@ -12,16 +12,16 @@
 
       <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-menu-button-wide"></i><span>Apartar cancha</span><i class="bi bi-chevron-down ms-auto"></i>
+        <i class="bi bi-calendar2-week"></i><span>Apartar cancha</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
         <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
-            <a href="index.html.erb">
+            <a href="<%= canchas_path %>">
               <i class="bi bi-circle"></i><span>CANCHAS</span>
             </a>
           </li>
           <li>
-            <a href="components-accordion.html">
+            <a href="<%= new_cancha_path %>">
               <i class="bi bi-circle"></i><span>NUEVA CANCHA</span>
             </a>
           </li>
@@ -35,8 +35,13 @@
         </a>
         <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
-            <a href="forms-elements.html">
+            <a href="<%= new_cliente_path %>">
               <i class="bi bi-circle"></i><span>Adicionar tus datos</span>
+            </a>
+          </li>
+          <li>
+            <a href="<%= clientes_path %>">
+              <i class="bi bi-circle"></i><span>Lista de registros</span>
             </a>
           </li>
           
@@ -79,7 +84,7 @@
       <li class="nav-heading">Pages</li>
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="users-profile.html">
+        <a class="nav-link collapsed" href="#">
           <i class="bi bi-person"></i>
           <span>Mi Perfil</span>
         </a>
