@@ -1,2 +1,22 @@
 <h1>Facturas#show</h1>
-<p>Find me in app/views/facturas/show.html.erb</p>
+br>
+<h1>Factura</h1>
+<dl>
+    <dt>Codigo</dt>
+    <dd><%=@factura.codigo%></dd>
+
+    <dt>Fecha</dt>
+    <dd><%=@factura.fecha%></dd>
+
+    <dt>Hora</dt>
+    <dd><%=@factura.hora%></dd>
+
+<dt>Cliente</dt>
+
+    <dd><%=@factura.cliente.identificacion%></dd>
+
+    <dt>Cancha</dt>
+    
+    <dd><%=@factura.cancha.id%></dd>
+
+    </dl>
