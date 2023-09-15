@@ -3,5 +3,6 @@
     <%= f.input :nombre %>
     <%= f.input :apellido %>
     <%= f.input :telefono %>
+    <%= f.association :cancha, label_method: :nombre %>
     <%= f.button :submit %>
 <% end %>
