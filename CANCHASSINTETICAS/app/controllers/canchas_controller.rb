@@ -7,6 +7,7 @@ class CanchasController < ApplicationController
     @cancha = Cancha.new
   end
   def create
+    
     @cancha = Cancha.new(cancha_params)
     if @cancha.save
       redirect_to cancha_path(@cancha)
