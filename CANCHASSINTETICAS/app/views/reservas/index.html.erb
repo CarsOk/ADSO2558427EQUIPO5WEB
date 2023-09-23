@@ -1,0 +1,36 @@
+<section class="section dashboard">
+  <div class="row">
+
+      <section class="section">
+      <div class="row">
+      <div class="col-lg-12">
+
+          <div class="card">
+          <div class="card-body">
+              <h1 class="card-title">Lista de reservas</h1>
+              <!-- Default Table -->
+              <table class="table">
+              <thead>
+                  <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Codigo</th>
+                  <th scope="col">Fecha</th>
+                  <th scope="col">Identificacion del cliente</th>
+                  <th scope="col">Codigo de cancha</th>
+                  <th scope="col">Fecha</th>
+                  <th scope="col">Hora de inicio</th>
+                  <th scope="col">Hora de fin</th>
+                  </tr>
+              </thead>
+              <tbody>
+                <%= render @reservas%>
+              </tbody>
+              </table>
+              <!-- End Default Table Example -->
+          </div>
+          </div>
+      </div>
+      </div>
+      </section>
+  </div> 
+</section>
