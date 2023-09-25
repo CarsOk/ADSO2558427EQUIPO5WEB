@@ -4,7 +4,7 @@ class ReservasController < ApplicationController
   end
 
   def new
-    @reservas = Reserva.new
+    @reserva = Reserva.new
   end
 
   def create
