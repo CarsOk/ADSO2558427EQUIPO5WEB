@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  codigo: 1
+  fecha: 2023-09-23
+  hora_inicio: 2023-09-23 13:48:47
+  hora_fin: 2023-09-23 13:48:47
+  cancha: one
+  cliente: one
+
+two:
+  codigo: 1
+  fecha: 2023-09-23
+  hora_inicio: 2023-09-23 13:48:47
+  hora_fin: 2023-09-23 13:48:47
+  cancha: two
+  cliente: two
