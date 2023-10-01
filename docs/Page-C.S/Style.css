@@ -1,0 +1,58 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+main{
+    height: 300px;
+    text-align: left;
+    padding: 100px 30px 0px 30px;
+}
+div ul li{
+    width: 150px;
+}
+header{
+  color: black;
+  font-size: 35px;
+  padding: 20px;
+  float: left;
+  width: 700px;
+  height: 100px;
+}
+.navbar{
+    justify-content: flex-end;
+    float: right;
+    padding-top: 25px;
+    width: 450px;
+}
+.navbar-brand{
+    width: 100px;
+}
+#navbarNa{
+    width: 125px;
+}
+section{
+    display: block;
+}
+
+#Objetivos{
+    display: block;
+    width: 1350px;
+    padding-left: 40px;
+}
+.listadeobjetivos li{
+    width: 1350px;
+}
+.linkdiagrama{
+    color: #212529;
+    font-size: 19px;
+}
+#listacdu{
+    padding-left: 25px;
+}
+.listad{
+    padding-left: 30px;
+}
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
