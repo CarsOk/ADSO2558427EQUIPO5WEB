@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CANCHASSINTETICAS</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%#= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+=======
+  
+  </head>
+
+  <body>
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top d-flex align-items-center">
+    <div class="container d-flex align-items-center">
+
+      <div class="logo me-auto">
+        <h1><a href="index.html">SPORT WORLD</a></h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+      </div>
+
+      <nav id="navbar" class="navbar order-last order-lg-0">
+        <ul>
+          <li><a class="nav-link scrollto active" href="<%= root_path %>">Inicio</a></li>
+          <li><a class="nav-link scrollto" href="<%= canchas_path %>">Canchas</a></li>
+          <li><a class="nav-link scrollto" href="#">Reservar</a></li>
+          <li><a class="nav-link scrollto " href="#">Informacion</a></li>
+
+          <li class="dropdown"><a href="#"><span>Servicios</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="#">Ver</a></li>
+            </ul>       
+          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+      <div class="header-social-links d-flex align-items-center">
+        <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+        <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+        <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+        <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></i></a>
+      </div>
+
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact section-bg">x
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Contact</h2>
+        <p></p>
+      </div>
+
+      <div class="row mt-5 justify-content-center">
+
+        <div class="col-lg-10">
+
+          <div class="info-wrap">
+            <div class="row">
+              <div class="col-lg-4 info">
+                <i class="bi bi-geo-alt"></i>
+                <h4>Location:</h4>
+                <p>A108 Adam Street<br>New York, NY 535022</p>
+              </div>
+
+              <div class="col-lg-4 info mt-4 mt-lg-0">
+                <i class="bi bi-envelope"></i>
+                <h4>Email:</h4>
+                <p>info@example.com<br>contact@example.com</p>
+              </div>
+
+              <div class="col-lg-4 info mt-4 mt-lg-0">
+                <i class="bi bi-phone"></i>
+                <h4>Call:</h4>
+                <p>+1 5589 55488 51<br>+1 5589 22475 14</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </footer><!-- End Footer -->
+  </body>
+</html>
