@@ -1,0 +1,320 @@
+.boton-desplegable{
+    background-color: rgb(5, 92, 5);
+}
+#div-contenedor{
+    /* border: 1px solid black; */
+    background-color: rgb(5, 92, 5);
+    height: 80px;
+    width: 100%;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: large;
+    color: black;
+}
+.container-fluid{
+    /*border: 1px solid red;*/
+    float: left;
+    
+}
+
+
+.margen{
+    
+    width: 100%;
+    height: 100%;
+    /*box-shadow: 0px 0px 5px 1px black;*/
+    border: 1px solid white;
+}
+.texto-info{
+    /* border: 1px solid blue; */ 
+    margin: 0 auto;
+    width: 70%;
+    height: auto;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: justify;
+    
+}
+#inicio{
+    margin-right: 10px;
+}
+
+#docum{
+    margin-right: 10px;
+}
+.izquierda{
+    /*border: 1px solid black;*/
+    width: auto;
+    height: 500px;
+    /*box-shadow: 0px 0px 5px 1px black;*/
+    margin-right: 20px;
+}
+.imagen-izquierda{
+    height: 210px;
+    width: 250px;
+    
+    margin-top: 40px;
+    
+}
+.derecha{
+    /*border: 1px solid black;*/
+    width: auto;
+    height: 500px;
+    /*box-shadow: 0px 0px 5px 1px black;*/
+}
+.imagen-derecha{
+    width: 150px;
+    height: 190px;
+    
+    margin-top: 40px;
+}
+#parrafo{
+    width: 520px;
+    margin: 0 auto;
+    
+    font-family: 'Courier New', Courier, monospace;
+    text-align: justify;
+}
+#parrafo2{
+    width: 520px;
+    margin: 0 auto;
+    margin-top: px;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: justify;
+}
+.general{
+    display: flex;
+    justify-content: space-around;
+    /* border: 1px solid green; */
+    margin-top: 20px;
+    width: auto;
+    
+}
+.card{
+    /*box-shadow: 0px 0px 5px 1px black;*/
+    width: 30px;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: justify;
+}
+.card-text{
+    font-weight: bold;
+    
+}
+.subtitulos{
+    font-weight: bold;
+    text-align: center;
+    font-size: 20px;
+}
+.visionmision{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+}
+footer{
+    background-color: rgb(17, 74, 17);
+    color: aliceblue;
+    font-weight: bold;
+    height: 200px;
+    margin-top: 80px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    /*border: 1px solid red;*/
+}
+
+#info-footer{
+    text-align: initial;
+    position: absolute;
+    top: 1800px;
+    left: 110px;
+    font-family: 'Courier New', Courier, monospace;
+    /* border: 1px solid red; */
+
+}
+.titulo2{
+    font-weight:  bolder;
+    text-align: center;
+    font-size: 25px;
+    
+    
+}
+.primer-parrafo{
+    margin-top: 40px;
+}
+#opciones{
+    justify-content: end;
+    margin-right: 30px;
+}
+#botones-nav{
+    margin: 1px solid black;
+    border-radius: 4px;
+}
+.img-fluid{
+    max-width: 100%;
+}
+.redes-container{
+    display: flex;
+    height: 100hv;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+}
+.redes-container ul li{
+    display: inline-block;
+    margin: 0 5px;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    margin-top: 60px;
+}
+.redes-container ul li a{
+    display: block;
+    padding: 0 10px;
+    background-color: #fff;
+    color: black;
+    line-height: 50px;
+    font-size: 20px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    transition: .2s;
+    border-radius: 30px;
+}
+.redes-container ul:hover a{
+    filter: blur(2px);
+}
+.redes-container ul li a:hover{
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    filter: none;
+    color: white;
+}
+.redes-container ul li .facebook:hover{
+    background-color: #0000ff;
+}
+.redes-container ul li .instagram:hover{
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+    box-shadow: 0px 3px 10px rgba(0,0,0,.25);
+}
+.redes-container ul li .whatsapp:hover{
+    background-color: rgb(112, 206, 19);
+}
+.redes-container ul li .twitter:hover{
+    background-color: #1DA1F2;
+}
+
+
+
+
+/* movil pequeño muy pequeño */
+@media(max-width: 575px){
+    #div-contenedor{
+        width: 100%;
+    }
+    .margen{
+        width: 100%;
+    }
+    footer{
+        width: 100%;
+    }
+    .visionmision{
+        display: flex;
+        flex-direction: column;
+    }
+    #parrafo{
+        width: 80%;
+        /* border: 1px solid red; */
+        height: auto;
+        margin: auto;
+    }
+    #parrafo2{
+        width: 80%;
+        height: auto;
+    }
+    #opciones{
+        /* border: 1px solid red; */
+        margin: auto;
+        background-color: rgba(255, 255, 255, 0.7);
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        height: 160px;
+        border-radius: 5px;
+    }
+    .nav-item{
+        margin-top: 10px;
+        margin-left: 10px;
+        /* border: 1px solid red; */
+        width: 200px;
+    }
+    
+}
+/* movil pequeño */
+@media (min-width: 576px) and (max-width: 767px) {
+    #div-contenedor{
+        width: 100%;
+    }
+    .margen{
+        width: 100%;
+    }
+    footer{
+        width: 100%;
+    }
+    main{
+        width: 100%;
+    }
+    .visionmision{
+        display: flex;
+        flex-direction: column;
+    }
+    #parrafo{
+        width: 50%;
+    }
+    #parrafo2{
+        width: 50%;
+    }
+}
+
+/* tablet */
+@media (min-width: 768px) and (max-width: 991px) {
+    #div-contenedor{
+        
+        width: 100%;
+        
+    }
+    .margen{
+        width: 100%;
+        
+    }
+    footer{
+        width: 100%;
+    }
+    main{
+        width: 100%;
+        
+    }
+    .visionmision{
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+/* pc */
+@media (min-width: 992px) {
+    #div-contenedor{
+        width: 100%;
+    }
+    .margen{
+        width: 100%;
+        /* border: 1px solid red; */
+    }
+    footer{
+        width: 100%;
+    }
+    main{
+        width: 100%;
+        
+    }
+    .izquierda{
+        /* border: 1px solid blue; */
+        margin: auto;
+    }
+    .derecha{
+        /* border: 1px solid red; */
+        margin: auto;
+    }
+    
+}
