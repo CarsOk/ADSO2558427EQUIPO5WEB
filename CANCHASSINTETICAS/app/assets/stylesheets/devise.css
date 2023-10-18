@@ -1,0 +1,319 @@
+:root{
+    --blanco: #fff; /* color: var(--blanco) */
+}
+
+* {
+    border: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+@media (min-width:1024px) {
+  .contenedorPrincipal{
+    height: 680px;
+    width: 100%;
+    margin: auto;
+}
+
+.logo {
+    align-items: center;
+    border: 2px solid #fff;
+    display: flex;
+    flex-direction: column;
+    height: 82px;
+    justify-content: center;
+    margin: auto;
+    width: 76px;
+}
+
+.logoParte1{
+    width: 62px;
+}
+
+.logoParte2{
+    width: 65px;
+}
+
+.contenedorSesion{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    min-height: 400px;
+}
+
+.iniciarSesion{
+    align-items: center;
+    background-color: #F6F8FA;
+    border-radius: 30px 30px 30px 30px;
+    box-shadow: 5px 3px 7px;
+    color: gray;
+    display: flex;
+    flex-direction: column;
+    height: 410px;  
+    margin-top: 25px;
+    width: 360px;
+}
+
+.titulo{
+    color: #52545C;
+    font-size: 25px;
+    font-weight: 50;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.contextoDelInput{
+    color: #52545C;
+    display: block;
+    font-size: 18px;
+    padding-bottom: 10px;
+    width: 50px;
+}
+
+.contextoDelInputContraseña{
+    color: #52545C;
+    display: block;
+    font-size: 18px;
+    padding-bottom: 10px;
+    width: 50px;
+}
+
+.inputEstilo{
+    border-radius: 8px 8px 8px 8px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    height: 35px;
+    margin-bottom: 38px;
+    padding-left: 10px;
+    width: 300px;
+}
+
+.ingresar{
+    background-color: #423271;
+    border-radius: 10px 10px 10px 10px;
+    color: #FFFF;
+    height: 35px;
+    width: 300px;
+}
+
+.contraseñaOlvidada {
+    font-size: 15px;
+    margin-top: 100px;
+    text-align: left;
+}
+
+.textoNuevoUsuario {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 15px;
+    width: 360px;
+}
+
+.linea {
+    border-top: 1px solid rgba(0, 0, 0, 0.5);
+    
+    width: 125px;
+}
+
+.contenidoNuevoUsuario {
+    color: rgba(0, 0, 0, 0.56);
+    font-size: 15px;
+}
+
+.crearUsuario{
+    align-items: center;
+    background: linear-gradient( #f7f7f7, #d1d1d1 );
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 12px 12px 12px 12px;
+    color: rgba(0, 0, 0, 1.0);
+    display: flex;
+    font-size: 15px;
+    height: 38px;
+    justify-content: center;
+    margin-bottom: 20px;
+    text-align: center;
+    width: 360px;
+}
+
+.crearUsuarioTextoBoton{
+    text-decoration: none;
+}
+
+footer{
+    align-items: center;
+    background-color: #5B5CA5;
+    display: flex;
+    height: 50px;
+    justify-content: center;
+}
+
+.textoPiePagina{
+    color: rgb(255, 255, 255, 0.8);
+}
+
+}
+
+@media (max-width:1023px) {
+  .contenedorPrincipal{
+      width: 100%;
+      margin: auto;
+  }
+
+  .logo {
+      align-items: center;
+      border: 2px solid #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin: auto;
+      margin-top: 20px;
+      width: 76px;
+  }
+
+  .logoParte1{
+      display: none;
+  }
+
+  .logoParte2{
+      margin-top: 5px;
+      width: 65px;
+  }
+
+  .contenedorSesion{
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      min-height: 400px;
+      width: auto;
+  }
+
+  .iniciarSesion{
+      align-items: center;
+      background-color: #F6F8FA;
+      border-radius: 20px 20px 20px 20px;
+      box-shadow: 5px 3px 5px;
+      color: gray;
+      display: flex;
+      flex-direction: column;
+      height: 380px;  
+      margin-top: 25px;
+      width: 330px;
+  }
+
+  .titulo{
+      color: #52545C;
+      font-size: 25px;
+      font-weight: 50;
+      margin-top: 10px;
+      text-align: center;
+  }
+
+  .contextoDelInput{
+      color: #52545C;
+      display: block;
+      font-size: 18px;
+      padding-bottom: 10px;
+      width: 50px;
+  }
+
+  .contextoDelInputContraseña{
+      color: #52545C;
+      display: block;
+      font-size: 18px;
+      padding-bottom: 10px;
+      width: 50px;
+  }
+
+  .inputEstilo{
+      border-radius: 8px 8px 8px 8px;
+      border: 1px solid rgba(0, 0, 0, 0.2);
+      height: 35px;
+      margin-bottom: 38px;
+      padding-left: 10px;
+      width: 280px;
+  }   
+
+  .ingresar{
+      background-color: #423271;
+      border-radius: 10px 10px 10px 10px;
+      color: #FFFF;
+      height: 35px;
+      width: 280px;
+  }
+
+  .contraseñaOlvidada {
+      font-size: 15px;
+      margin-top: 18px;
+      text-align: left;
+      width: 280px;
+  }
+
+  .textoNuevoUsuario {
+      align-items: center;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      margin-top: 15px;
+      width: 330px;
+  }
+
+  .linea {
+      border-top: 1px solid rgba(0, 0, 0, 0.5);
+      width: 100px;
+  }
+
+  .contenidoNuevoUsuario {
+  color: rgba(0, 0, 0, 0.56);
+  font-size: 15px;
+  }
+
+  .crearUsuario{
+      background: linear-gradient( #f7f7f7, #d1d1d1 );
+      border: 1px solid rgba(0, 0, 0, 0.3);
+      border-radius: 8px 8px 8px 8px;
+      color: rgba(0, 0, 0, 1.0);
+      font-size: 15px;
+      height: 38px;
+      margin-bottom: 20px;
+      width: 330px;
+  }
+
+  .crearUsuario{
+    align-items: center;
+    background: linear-gradient( #f7f7f7, #d1d1d1 );
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 12px 12px 12px 12px;
+    color: rgba(0, 0, 0, 1.0);
+    display: flex;
+    font-size: 15px;
+    height: 38px;
+    justify-content: center;
+    text-align: center;
+    width: 360px;
+  }
+
+  .crearUsuarioTextoBoton{
+    text-decoration: none;
+  }
+
+  footer{
+      align-items: center;
+      background-color: #5B5CA5;
+      display: flex;
+      height: 50px;
+      justify-content: center;
+  }
+
+  .textoPiePagina{
+      color: rgb(255, 255, 255, 0.8);
+  }
+}
+
+.footer{
+    display: flex;
+    flex-direction: column;
+    padding: 75px;
+}
