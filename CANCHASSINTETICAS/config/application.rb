@@ -18,5 +18,11 @@ module CANCHASSINTETICAS
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+    config.to_prepare do
+      Devise::SessionsController.layout "login"
+      Devise::RegistrationsController.layout "login"
+      Devise::ConfirmationsController.layout "login"
+      Devise::UnlocksController.layout "login"            
+      Devise::PasswordsController.layout "login"
   end
 end

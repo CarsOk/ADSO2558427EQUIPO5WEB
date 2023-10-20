@@ -1,4 +1,5 @@
 class CanchasController < ApplicationController
+  before_action :authenticate_usuario!
   def index
     @canchas = Cancha.all
   end
