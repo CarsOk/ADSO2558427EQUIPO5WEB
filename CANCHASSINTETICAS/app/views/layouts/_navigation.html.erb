@@ -11,21 +11,16 @@
                     IN+
                 </div>
             </li>
-            <li class="<%= 'active' if current_page?('/') %>">
+            <li class="<%= 'active' if current_page?('/canchas') %>">
                 <%= link_to "/canchas" do %>
                 <i class="fa fa-laptop"></i> <span class="nav-label">Canchas</span>
                 <% end %>
             </li>
-            <li class="<%= 'active' if current_page?('/home/minor') %>">
-              
-                <%= link_to "/canchas" do %>
-                <i class="fa fa-desktop"></i> <span class="nav-label">Minor page</span>
-
+            <li class="<%= 'active' if current_page?('/reservas/new') %>">
                 <%= link_to "/reservas/new" do %>
                 <i class="fa fa-desktop"></i> <span class="nav-label">Reservar una Cancha</span>
                 <% end %>
             </li>
         </ul>
-
     </div>
 </nav>

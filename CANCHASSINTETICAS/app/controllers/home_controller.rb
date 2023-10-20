@@ -4,6 +4,7 @@ class HomeController < ApplicationController
 
   def dashboard
   end
+
   def landing_page
     render layout: false
   end
