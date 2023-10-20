@@ -1,5 +1,7 @@
 class ClientesController < ApplicationController
 
+  before_action :verificar_admin, only: [ :edit]
+
   def index
     @clientes = Cliente.all
   end
@@ -32,13 +34,21 @@ class ClientesController < ApplicationController
     @cliente = Cliente.find(params[:id])
     if @cliente.update(cliente_params)
       redirect_to cliente_path(@cliente)
-    else 
+    else
       render :edit
     end
   end
 
   private
+
   def cliente_params
     params.require(:cliente).permit(:identificacion, :nombre, :apellido, :telefono)
+  end
+
+  def verificar_admin
+    if current_usuario.admin == false
+      flash[:alert] = "Sin permisos de administrador"
+      redirect_to dashboard_path
+    end
   end
 end
