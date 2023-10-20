@@ -10,7 +10,7 @@
   
   /* Estilos para el encabezado */
   .titulo{
-    color: #009688;
+    color: #00b628;
     text-align: center;
   }
   
@@ -22,7 +22,7 @@
   .form-inputs label {
     display: block;
     margin-bottom: 5px;
-    color: #009688;
+    color: #00b628;
   }
   
   .form-inputs input[type="text"],
@@ -41,7 +41,7 @@
   }
   
   .form-actions input[type="submit"] {
-    background-color: #009688;
+    background-color: #00b628;
     color: #fff;
     padding: 10px 20px;
     border: none;
@@ -50,16 +50,23 @@
   }
   
   .form-actions input[type="submit"]:hover {
-    background-color: #00796b;
+    background-color: #00b628;
   }
   
   /* Estilos para los enlaces adicionales */
   .form-container a {
-    color: #009688;
+    color: #00b628;
     text-decoration: none;
   }
   
   .form-container a:hover {
     text-decoration: underline;
   }
-  
+
+  .custom-link {
+    color: black;
+    text-decoration: none; /* Esto evita la subrayado en los enlaces */
+  }
+  .custom-link:hover {
+    color: #333; /* Cambia el color al pasar el cursor sobre el enlace */
+  }
