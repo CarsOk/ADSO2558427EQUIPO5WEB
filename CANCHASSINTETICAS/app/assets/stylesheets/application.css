@@ -17,3 +17,5 @@
  @import 'devise';
 
  @import 'landing_page';
+
+ @import "public/font-awesome/icon.less";
