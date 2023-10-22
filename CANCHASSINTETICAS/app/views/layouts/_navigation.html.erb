@@ -1,26 +1,60 @@
 <nav class="navbar-default navbar-static-side" role="navigation">
-    <div class="sidebar-collapse">
-        <ul class="nav metismenu" id="side-menu">
-            <li class="nav-header">
-                <div class="dropdown profile-element">
+      <div class="sidebar-collapse">
+          <ul class="nav metismenu" id="side-menu">
+              <li class="nav-header">
+                  <div class="dropdown profile-element">
+                      <img alt="image" class="rounded-circle" src="img/profile_small.jpg"/>
                     <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                         <span class="block m-t-xs font-bold">SPORT WORLD:)</span>
                     </a>
-                </div>
-                <div class="logo-element">
-                    IN+
-                </div>
-            </li>
-            <li class="<%= 'active' if current_page?('/canchas') %>">
-                <%= link_to "/canchas" do %>
-                <i class="fa fa-laptop"></i> <span class="nav-label">Canchas</span>
-                <% end %>
-            </li>
-            <li class="<%= 'active' if current_page?('/reservas/new') %>">
-                <%= link_to "/reservas/new" do %>
-                <i class="fa fa-desktop"></i> <span class="nav-label">Reservar una Cancha</span>
-                <% end %>
-            </li>
-        </ul>
-    </div>
-</nav>
+                  </div>
+                  <div class="logo-element">
+                      SW
+                  </div>
+              </li>
+              <li class="active">
+                  <a href="<%= dashboard_path %>"><i class="fa fa-table"></i> <span class="nav-label">Dashboards</span></a>
+              </li>
+              <li>
+                  <a href="<%= canchas_path %>"><i class="fa fa-futbol-o"></i> <span class="nav-label">Canchas</span></a>
+              </li>
+              <li>
+                  <a href="<%= new_reserva_path %>"><i class="fa fa-bar-chart-o"></i> <span class="nav-label">Reservar</span></a>
+              </li>
+              <li>
+                  <a href="<%= new_cancha_path %>"><i class="fa fa-envelope"></i> <span class="nav-label">Nueva cancha</span></a>
+              </li>
+              <li>
+                  <a href="widgets.html"><i class="fa fa-flask"></i> <span class="nav-label">Widgets</span></a>
+              </li>
+              <li>
+                  <a href="#"><i class="fa fa-edit"></i> <span class="nav-label">Forms</span><span class="fa arrow"></span></a>
+              </li>
+              <li>
+                  <a href="#"><i class="fa fa-desktop"></i> <span class="nav-label">App Views</span>  <span class="float-right label label-primary">SPECIAL</span></a>
+              </li>
+              <li>
+                  <a href="#"><i class="fa fa-files-o"></i> <span class="nav-label">Other Pages</span><span class="fa arrow"></span></a>
+              </li>
+              <li>
+                  <a href="#"><i class="fa fa-globe"></i> <span class="nav-label">Miscellaneous</span><span class="label label-info float-right">NEW</span></a>
+              </li>
+              <li>
+                  <a href="#"><i class="fa fa-flask"></i> <span class="nav-label">UI Elements</span><span class="fa arrow"></span></a>
+              </li>
+
+              <li>
+                  <a href="grid_options.html"><i class="fa fa-laptop"></i> <span class="nav-label">Grid options</span></a>
+              </li>
+              <li>
+                  <a href="#"><i class="fa fa-table"></i> <span class="nav-label">Tables</span><span class="fa arrow"></span></a>
+              </li>
+              <li>
+                  <a href="#"><i class="fa fa-shopping-cart"></i> <span class="nav-label">E-commerce</span><span class="fa arrow"></span></a>
+              </li>
+              <li>
+                  <a href="#"><i class="fa fa-picture-o"></i> <span class="nav-label">Gallery</span><span class="fa arrow"></span></a>
+              </li>
+          </ul>
+      </div>
+  </nav>

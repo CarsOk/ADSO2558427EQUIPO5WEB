@@ -4,6 +4,7 @@
     <title>CANCHASSINTETICAS</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -14,22 +15,18 @@
 
   <body>
 
-  <!-- Wrapper-->
-  <div id="wrapper" class="<%= params[:controller] %>.<%= params[:action] %>">
+    <!-- Wrapper-->
+    <div id="wrapper" class="<%= params[:controller] %>.<%= params[:action] %>">
 
       <!-- Navigation -->
       <%= render 'layouts/navigation' %>
-
+        
       <!-- Page wraper -->
       <div id="page-wrapper" class="gray-bg <%= @extra_class %>">
 
           <!-- Page wrapper -->
           <%= render 'layouts/topnavbar' %>
-          <div class="alert alert-success" role="alert">
-            <p class="notice"><%= notice %></p>
-            <p class="alert"><%= alert %></p>
-          </div>
-      
+
           <!-- Main view  -->
           <%= yield %>
 
@@ -46,7 +43,6 @@
   <!-- For demo purpose we include javascript in view but you can easily start SeedProject and organize it with Rails asset pipeline as you want -->
   <%= yield :javascript %>
 
-    <script src="scripts.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>

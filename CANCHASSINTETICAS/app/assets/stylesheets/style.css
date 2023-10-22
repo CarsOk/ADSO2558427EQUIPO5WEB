@@ -855,6 +855,7 @@ h5 {
   font-weight: 600;
   padding: 14px 20px 14px 25px;
   display: block;
+  text-decoration: none;
 }
 .nav.metismenu > li {
   display: block;
@@ -1031,6 +1032,7 @@ ul.nav-second-level {
 }
 .nav-header a {
   color: #DFE4ED;
+  text-decoration: none;
 }
 .nav-header .text-muted {
   color: #8095a8 !important;
@@ -1184,6 +1186,7 @@ body.mini-navbar .navbar-default .nav > li > .nav-second-level li a {
 }
 .footer {
   transition: margin 0s;
+  text-align: center;
 }
 .pace-done .navbar-static-side,
 .pace-done .nav-header,
@@ -1284,12 +1287,7 @@ body:not(.fixed-sidebar):not(.canvas-menu).mini-navbar .nav-second-level {
 body.mini-navbar .navbar-default .nav > li > a {
   font-size: 16px;
 }
-body.mini-navbar .logo-element {
-  display: block;
-}
-body.canvas-menu .logo-element {
-  display: none;
-}
+ 
 body.mini-navbar .nav-header {
   padding: 0;
   background-color: #1ab394;
@@ -4432,7 +4430,7 @@ body.boxed-layout {
   background: url('patterns/shattered.png');
 }
 body.boxed-layout #wrapper {
-  background-color: #2f4050;
+  background-color: #676a6c;
   max-width: 1200px;
   margin: 0 auto;
   -webkit-box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.75);
@@ -4998,9 +4996,9 @@ table.table-mail tr td {
   margin-left: 4px;
 }
 .ibox-title .pull-right {
-  position: absolute;
   right: 15px;
   top: 15px;
+  text-align: center;
 }
 .ibox-tools {
   display: block;
@@ -8942,7 +8940,7 @@ body.skin-2 {
 }
 .skin-2 .nav-header {
   background-color: #23c6c8;
-  background-image: url('patterns/header-profile-skin-2.png');
+  background-image: url('css/patterns/header-profile-skin-2.png');
 }
 .skin-2.mini-navbar .nav-second-level {
   background: #ededed;
