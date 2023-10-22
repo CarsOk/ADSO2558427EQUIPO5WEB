@@ -1,6 +1,6 @@
 class ClientesController < ApplicationController
-
-  before_action :verificar_admin, only: [ :edit]
+  before_action :authenticate_usuario!
+  before_action :verificar_admin, only: :index
 
   def index
     @clientes = Cliente.all
@@ -13,8 +13,9 @@ class ClientesController < ApplicationController
   def create
     @cliente = Cliente.new(cliente_params)
     if @cliente.save
-      redirect_to cliente_path(@cliente)
+      redirect_to cliente_path(@cliente), notice: "Cliente creado correctamente."
     else
+      flash.now[:alert] = "Error al crear nuevo cliente."
       render :new
     end
   end
@@ -29,14 +30,23 @@ class ClientesController < ApplicationController
 
   def update
     @cliente = Cliente.find(params[:id])
-  end
-  def update
-    @cliente = Cliente.find(params[:id])
     if @cliente.update(cliente_params)
-      redirect_to cliente_path(@cliente)
+      redirect_to cliente_path(@cliente), notice: "Cliente editado correctamente." 
     else
+      lse 
+      flash.now[:alert] = "Error al editar el cliente."
       render :edit
     end
+  end
+
+  def destroy
+    @cliente = Cliente.find(params[:id])
+    if @cliente.destroy
+    redirect_to cliente_path, notice: "Cliente eliminado correctamente."
+    else 
+      flash.now[:alert] = "Error al eliminar el cliente."
+      render :new
+    end   
   end
 
   private
