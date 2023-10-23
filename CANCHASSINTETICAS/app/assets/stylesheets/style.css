@@ -855,6 +855,7 @@ h5 {
   font-weight: 600;
   padding: 14px 20px 14px 25px;
   display: block;
+  text-decoration: none;
 }
 .nav.metismenu > li {
   display: block;
@@ -893,7 +894,7 @@ h5 {
 }
 .navbar-default {
   background-color: transparent;
-  border-color: #2f4050;
+  border-color: #2F4050;
 }
 .navbar-top-links li {
   display: inline-block;
