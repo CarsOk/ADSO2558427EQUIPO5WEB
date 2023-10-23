@@ -3,4 +3,15 @@ class Usuario < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+  
+  after_create :check_admin
+
+    def check_admin
+      if email == 'luisa@gmail.com' && password == '123456'
+        self.admin = true
+      else
+        self.admin = false
+      end
+        save
+    end
 end
