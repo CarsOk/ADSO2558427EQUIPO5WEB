@@ -1,7 +1,8 @@
 <tr>
-    <th scope="row"><%= cancha.codigo %></th>
+    <th scope="row"><%= cancha.id %></th>
     <td><%= cancha.nombre %></td>
-    <td><%= cancha.tamanio %></td>
+    <td><%= cancha.jugadores %></td>
+    <td><%= cancha.distancia %></td>
     <td><%= cancha.precio %></td>
     <td><%= link_to 'Ver', cancha_path(cancha)%></td>
 </tr>

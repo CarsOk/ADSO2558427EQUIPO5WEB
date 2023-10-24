@@ -51,7 +51,7 @@ class CanchasController < ApplicationController
   private
 
   def cancha_params
-    params.require(:cancha).permit(:codigo, :nombre, :tamaño, :precio)
+    params.require(:cancha).permit(:codigo, :nombre, :jugadores, :distancia, :precio)
   end
 
   def verificar_admin

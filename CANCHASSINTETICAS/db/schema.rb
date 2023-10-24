@@ -10,32 +10,36 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_10_20_201238) do
+ActiveRecord::Schema[7.0].define(version: 2023_10_24_091016) do
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "canchas", force: :cascade do |t|
-    t.integer "codigo"
     t.string "nombre"
-    t.string "tamanio"
-    t.string "precio"
+    t.integer "jugadores"
+    t.float "precio"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "distancia"
+    t.string "image"
+    t.integer "codigo"
   end
 
   create_table "clientes", force: :cascade do |t|
     t.integer "identificacion"
     t.string "nombre"
     t.string "apellido"
-    t.string "telefono"
+    t.string "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "reservas", force: :cascade do |t|
-    t.integer "codigo"
     t.date "fecha"
     t.time "hora_inicio"
     t.time "hora_fin"
-    t.integer "cancha_id", null: false
-    t.integer "cliente_id", null: false
+    t.bigint "cancha_id", null: false
+    t.bigint "cliente_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["cancha_id"], name: "index_reservas_on_cancha_id"
