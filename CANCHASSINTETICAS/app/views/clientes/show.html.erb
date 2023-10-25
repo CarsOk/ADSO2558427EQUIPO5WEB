@@ -1,17 +1,50 @@
-<h1>Perfil de <%= @cliente.nombre %></h1>
+<div class="wrapper wrapper-content">
+  <div class="row animated fadeInRight">
+    <div class="col-md-12">
+      <div class="ibox ">
+        <div class="ibox-title">
+          <h2><i class="fa fa-user-o"></i> Mi perfil</h2>
+        </div>
+        <div>
+          <div class="ibox-content no-padding border-left-right">
+            <div class="col-md-4">
+              <img alt="image" class="img-fluid" src="#">
+            </div>
+          </div>
+          <div class="ibox-content profile-content">
+            <div class="col-md-8">
+              <h4><strong><%= @cliente.nombre %> <%= @cliente.apellido %></strong></h4>
+              <h4><strong><%= @cliente.identificacion %></strong></h4>
+              <br>
+                <h5>
+                  Sobre mi:
+                </h5>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitat.
+                </p>
+              <div class="row m-t-lg">
+                <div class="col-md-6">
+                  <h5><strong>169</strong> Reservas</h5>
+                </div>
+                <div class="col-md-6">
+                  <h5><strong>28</strong> Comentarios</h5>
+                </div>
+              </div>
+              <div class="user-button">
+                <div class="row">
+                  <div class="col-md-6">
+                    <a href="#" class="btn btn-primary btn-sm btn-block"><i class="fa fa-envelope"></i> Modificar perfil</a>
+                  </div>
+                  <div class="col-md-6">
+                    <a href="<%= edit_cliente_path(@cliente) %>" class="btn btn-default btn-sm btn-block"><i class="fa fa-pencil-square-o"></i> Modificar perfil</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-<dl>
-
-  <dt>Identificacion:</dt>
-  <dd><%= @cliente.identificacion %></dd>
-
-  <dt>Nombre:</dt>
-  <dd><%= @cliente.nombre %></dd>
-
-  <dt>Apellido:</dt>
-  <dd><%= @cliente.apellido %></dd>
-
-  <dt>Telefono:</dt>
-  <dd><%= @cliente.telefono %></dd>
-
-</dl>

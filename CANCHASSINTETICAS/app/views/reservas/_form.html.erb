@@ -1,7 +1,6 @@
 <%= simple_form_for @reserva do |f| %>
-    <%= f.input :codigo %>
     <%= f.association :cliente, label_method: :identificacion %>
-    <%= f.association :cancha, label_method: :codigo %>
+    <%= f.association :cancha, label_method: :nombre %>
     <%= f.input :fecha %>
     <%= f.input :hora_inicio %>
     <%= f.input :hora_fin %>
