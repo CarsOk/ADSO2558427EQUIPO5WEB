@@ -1,20 +1,48 @@
-<h1>Informacion de <%= @cancha.id %></h1>
-
-<dl>
-
-  <dt>Codigo:</dt>
-  <dd><%= @cancha.codigo%></dd>
-
-  <dt>Nombre:</dt>
-  <dd><%= @cancha.nombre%></dd>
-
-  <dt>Jugadores:</dt>
-  <dd><%= @cancha.jugadores %></dd>
-
-  <dt>Distancia:</dt>
-  <dd><%= @cancha.distancia %></dd>
-
-  <dt>Precio:</dt>
-  <dd><%= @cancha.precio %></dd>
-
-</dl>
+<div class="row">
+<div class="col-lg-12">
+<div class="ibox-title">
+  <div class="ibox product-detail">
+    <div class="ibox-content">
+    <div class="ibox-tools">
+      <a href="<%= edit_cancha_path(@cancha) %>" class="btn btn-white btn-sm"><i class="fa fa-cogs"></i></a>
+    </div>
+      <div class="row">
+        <div class="col-md-5">
+          <div class="product-images">
+            <div>
+              <div class="image-imitation">
+                [IMAGE 1]
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-7">
+          <h2 class="font-bold m-b-xs">
+            Cancha N°<%= @cancha.id %>
+          </h2>
+          <span style="font-size: 20px;"><%= @cancha.nombre %></span>
+          <hr>
+          <div>
+          <a href="<%= new_reserva_path %>" class="btn btn-primary float-right">Reservar</a>
+            <h1 class="product-main-price">$<%= @cancha.precio %></h1>
+          </div>
+          <hr>
+          <h4>Descripción:</h4>
+          <dl class="row m-t-md small">
+            <dt>Cantidad de jugadores:</dt>
+            <dd>La cantidad de jugadores requerida para nuestra cancha es de <%= @cancha.jugadores %>.</dd>
+            <dt>Distancia:</dt>
+            <dd>La distancia de esta cancha es de <%= @cancha.distancia %>, para mejor comodidad de nuestros clientes.</dd>
+          </dl>
+          <div class="text-right">
+            <div class="btn-group">
+              <a href="<%= canchas_path %>" class="btn btn-white btn-sm"><i class="fa fa-mail-reply"></i> Regresar</a>
+              <a href="#" target="_blank" class="btn btn-white btn-sm"><i class="fa fa-comments"></i> Comentarios </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

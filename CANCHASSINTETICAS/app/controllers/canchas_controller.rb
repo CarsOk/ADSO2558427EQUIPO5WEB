@@ -8,6 +8,7 @@ class CanchasController < ApplicationController
 
   def new
     @cancha = Cancha.new
+    @titulo = 'Ingresar nueva cancha'
   end
 
   def create
@@ -26,6 +27,7 @@ class CanchasController < ApplicationController
 
   def edit
     @cancha = Cancha.find(params[:id])
+    @titulo = 'Modificar Cancha'
   end
 
   def update

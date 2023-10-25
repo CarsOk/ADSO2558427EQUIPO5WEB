@@ -5008,7 +5008,6 @@ table.table-mail tr td {
   display: block;
   float: none;
   margin-top: 0;
-  position: absolute;
   top: 15px;
   right: 15px;
   padding: 0;
@@ -5017,7 +5016,7 @@ table.table-mail tr td {
 .ibox-tools a {
   cursor: pointer;
   margin-left: 5px;
-  color: #c4c4c4 !important;
+  color: black;
 }
 .ibox-tools a.btn-primary {
   color: #fff !important;
@@ -5260,6 +5259,17 @@ a.close-canvas-menu:hover {
   height: 100%;
   width: 240px;
   float: left;
+}
+.form-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 500px;
+  margin-top: 10px;
+}
+.form-container2{
+  text-align: left;
+  width: 335px;
 }
 .modal-backdrop {
   z-index: 2040 !important;
