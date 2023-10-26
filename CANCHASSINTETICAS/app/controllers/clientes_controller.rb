@@ -8,6 +8,7 @@ class ClientesController < ApplicationController
 
   def new
     @cliente = Cliente.new
+    @titulo = 'Registrarse'
   end
 
   def create
@@ -26,6 +27,7 @@ class ClientesController < ApplicationController
 
   def edit
     @cliente = Cliente.find(params[:id])
+    @titulo = 'Modificar información'
   end
 
   def update
@@ -52,7 +54,7 @@ class ClientesController < ApplicationController
   private
 
   def cliente_params
-    params.require(:cliente).permit(:identificacion, :nombre, :apellido, :telefono)
+    params.require(:cliente).permit(:identificacion, :nombre, :apellido, :email)
   end
 
   def verificar_admin
