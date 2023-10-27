@@ -9,14 +9,18 @@ default: &default
 development:
   <<: *default
   database: sport_development
+  username: sportworld
+  password: 123456
 
 test:
   <<: *default
   database: sport_test
+  username: sportworld
+  password: 123456
 
 production:
   <<: *default
   database: sport_production
   username: sportworld
-  password: <%= ENV['123456'] %>
+  password: 123456
 
