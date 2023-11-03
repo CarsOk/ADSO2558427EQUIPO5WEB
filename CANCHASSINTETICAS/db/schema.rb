@@ -22,7 +22,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_24_091016) do
     t.datetime "updated_at", null: false
     t.string "distancia"
     t.string "image"
-    t.integer "codigo"
   end
 
   create_table "clientes", force: :cascade do |t|
