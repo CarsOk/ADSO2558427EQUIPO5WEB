@@ -1,0 +1,32 @@
+<section class="section dashboard">
+  <div class="row">
+      <section class="section">
+      <div class="row">
+      <div class="col-lg-12">
+          <div class="card">
+          <div class="card-body">
+              <h1 class="card-title">Lista de usuarios</h1>
+              <!-- Default Table -->
+              <table class="table">
+              <thead>
+                  <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Identificacion</th>
+                  <th scope="col">Nombre</th>
+                  <th scope="col">Apellido</th>
+                  <th scope="col">E-mail</th>
+                  <th scope="col">Perfil</th>
+                  </tr>
+              </thead>
+              <tbody>
+                <%= render @usuarios%>
+              </tbody>
+              </table>
+              <!-- End Default Table Example -->
+          </div>
+          </div>
+      </div>
+      </div>
+      </section>
+  </div> 
+</section>

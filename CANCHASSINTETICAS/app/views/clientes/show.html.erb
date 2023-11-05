@@ -24,7 +24,7 @@
                 </p>
               <div class="row m-t-lg">
                 <div class="col-md-6">
-                  <h5><strong>169</strong> Reservas</h5>
+                  <h5><strong><%= @reservas_realizadas %></strong> Reservas</h5>
                 </div>
                 <div class="col-md-6">
                   <h5><strong>28</strong> Comentarios</h5>
@@ -33,7 +33,7 @@
               <div class="user-button">
                 <div class="row">
                   <div class="col-md-6">
-                    <a href="#" class="btn btn-primary btn-sm btn-block"><i class="fa fa-envelope"></i> Modificar perfil</a>
+                    <a href="<%= cliente_path(@cliente) %>" data-method="delete" data-confirm="¿Estás seguro de que deseas eliminar este cliente?" class="btn btn-primary btn-sm btn-block"><i class="fa fa-envelope"></i> Eliminar perfil</a>
                   </div>
                   <div class="col-md-6">
                     <a href="<%= edit_cliente_path(@cliente) %>" class="btn btn-default btn-sm btn-block"><i class="fa fa-pencil-square-o"></i> Modificar perfil</a>

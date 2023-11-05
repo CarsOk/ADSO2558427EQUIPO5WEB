@@ -60,3 +60,5 @@ gem 'simple_form'
 gem 'devise'
 
 gem 'carrierwave'
+
+gem 'bootstrap-datepicker-rails'

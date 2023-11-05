@@ -1,12 +1,14 @@
 <h1>Reserva <%= @reserva.id %></h1>
 
 <dl>
+  <dt>Codigo de la reserva:</dt>
+  <dd><%=@reserva.id%></dd>
 
   <dt>Identificacion del cliente:</dt>
   <dd><%=@reserva.cliente.identificacion%></dd>
 
   <dt>Nombre de cancha:</dt>
-  <dd><%=@reserva.cancha.codigo%></dd>
+  <dd><%=@reserva.cancha.nombre%></dd>
 
   <dt>Fecha:</dt>
   <dd><%= @reserva.fecha %></dd>
@@ -16,6 +18,5 @@
 
   <dt>Hora de fin:</dt>
   <dd><%= @reserva.hora_fin %></dd>
-
 </dl>
 
