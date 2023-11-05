@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_10_24_091016) do
+ActiveRecord::Schema[7.0].define(version: 2023_10_28_234208) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -31,6 +31,16 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_24_091016) do
     t.string "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "usuario_id"
+    t.index ["usuario_id"], name: "index_clientes_on_usuario_id"
+  end
+
+  create_table "comentarios", force: :cascade do |t|
+    t.text "contenido"
+    t.bigint "valoracion_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["valoracion_id"], name: "index_comentarios_on_valoracion_id"
   end
 
   create_table "reservas", force: :cascade do |t|
@@ -54,10 +64,22 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_24_091016) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "admin", default: false
+    t.integer "identificacion"
+    t.string "nombre"
+    t.string "apellido"
     t.index ["email"], name: "index_usuarios_on_email", unique: true
     t.index ["reset_password_token"], name: "index_usuarios_on_reset_password_token", unique: true
   end
 
+  create_table "valoraciones", force: :cascade do |t|
+    t.integer "calificacion"
+    t.text "comentario"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_foreign_key "clientes", "usuarios"
+  add_foreign_key "comentarios", "valoraciones"
   add_foreign_key "reservas", "canchas"
   add_foreign_key "reservas", "clientes"
 end
