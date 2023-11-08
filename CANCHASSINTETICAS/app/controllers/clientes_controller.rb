@@ -1,5 +1,4 @@
 class ClientesController < ApplicationController
-  before_action :authenticate_usuario!
   before_action :verificar_admin, only: :index
 
   def index
@@ -7,12 +6,12 @@ class ClientesController < ApplicationController
   end
 
   def new
-    @cliente = Cliente.new
+    @cliente = current_usuario.build_cliente
     @titulo = 'Registrarse'
   end
 
   def create
-    @cliente = Cliente.new(cliente_params)
+    @cliente = current_usuario.build_cliente(cliente_params)
     if @cliente.save
       redirect_to cliente_path(@cliente), notice: "Cliente creado correctamente."
     else
@@ -23,6 +22,7 @@ class ClientesController < ApplicationController
 
   def show
     @cliente = Cliente.find(params[:id])
+    @reservas_realizadas = @cliente.reservas.count
   end
 
   def edit
@@ -54,7 +54,7 @@ class ClientesController < ApplicationController
   private
 
   def cliente_params
-    params.require(:cliente).permit(:identificacion, :nombre, :apellido, :email)
+    params.require(:cliente).permit(:identificacion, :nombre, :apellido, :email, :usuario_id)
   end
 
   def verificar_admin

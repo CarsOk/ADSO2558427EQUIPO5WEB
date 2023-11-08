@@ -21,3 +21,4 @@
 //= pace.min.js
 //= jquery.slimscroll.js
 //= jquery.slimscroll.min.js
+//= reservas.js

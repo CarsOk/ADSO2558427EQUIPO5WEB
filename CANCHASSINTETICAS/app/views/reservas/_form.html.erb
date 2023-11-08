@@ -1,8 +1,56 @@
-<%= simple_form_for @reserva do |f| %>
-    <%= f.association :cliente, label_method: :identificacion %>
-    <%= f.association :cancha, label_method: :nombre %>
-    <%= f.input :fecha %>
-    <%= f.input :hora_inicio %>
-    <%= f.input :hora_fin %>
-    <%= f.button :submit %>
-<% end %>
+<div class="form-container">
+  <div class="form-container2">
+    <h2 style="text-align: center;"><%= @titulo %></h2>
+    <%= simple_form_for @reserva do |f| %>
+      <div class="form-group">
+        <%= f.label :cliente, "Cliente", class: "control-label col-sm-2" %>
+        <div class="col-sm-10">
+          <%= f.collection_select :cliente_id, Cliente.all, :id, :identificacion, { include_blank: false }, { class: "form-control" } %>
+        </div>
+      </div>
+      <div class="form-group">
+        <%= f.label :cancha, "Cancha", class: "control-label col-sm-2" %>
+        <div class="col-sm-10">
+          <%= f.collection_select :cancha_id, Cancha.all, :id, :nombre, { include_blank: false }, { class: "form-control" } %>
+        </div>
+      </div>
+      <div class="form-group">
+        <%= f.label :fecha, "Fecha", class: "control-label col-sm-2" %>
+        <div class="col-sm-10">
+          <%= f.date_field :fecha, min: Date.current, max: Date.new(2030, 12, 31),
+          class: "form-control date-select-custom-class" %>
+        </div>
+      </div>
+      <div class="form-group">
+        <%= f.label :hora_inicio, "Hora de Inicio", class: "control-label col-sm-4" %>
+        <div class="col-sm-10">
+          <div class="row">
+            <div class="col-md-4">
+              <%= f.input :hora_inicio, as: :select, collection: 8..23, prompt: 'Hora', include_blank: false, input_html: { class: "form-control" }, label: false %>
+            </div>
+            <div class="col-md-5">
+              <%= f.input :hora_inicio, as: :select, collection: 0..59, prompt: 'Minutos', include_blank: false, input_html: { class: "form-control" }, label: false %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <%= f.label :hora_fin, "Hora de Finalización", class: "control-label col-sm-9" %>
+        <div class="col-sm-10">
+          <div class="row">
+            <div class="col-md-4">
+              <%= f.input :hora_fin, as: :select, collection: 8..23, prompt: 'Hora', include_blank: false, input_html: { class: "form-control" }, label: false %>
+            </div>
+            <div class="col-md-5">
+              <%= f.input :hora_fin, as: :select, collection: 0..59, prompt: 'Minutos', include_blank: false, input_html: { class: "form-control" }, label: false %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <%= f.button :submit, "Enviar", class: "btn btn-primary" %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
