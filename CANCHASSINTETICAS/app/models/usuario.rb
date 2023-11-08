@@ -1,4 +1,8 @@
 class Usuario < ApplicationRecord
+  has_one :cliente
+  accepts_nested_attributes_for :cliente
+  after_create :create_cliente
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -14,4 +18,10 @@ class Usuario < ApplicationRecord
       end
         save
     end
+
+  private
+
+  def create_cliente
+    Cliente.create(usuario: self)
+  end
 end
