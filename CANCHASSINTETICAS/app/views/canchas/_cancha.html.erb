@@ -1,8 +1,24 @@
-<tr>
-    <th scope="row"><%= cancha.id %></th>
-    <td><%= cancha.nombre %></td>
-    <td><%= cancha.jugadores %></td>
-    <td><%= cancha.distancia %></td>
-    <td><%= cancha.precio %></td>
-    <td><%= link_to 'Ver detalles', cancha_path(cancha)%></td>
-</tr>
+<div class="row">
+    <div class="col-md-3">
+        <div class="ibox">
+            <div class="ibox-content product-box">
+                <div class="product-imitation">
+                    [ IMAGEN ]
+                </div>
+                <div class="product-desc">
+                    <span class="product-price">
+                       $<%= cancha.precio %>
+                    </span>
+                    <small class="text-muted">Codigo <%= cancha.id %></small>
+                    <a href="<%= cancha_path(cancha) %>" class="product-name"><%= cancha.nombre %></a>
+                    <div class="small m-t-xs">
+                        La cantidad de jugadores deseada es <%= cancha.jugadores %>
+                    </div>
+                    <div class="m-t text-righ">
+                        <a href="<%= cancha_path(cancha) %>" class="btn btn-xs btn-outline btn-primary">Detalles<i class="fa fa-long-arrow-right"></i> </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

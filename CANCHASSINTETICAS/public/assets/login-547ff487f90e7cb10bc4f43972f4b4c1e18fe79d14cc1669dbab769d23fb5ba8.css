@@ -2,28 +2,12 @@
 .form-container {
     max-width: 400px;
     margin: auto;
-    padding: 0px 20px 0px 20px;
-    background-color: white;
+    padding: 20px;
+    background-color: black;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border: 1px solid #ddd;
   }
-  .logo{
-    width: 62px;
-  }
-  .logo-container{
-    align-items: center;
-    border: 2px solid #fff;
-    display: flex;
-    flex-direction: column;
-    height: 82px;
-    justify-content: center;
-    margin: auto;
-    width: 76px;
-  }
-  .vh-100{
-    background: linear-gradient(to bottom, #37517e, #47b2e4);  
-  }
+  
   /* Estilos para el encabezado */
   .titulo{
     color: black;
@@ -71,7 +55,7 @@
   
   /* Estilos para los enlaces adicionales */
   .form-container a {
-    color: black;
+    color: #37517e;
     text-decoration: none;
   }
   
@@ -84,5 +68,5 @@
     text-decoration: none; /* Esto evita la subrayado en los enlaces */
   }
   .custom-link:hover {
-    color: black; /* Cambia el color al pasar el cursor sobre el enlace */
+    color: #47b2e4; /* Cambia el color al pasar el cursor sobre el enlace */
   }
