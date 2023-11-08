@@ -11,7 +11,7 @@ class Usuario < ApplicationRecord
   after_create :check_admin
 
     def check_admin
-      if email == 'luisa@gmail.com' && password == '123456'
+      if email == 'admin@gmail.com' && password == '123456'
         self.admin = true
       else
         self.admin = false
