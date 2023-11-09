@@ -1466,7 +1466,7 @@ body.canvas-menu.mini-navbar nav.navbar-static-side {
   margin-left: 0 !important;
 }
 .top-navigation .wrapper.wrapper-content {
-  padding: 40px;
+  padding: 20px;
 }
 .top-navigation.body-small .wrapper.wrapper-content,
 .body-small .top-navigation .wrapper.wrapper-content {
@@ -4575,9 +4575,7 @@ video {
 .wrapper {
   padding: 0 20px;
 }
-.wrapper-content {
-  padding: 20px 10px 40px;
-}
+
 #page-wrapper {
   padding: 0 15px;
   position: relative !important;
@@ -4938,7 +4936,7 @@ code {
 .ibox-content {
   background-color: #ffffff;
   color: inherit;
-  padding: 15px 20px 20px 20px;
+  padding: 10px 10px 10px 10px;
   border-color: #e7eaec;
   border-image: none;
   border-style: solid;
