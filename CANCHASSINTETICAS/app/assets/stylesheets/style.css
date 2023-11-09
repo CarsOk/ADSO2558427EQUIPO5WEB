@@ -1186,6 +1186,13 @@ body.mini-navbar .navbar-default .nav > li > .nav-second-level li a {
 }
 .footer {
   transition: margin 0s;
+  background: none repeat scroll 0 0 white;
+  border-top: 1px solid #e7eaec;
+  bottom: 0;
+  left: 0;
+  padding: 10px 20px;
+  position: absolute;
+  right: 0;
 }
 .pace-done .navbar-static-side,
 .pace-done .nav-header,
@@ -4900,7 +4907,7 @@ code {
 }
 .ibox {
   clear: both;
-  margin-bottom: 25px;
+  margin-bottom: 5px;
   margin-top: 20px;
   padding: 0;
 }
