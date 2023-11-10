@@ -3,6 +3,8 @@ class HomeController < ApplicationController
   before_action :authenticate_usuario!, only: [:dashboard]
 
   def dashboard
+    @cantidad_canchas = Cancha.all.size
+    @cantidad_clientes = Cliente.all.size
   end
 
   def landing_page

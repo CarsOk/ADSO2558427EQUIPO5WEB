@@ -9,6 +9,7 @@ class ReservasController < ApplicationController
 
   def new
     @reserva = Reserva.new
+    @titulo = 'Realiza tu reserva'
   end
 
   def create
@@ -28,6 +29,7 @@ class ReservasController < ApplicationController
 
   def edit
     @reserva = Reserva.find(params[:id])
+    @titulo = 'Modificar reserva'
   end
 
   def update

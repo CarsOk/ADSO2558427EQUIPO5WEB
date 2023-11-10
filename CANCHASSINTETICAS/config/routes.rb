@@ -15,4 +15,5 @@ Rails.application.routes.draw do
   resources :canchas
   resources :clientes
   resources :reservas
+  resource :usuarios
 end

@@ -1186,6 +1186,13 @@ body.mini-navbar .navbar-default .nav > li > .nav-second-level li a {
 }
 .footer {
   transition: margin 0s;
+  background: none repeat scroll 0 0 white;
+  border-top: 1px solid #e7eaec;
+  bottom: 0;
+  left: 0;
+  padding: 10px 20px;
+  position: absolute;
+  right: 0;
 }
 .pace-done .navbar-static-side,
 .pace-done .nav-header,
@@ -1466,7 +1473,7 @@ body.canvas-menu.mini-navbar nav.navbar-static-side {
   margin-left: 0 !important;
 }
 .top-navigation .wrapper.wrapper-content {
-  padding: 40px;
+  padding: 20px;
 }
 .top-navigation.body-small .wrapper.wrapper-content,
 .body-small .top-navigation .wrapper.wrapper-content {
@@ -4575,9 +4582,7 @@ video {
 .wrapper {
   padding: 0 20px;
 }
-.wrapper-content {
-  padding: 20px 10px 40px;
-}
+
 #page-wrapper {
   padding: 0 15px;
   position: relative !important;
@@ -4902,7 +4907,7 @@ code {
 }
 .ibox {
   clear: both;
-  margin-bottom: 25px;
+  margin-bottom: 5px;
   margin-top: 20px;
   padding: 0;
 }
@@ -4938,7 +4943,7 @@ code {
 .ibox-content {
   background-color: #ffffff;
   color: inherit;
-  padding: 15px 20px 20px 20px;
+  padding: 10px 10px 10px 10px;
   border-color: #e7eaec;
   border-image: none;
   border-style: solid;
