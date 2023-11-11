@@ -15,7 +15,7 @@ class ReservasController < ApplicationController
   def create
     @reserva = Reserva.new(reserva_params)
     if @reserva.save
-      redirect_to reserva_path(@reserva), notice: "Reserva creada correctamente."
+      redirect_to reserva_path(@reserva), notice: 'Reserva creada exitosamente.'
     else
       flash.now[:alert] = "Error al crear nueva reserva."
       render :new
@@ -63,4 +63,5 @@ class ReservasController < ApplicationController
       redirect_to dashboard_path
     end
   end
+
 end
