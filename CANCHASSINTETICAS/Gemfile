@@ -62,3 +62,4 @@ gem 'devise'
 gem 'carrierwave'
 
 gem 'bootstrap-datepicker-rails'
+
