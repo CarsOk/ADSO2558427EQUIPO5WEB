@@ -1,5 +1,4 @@
 class ReservasController < ApplicationController
-
   before_action :authenticate_usuario!
   before_action :verificar_admin, only: :index
 
@@ -54,7 +53,7 @@ class ReservasController < ApplicationController
   private
 
   def reserva_params
-   params.require(:reserva).permit(:codigo, :fecha, :hora_inicio, :hora_fin, :cliente_id, :cancha_id)
+   params.require(:reserva).permit(:codigo, :fecha, :hora_inicio, :hora_fin, :usuario_id, :cancha_id)
   end
 
   def verificar_admin

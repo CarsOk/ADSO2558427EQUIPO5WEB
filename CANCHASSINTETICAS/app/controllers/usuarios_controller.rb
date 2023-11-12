@@ -1,18 +1,15 @@
 class UsuariosController < ApplicationController
+    before_action :authenticate_usuario!
+    before_action :verificar_admin, only: :index
+  
     def index
-        @usuarios = Usuario.all
+      @usuarios = Usuario.all
     end
     
-      #def new
-        #@usuario = Usuario.new
-      #end
-    
-      def show
-        @usuario = Usuario.find(params[:id])
-      rescue ActiveRecord::RecordNotFound
-      end
-    
-      #def edit
-        #@usuario = Usuario.find(params[:id])
-      #end
+    def verificar_admin
+        if current_usuario.admin == false
+          flash[:alert] = "Sin permisos de administrador"
+          redirect_to dashboard_path
+        end
+    end
 end

@@ -11,7 +11,7 @@
           <div class="product-images">
             <div>
               <div class="image-imitation">
-                [IMAGE 1]
+                 <%= image_tag @cancha.image.url if @cancha.image.present? %>
               </div>
             </div>
           </div>
@@ -34,15 +34,16 @@
             <dt>Distancia:</dt>
             <dd>La distancia de esta cancha es de <%= @cancha.distancia %>, para mejor comodidad de nuestros clientes.</dd>
           </dl>
-          <div class="text-right">
-            <div class="btn-group">
-              <a href="<%= canchas_path %>" class="btn btn-white btn-sm"><i class="fa fa-mail-reply"></i> Regresar</a>
-              <a href="#" target="_blank" class="btn btn-white btn-sm"><i class="fa fa-comments"></i> Comentarios </a>
+            <div class="text-right">
+              <div class="btn-group">
+                <%= link_to '<i class="fa fa-mail-reply"></i> Regresar'.html_safe, :back, class: 'btn btn-white btn-sm' %>
+                <a href="#" target="_blank" class="btn btn-white btn-sm"><i class="fa fa-comments"></i> Comentarios </a>
+              </div>
             </div>
-          </div>
         </div>
       </div>
     </div>
   </div>
 </div>
 </div>
+
