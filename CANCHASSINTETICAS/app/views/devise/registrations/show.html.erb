@@ -13,8 +13,8 @@
           </div>
           <div class="ibox-content profile-content">
             <div class="col-md-8">
-              <h4><strong><%= @cliente.nombre %> <%= @cliente.apellido %></strong></h4>
-              <h4><strong><%= @cliente.identificacion %></strong></h4>
+              <h4><strong><%= @usuario.nombre %> <%= @usuario.apellido %></strong></h4>
+              <h4><strong><%= @usuario.identificacion %></strong></h4>
               <br>
                 <h5>
                   Sobre mi:
@@ -33,10 +33,10 @@
               <div class="user-button">
                 <div class="row">
                   <div class="col-md-6">
-                    <a href="<%= cliente_path(@cliente) %>" data-method="delete" data-confirm="¿Estás seguro de que deseas eliminar este cliente?" class="btn btn-primary btn-sm btn-block"><i class="fa fa-envelope"></i> Eliminar perfil</a>
+                    <a href="#" data-method="delete" data-confirm="¿Estás seguro de que deseas eliminar este cliente?" class="btn btn-primary btn-sm btn-block"><i class="fa fa-exclamation-circle"></i> Eliminar perfil</a>
                   </div>
                   <div class="col-md-6">
-                    <a href="<%= edit_cliente_path(@cliente) %>" class="btn btn-default btn-sm btn-block"><i class="fa fa-pencil-square-o"></i> Modificar perfil</a>
+                    <a href="<%= edit_usuario_registration_path %>" class="btn btn-default btn-sm btn-block"><i class="fa fa-pencil-square-o"></i> Modificar perfil</a>
                   </div>
                 </div>
               </div>
@@ -47,4 +47,3 @@
     </div>
   </div>
 </div>
-
