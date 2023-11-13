@@ -69,6 +69,17 @@
   .form-actions input[type="submit"]:hover {
     background-color: #47b2e4;
   }
+  .form-actions-edit input[type="submit"]{
+    background-color: #47b2e4;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .form-actions-edit input[type="submit"]:hover {
+    background-color: #398eb6;
+  }
   
   /* Estilos para los enlaces adicionales */
   .form-container a {

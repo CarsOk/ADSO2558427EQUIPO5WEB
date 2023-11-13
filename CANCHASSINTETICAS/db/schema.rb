@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_10_28_234208) do
+ActiveRecord::Schema[7.0].define(version: 2023_11_12_064451) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -21,18 +21,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_28_234208) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "distancia"
-    t.string "image"
-  end
-
-  create_table "clientes", force: :cascade do |t|
-    t.integer "identificacion"
-    t.string "nombre"
-    t.string "apellido"
-    t.string "email"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.bigint "usuario_id"
-    t.index ["usuario_id"], name: "index_clientes_on_usuario_id"
+    t.text "image"
   end
 
   create_table "comentarios", force: :cascade do |t|
@@ -48,11 +37,11 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_28_234208) do
     t.time "hora_inicio"
     t.time "hora_fin"
     t.bigint "cancha_id", null: false
-    t.bigint "cliente_id", null: false
+    t.bigint "usuario_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["cancha_id"], name: "index_reservas_on_cancha_id"
-    t.index ["cliente_id"], name: "index_reservas_on_cliente_id"
+    t.index ["usuario_id"], name: "index_reservas_on_usuario_id"
   end
 
   create_table "usuarios", force: :cascade do |t|
@@ -78,8 +67,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_28_234208) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "clientes", "usuarios"
   add_foreign_key "comentarios", "valoraciones"
   add_foreign_key "reservas", "canchas"
-  add_foreign_key "reservas", "clientes"
 end

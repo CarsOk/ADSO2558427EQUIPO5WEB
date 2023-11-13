@@ -3,8 +3,8 @@
           <ul class="nav metismenu" id="side-menu">
               <li class="nav-header">
                     <div class="dropdown profile-element">
-                        <img alt="image" class="rounded-circle" src="img/profile_small.jpg"/>
-                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                    <img alt="image" class="rounded-circle" src="/assets/Logo-CS-c4b7a8c7a98069293f798f11516bbb395afd110625d69b4464d75f0cd88343fa.png" />
+                        <a  href="<%= root_path %>" class="dropdown-toggle">
                             <span class="block m-t-xs font-bold">SPORT WORLD</span>
                         </a>
                     </div>
@@ -15,6 +15,9 @@
               <li>
                  <a href="<%= root_path %>"><i class="fa fa-mail-reply-all"></i> <span class="nav-label">Inicio</span></a>
               </li>
+              <li>
+                <a href="<%= user_profile_path %>"><i class="fa fa-user"></i> <span class="nav-label">Mi perfil</span></a>
+              </li>    
               <li class="active">
                   <a href="<%= dashboard_path %>"><i class="fa fa-table"></i> <span class="nav-label">Dashboard</span></a>
               </li>
@@ -28,19 +31,10 @@
                   <a href="<%= new_cancha_path %>"><i class="fa fa-edit"></i> <span class="nav-label">Nueva cancha</span></a>
               </li>
               <li>
-                  <a href="<%= reservas_path %>"><i class="fa fa-flask"></i> <span class="nav-label">Reservas</span></a>
+                  <a href="<%= reservas_path %>"><i class="fa fa-envelope"></i> <span class="nav-label">Reservas</span></a>
               </li>
               <li>
-                  <a href="<%= clientes_path %>"><i class="fa fa-edit"></i> <span class="nav-label">Registros</span><span class="fa arrow"></span></a>
-              </li>
-              <li>
-                  <a href="#"><i class="fa fa-desktop"></i> <span class="nav-label">App Views</span>  <span class="float-right label label-primary">SPECIAL</span></a>
-              </li>
-              <li>
-                  <a href="#"><i class="fa fa-files-o"></i> <span class="nav-label">Other Pages</span><span class="fa arrow"></span></a>
-              </li>
-              <li>
-                  <a href="#"><i class="fa fa-globe"></i> <span class="nav-label">Miscellaneous</span><span class="label label-info float-right">NEW</span></a>
+                  <a href=" <%= usuarios_index_path %>"><i class="fa fa-group"></i> <span class="nav-label">Usuarios</span></a>
               </li>
           </ul>
       </div>

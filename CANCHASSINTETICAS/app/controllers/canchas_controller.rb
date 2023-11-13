@@ -53,7 +53,7 @@ class CanchasController < ApplicationController
   private
 
   def cancha_params
-    params.require(:cancha).permit(:codigo, :nombre, :jugadores, :distancia, :precio)
+    params.require(:cancha).permit(:codigo, :nombre, :jugadores, :distancia, :precio, :image)
   end
 
   def verificar_admin
@@ -62,4 +62,5 @@ class CanchasController < ApplicationController
       redirect_to dashboard_path
     end
   end
+
 end

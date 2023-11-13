@@ -221,6 +221,7 @@ strong {
 
 small, .small {
   font-size: 0.875em;
+  text-align: center;
 }
 
 mark, .mark {
@@ -3200,6 +3201,7 @@ textarea.form-control-lg {
 
 .dropdown-toggle {
   white-space: nowrap;
+  text-decoration: none;
 }
 .dropdown-toggle::after {
   display: inline-block;
@@ -8265,6 +8267,8 @@ textarea.form-control-lg {
 
 .rounded-circle {
   border-radius: 50% !important;
+  width: 170px;
+  height: 150px;
 }
 
 .rounded-pill {
