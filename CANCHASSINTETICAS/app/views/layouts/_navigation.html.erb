@@ -3,7 +3,18 @@
           <ul class="nav metismenu" id="side-menu">
               <li class="nav-header">
                     <div class="dropdown profile-element">
-                    <img alt="image" class="rounded-circle" src="/assets/Logo-CS-c4b7a8c7a98069293f798f11516bbb395afd110625d69b4464d75f0cd88343fa.png" />
+                    <img alt="image" class="rounded-circle-logo" src="/assets/Logo-CS.png" />
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                        <span class="block m-t-xs font-bold">
+                            <% if current_usuario.admin == true %>
+                            <%= actual.nombre %>
+                            <% else %>
+                              <% if current_usuario.present? %>
+                                <%= actual.nombre %> <%= actual.apellido %>
+                              <% end %>
+                            <% end %>
+                        </span>
+                        </a>
                         <a  href="<%= root_path %>" class="dropdown-toggle">
                             <span class="block m-t-xs font-bold">SPORT WORLD</span>
                         </a>
@@ -26,6 +37,9 @@
                 </li>
                 <li>
                     <a href="<%= new_reserva_path %>"><i class="fa fa-check-square-o"></i> <span class="nav-label">Reservar</span></a>
+                </li>
+                <li>
+                    <a href="<%= mis_reservas_path %>"><i class="fa fa-check-square-o"></i> <span class="nav-label">Mis reservas</span></a>
                 </li>
                 <% if current_usuario.admin == true %>
                     <li>

@@ -8266,9 +8266,14 @@ textarea.form-control-lg {
 }
 
 .rounded-circle {
-  border-radius: 50% !important;
-  width: 170px;
-  height: 150px;
+  border-radius: 90% !important;
+  width: 145px;
+  height: 134px;
+}
+.rounded-circle-logo{
+  border-radius: 90% !important;
+  width: 160px;
+  height: 125px;
 }
 
 .rounded-pill {

@@ -8,7 +8,11 @@
         <div>
           <div class="ibox-content no-padding border-left-right">
             <div class="col-md-4">
-              <img alt="image" class="img-fluid" src="#">
+            <% if @usuario_current.present? %>
+            <%= image_tag @usuario_current.imagen.url, alt: "Imagen de perfil" %>
+            <% else %>
+            <img alt="image" class="rounded-circle" src="/assets/imgdf-619faad72b3d25d1c8762ad9df8aa51ab40dd234a9556285be9f96de68328f9c.png"/>
+            <% end %>
             </div>
           </div>
           <div class="ibox-content profile-content">

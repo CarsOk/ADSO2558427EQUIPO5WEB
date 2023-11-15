@@ -5,52 +5,42 @@
       <div class="form-group">
         <%= f.label :usuario_id, "Usuario", class: "control-label col-sm-2" %>
         <div class="col-sm-10">
-          <%= f.collection_select :usuario_id, [current_usuario], :id, :identificacion, { selected: current_usuario.id }, { class: "form-control", disabled: true  } %>
+          <%= f.text_field :usuario_id, value: @usuario_current.identificacion, class: 'form-control', readonly: true %>
+          <%= f.hidden_field :usuario_id, value: @usuario_current.id %>
         </div>
       </div>
       <div class="form-group">
-        <%= f.label :cancha, "Cancha", class: "control-label col-sm-2" %>
+      <%= f.label :cancha_id, "Cancha", class: "control-label col-sm-2" %>
         <div class="col-sm-10">
-          <%= f.collection_select :cancha_id, Cancha.all, :id, :nombre, { include_blank: false }, { class: "form-control" } %>
+          <%= f.select :cancha_id,
+                options_from_collection_for_select(Cancha.all, :id, :nombre),
+                { include_blank: false }, 
+                class: "form-control",
+                label: false %>
         </div>
       </div>
       <div class="form-group">
         <%= f.label :fecha, "Fecha", class: "control-label col-sm-2" %>
         <div class="col-sm-10">
           <%= f.date_field :fecha, min: Date.current, max: Date.new(2030, 12, 31),
-          class: "form-control date-select-custom-class" %>
+                            class: "form-control custom-date-field" %>
         </div>
       </div>
       <div class="form-group">
         <%= f.label :hora_inicio, "Hora de Inicio", class: "control-label col-sm-4" %>
         <div class="col-sm-10">
-          <div class="row">
-            <div class="col-md-4">
-              <%= f.input :hora_inicio, as: :select, collection:(8..23).to_a.map { |h| [format('%02d', h), h] }, prompt: 'Hora', include_blank: false, input_html: { class: "form-control" }, label: false %>
-            </div>
-            <div class="col-md-5">
-              <%= f.input :hora_inicio, as: :select, collection: (0..59).to_a.map { |m| [format('%02d', m), m] }, prompt: 'Minutos', include_blank: false, input_html: { class: "form-control" }, label: false %>
-            </div>
-          </div>
+          <%= f.time_field :hora_inicio, class: "form-control custom-time-field" %>
         </div>
       </div>
       <div class="form-group">
         <%= f.label :hora_fin, "Hora de Finalización", class: "control-label col-sm-9" %>
         <div class="col-sm-10">
-          <div class="row">
-            <div class="col-md-4">
-              <%= f.input :hora_fin, as: :select, collection:(8..23).to_a.map { |h| [format('%02d', h), h] }, prompt: 'Hora', include_blank: false, input_html: { class: "form-control" }, label: false %>
-            </div>
-            <div class="col-md-5">
-              <%= f.input :hora_fin, as: :select, collection: (0..59).to_a.map { |m| [format('%02d', m), m] }, prompt: 'Minutos', include_blank: false, input_html: { class: "form-control" }, label: false %>
-            </div>
-          </div>
+          <%= f.time_field :hora_fin, class: "form-control custom-time-field" %>
         </div>
       </div>
       <div class="form-group">
-        <%= f.button :submit, "Enviar", class: "btn btn-primary" %>
+        <%= f.button :submit, "Reservar", class: "btn btn-primary" %>
       </div>
     <% end %>
   </div>
 </div>
-
