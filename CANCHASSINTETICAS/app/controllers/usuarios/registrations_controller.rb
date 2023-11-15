@@ -1,11 +1,14 @@
 class Usuarios::RegistrationsController < Devise::RegistrationsController
+  before_action :authenticate_usuario!
   layout "login", only: [:new]
   before_action :verificar_admin, only: :index
 
   def create
     @usuario = Usuario.new(usuario_params)
     if @usuario.save
-      sign_in(@usuario, notice: "Se ha creado su usuario exitosamente.")
+      sign_in(@usuario)
+      redirect_to new_usuario_session_path
+      flash[:notice] = "Se ha creado su usuario exitosamente."
     else
       flash.now[:alert] = "Error al crear su usuario."
       render :new
@@ -46,5 +49,9 @@ class Usuarios::RegistrationsController < Devise::RegistrationsController
         flash[:alert] = "Sin permisos de administrador"
         redirect_to dashboard_path
       end
+    end
+
+    def after_sign_up_path_for(resource)
+      new_session_path(resource) # o la ruta que desees después del registro
     end
 end
