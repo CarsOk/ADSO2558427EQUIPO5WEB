@@ -1,5 +1,8 @@
 <main class="bg-gra-01">
   <div class="form-container">
+    <div class="icono-container">
+      <a class="custom-link" href="<%= root_path %>"><i class="fa fa-reply-all"></i></a>
+    </div>
     <div class="logo-container">
       <%= image_tag "Logo-CS.png", class: "logo"%>
     </div>
@@ -21,12 +24,10 @@
           </div>
         <% end %>
       </div>
-
       <div class="form-actions">  
         <%= f.submit "Ingresar" %>
       </div>
       <p class="small mb-5 pb-lg-2"><%= render "devise/shared/links" %></p>
     <% end %>
   </div>
-  <a class="custom-link" href="<%= root_path %>"><i class="fa fa-reply-all"></i>Volver al inicio</a>
 </main>

@@ -1,21 +1,19 @@
-default: &default
-  adapter: postgresql
-  encoding: unicode
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  username: postgres
-  password: 123456
-  host: localhost
-
 development:
-  <<: *default
-  database: sport_development
+  adapter: postgresql
+  database: b7bevba6yltod3ow77yn
+  username: u9rp7xix7mlnvostnqbv
+  password: hAXFtl5ZsR6OvCIttLH5
+  host: b7bevba6yltod3ow77yn-postgresql.services.clever-cloud.com
+  port: 6913
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  timeout: 5000
 
 test:
-  <<: *default
-  database: sport_test
-
-production:
-  <<: *default
-  database: sport_production
-  username: postgres
-  password: 123456
+  adapter: postgresql
+  database: b7bevba6yltod3ow77yn
+  username: u9rp7xix7mlnvostnqbv
+  password: hAXFtl5ZsR6OvCIttLH5
+  host: b7bevba6yltod3ow77yn-postgresql.services.clever-cloud.com
+  port: 6913
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  timeout: 5000
