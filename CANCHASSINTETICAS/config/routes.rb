@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   devise_for :usuarios, controllers: {
     sessions: 'usuarios/sessions',
     registrations: 'usuarios/registrations'
@@ -16,4 +17,5 @@ Rails.application.routes.draw do
   get 'dashboard', to: 'home#dashboard'
   resources :canchas
   resources :reservas
+  resources :comentarios
 end

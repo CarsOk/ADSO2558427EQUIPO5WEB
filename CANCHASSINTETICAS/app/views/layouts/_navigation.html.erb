@@ -27,6 +27,9 @@
                 <li>
                     <a href="<%= new_reserva_path %>"><i class="fa fa-check-square-o"></i> <span class="nav-label">Reservar</span></a>
                 </li>
+                <li>
+                    <a href="<%= new_comentario_path %>"><i class="fa fa-mail-reply-all"></i> <span class="nav-label">Agregar Comentario</span></a>
+                </li>
                 <% if current_usuario.admin == true %>
                     <li>
                         <a href="<%= new_cancha_path %>"><i class="fa fa-edit"></i> <span class="nav-label">Nueva cancha</span></a>

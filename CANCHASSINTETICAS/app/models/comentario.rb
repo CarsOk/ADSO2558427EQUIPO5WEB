@@ -1,4 +1,4 @@
 class Comentario < ApplicationRecord
   belongs_to :valoracion
-  belongs_to :cliente
+  belongs_to :usuario
 end
