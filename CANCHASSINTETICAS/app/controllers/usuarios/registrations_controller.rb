@@ -1,13 +1,16 @@
 class Usuarios::RegistrationsController < Devise::RegistrationsController
   before_action :authenticate_usuario!
-  layout "login", only: [:new]
+  layout "login", only: [:new, :set_flash_now_alert]
   before_action :verificar_admin, only: :index
 
   def create
     @usuario = Usuario.new(usuario_params)
     if @usuario.save
-      sign_in(@usuario)
+       sign_in(@usuario)
+  
       flash[:notice] = "Se ha creado su usuario exitosamente."
+  
+      redirect_to after_sign_up_path_for(@usuario)
     else
       set_flash_now_alert
       render :new
@@ -40,8 +43,17 @@ class Usuarios::RegistrationsController < Devise::RegistrationsController
       params.require(:usuario).permit(:identificacion, :nombre, :apellido, :email, :password, :password_confirmation, :imagen)
     end
 
+    def after_sign_up_path_for(usuario)
+      # Especifica la ruta a la que quieres redirigir después del registro exitoso.
+      dashboard_path
+    end
+
     def set_flash_now_alert
-      flash.now[:alert] = @reserva.errors.full_messages.join(', ')
+      if @reserva.nil?
+        flash.now[:alert] = "An error occurred, and @reserva is nil."
+      else
+        flash.now[:alert] = @reserva.errors.full_messages.join(', ')
+      end
     end
 
     def verificar_admin
