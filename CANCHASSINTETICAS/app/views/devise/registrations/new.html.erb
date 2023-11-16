@@ -1,10 +1,12 @@
 <main class="bg-gra-01">
   <div class="form-container-sign">
-    <%= link_to :back, class: "btn btn-white btn-sm" do %>
-      <i class="fa fa-reply-all"></i>
-    <% end %>
-    <div class="logo-container-sign">
-      <%= image_tag "Logo-CS.png", class: "logo"%>
+    <div class="header-container">
+      <%= link_to :back, class: "btn btn-white btn-sm" do %>
+        <i class="fa fa-reply-all"></i>
+      <% end %>
+      <div class="logo-container-sign">
+        <%= image_tag "Logo-CS.png", class: "logo" %>
+      </div>
     </div>
     <h4>Registrarse</h4>
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
@@ -26,6 +28,9 @@
 
         <label for="usuario_password_confirmation">Confirmar contraseña:</label>
         <%= f.password_field :password_confirmation, required: true, autocomplete: "new-password" %>
+
+        <label for="usuario_imagen">Imagen:</label>
+        <%= f.file_field :imagen %>
       </div>
       <div class="form-actions">
         <%= f.submit "Sign up" %>

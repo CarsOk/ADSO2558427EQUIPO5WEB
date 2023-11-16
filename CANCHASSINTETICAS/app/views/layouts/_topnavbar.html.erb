@@ -9,7 +9,9 @@
             </form>
         </div>
             <p class="notice"><%= notice %></p>
-            <p class="alert"><%= alert %></p>
+            <% if flash[:alert].present? %>
+                <p class="alert"><%= flash[:alert] %></p>
+            <% end %>
             <ul class="nav navbar-top-links navbar-right">
                 <li style="padding: 20px">
                     <span class="m-r-sm text-muted welcome-message">Bienvenido a Sport World.</span>

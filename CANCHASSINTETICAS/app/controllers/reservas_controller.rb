@@ -1,6 +1,7 @@
 class ReservasController < ApplicationController
   before_action :authenticate_usuario!
   before_action :verificar_admin, only: :index
+  before_action :set_usuario_current, only: [:new, :create]
 
   def index
     @reservas = Reserva.all
@@ -16,7 +17,7 @@ class ReservasController < ApplicationController
     if @reserva.save
       redirect_to reserva_path(@reserva), notice: 'Reserva creada exitosamente.'
     else
-      flash.now[:alert] = "Error al crear nueva reserva."
+      set_flash_now_alert
       render :new
     end
   end
@@ -27,15 +28,17 @@ class ReservasController < ApplicationController
 
   def edit
     @reserva = Reserva.find(params[:id])
+    @usuario_current = current_usuario
     @titulo = 'Modificar reserva'
   end
 
   def update
     @reserva = Reserva.find(params[:id])
+    @usuario_current = current_usuario
     if @reserva.update(reserva_params)
       redirect_to reserva_path(@reserva), notice: "Reserva editada correctamente."
     else
-      flash.now[:alert] = "Error al editar la reserva."
+      set_flash_now_alert
       render :edit
     end
   end
@@ -45,7 +48,7 @@ class ReservasController < ApplicationController
     if @reserva.destroy
     redirect_to reserva_path, notice: "Reserva eliminada correctamente."
     else 
-      flash.now[:alert] = "Error al eliminar la reserva."
+      set_flash_now_alert
       render :new 
     end   
   end
@@ -53,7 +56,7 @@ class ReservasController < ApplicationController
   private
 
   def reserva_params
-   params.require(:reserva).permit(:codigo, :fecha, :hora_inicio, :hora_fin, :usuario_id, :cancha_id)
+   params.require(:reserva).permit(:fecha, :hora_inicio, :hora_fin, :usuario_id, :cancha_id)
   end
 
   def verificar_admin
@@ -63,4 +66,11 @@ class ReservasController < ApplicationController
     end
   end
 
+  def set_flash_now_alert
+    flash.now[:alert] = @reserva.errors.full_messages.join(', ')
+  end
+
+  def set_usuario_current
+    @usuario_current = current_usuario
+  end
 end

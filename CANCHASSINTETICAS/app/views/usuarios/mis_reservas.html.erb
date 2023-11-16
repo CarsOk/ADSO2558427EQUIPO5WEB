@@ -1,0 +1,32 @@
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-10">
+        <h2>Mis reservas</h2>
+            <ol class="breadcrumb">
+            </ol>
+    </div>
+</div>
+<div class="wrapper wrapper-content  animated fadeInRight">
+    <div class="row" id="sortable-view">
+        <% @reservas.each do |reserva| %>
+            <div class="col-lg-4">
+                <div class="ibox">
+                    <div class="ibox-title">
+                        <h5>Reserva N° <%= reserva.id %></h5>
+                        <a href="<%= edit_reserva_path(reserva) %>" class="btn btn-default-mrs btn-sm btn-block"><i class="fa fa-pencil-square-o"></i></a>
+                    </div>
+                    <div class="ibox-content">
+                        <h2>
+                           <%= reserva.cancha.nombre %>
+                        </h2>
+                        <p>
+                        Descripcion:
+                        Fecha: <%= reserva.fecha %> <br>   
+                        Hora de inicio: <%= reserva.hora_inicio.try(:strftime, "%I:%M %p") %> <br>
+                        Hora de Finalizacion: <%= reserva.hora_fin.strftime("%I:%M %p")%>         
+                        </p>
+                    </div>
+                </div>
+            </div>
+        <% end %>
+    </div>
+</div>

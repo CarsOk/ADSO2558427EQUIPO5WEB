@@ -16,7 +16,7 @@ class CanchasController < ApplicationController
     if @cancha.save
       redirect_to cancha_path(@cancha), notice: "Cancha creada correctamente."
     else
-      flash.now[:alert] = "Error al crear nueva cancha."
+      set_flash_now_alert
       render :new
     end
   end
@@ -35,7 +35,7 @@ class CanchasController < ApplicationController
     if @cancha.update(cancha_params)
       redirect_to cancha_path(@cancha), notice: "Cancha editada correctamente."
     else
-      flash.now[:alert] = "Error al editar la cancha."
+      set_flash_now_alert
       render :edit
     end
   end
@@ -45,7 +45,7 @@ class CanchasController < ApplicationController
     if @cancha.destroy
     redirect_to cancha_path, notice: "Cancha eliminado correctamente."
     else 
-      flash.now[:alert] = "Error al eliminar la cancha."
+      set_flash_now_alert
       render :new
     end   
   end
@@ -54,6 +54,10 @@ class CanchasController < ApplicationController
 
   def cancha_params
     params.require(:cancha).permit(:codigo, :nombre, :jugadores, :distancia, :precio, :image)
+  end
+
+  def set_flash_now_alert
+    flash.now[:alert] = @reserva.errors.full_messages.join(', ')
   end
 
   def verificar_admin
