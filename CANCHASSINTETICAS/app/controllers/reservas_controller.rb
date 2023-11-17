@@ -5,6 +5,7 @@ class ReservasController < ApplicationController
 
   def index
     @reservas = Reserva.all
+    @reservas.each(&:calcular_estado_con_estilo)
   end
 
   def new
@@ -14,6 +15,9 @@ class ReservasController < ApplicationController
 
   def create
     @reserva = Reserva.new(reserva_params)
+    @reserva.hora_inicio = params[:reserva][:hora_inicio]
+    @reserva.hora_fin = params[:reserva][:hora_fin]
+    @reserva.cancha_id = params[:reserva][:cancha_id]
     if @reserva.save
       redirect_to reserva_path(@reserva), notice: 'Reserva creada exitosamente.'
     else
@@ -56,7 +60,7 @@ class ReservasController < ApplicationController
   private
 
   def reserva_params
-   params.require(:reserva).permit(:fecha, :hora_inicio, :hora_fin, :usuario_id, :cancha_id)
+   params.require(:reserva).permit(:fecha, :hora_inicio, :hora_fin, :precio, :estado,:usuario_id, :cancha_id)
   end
 
   def verificar_admin

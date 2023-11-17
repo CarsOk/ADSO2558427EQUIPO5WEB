@@ -19,10 +19,10 @@
                            <%= reserva.cancha.nombre %>
                         </h2>
                         <p>
-                        Descripcion:
+                        Descripcion: <br>
                         Fecha: <%= reserva.fecha %> <br>   
                         Hora de inicio: <%= reserva.hora_inicio.try(:strftime, "%I:%M %p") %> <br>
-                        Hora de Finalizacion: <%= reserva.hora_fin.strftime("%I:%M %p")%>         
+                        Hora de Finalizacion: <%= reserva.hora_fin.strftime("%I:%M %p")%><br>        
                         </p>
                     </div>
                 </div>

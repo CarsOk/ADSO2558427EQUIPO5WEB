@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_11_15_102623) do
+ActiveRecord::Schema[7.0].define(version: 2023_11_16_092301) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "adminpack"
   enable_extension "autoinc"
@@ -96,6 +96,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_15_102623) do
     t.bigint "usuario_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.float "precio"
+    t.float "duracion_en_horas"
+    t.string "estado"
     t.index ["cancha_id"], name: "index_reservas_on_cancha_id"
     t.index ["usuario_id"], name: "index_reservas_on_usuario_id"
   end

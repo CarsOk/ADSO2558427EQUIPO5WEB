@@ -65,3 +65,9 @@ gem 'bootstrap-datepicker-rails'
 
 gem 'validates_timeliness'
 
+gem 'rake', '13.1.0'
+
+gem 'fullcalendar-rails'
+
+
+

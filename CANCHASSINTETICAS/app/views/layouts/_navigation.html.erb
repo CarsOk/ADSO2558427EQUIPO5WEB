@@ -6,7 +6,7 @@
                     <img alt="image" class="rounded-circle-logo" src="/assets/Logo-CS.png" />
                         <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                         <span class="block m-t-xs font-bold">
-                            <% if current_usuario.admin == true %>
+                            <% if current_usuario&.admin == true %>
                             <%= actual.nombre %>
                             <% else %>
                               <% if current_usuario.present? %>
@@ -23,15 +23,15 @@
                       SW
                   </div>
               </li>
+                <li class="active">
+                    <a href="<%= dashboard_path %>"><i class="fa fa-table"></i> <span class="nav-label">Dashboard</span></a>
+                </li>
                 <li>
                     <a href="<%= root_path %>"><i class="fa fa-mail-reply-all"></i> <span class="nav-label">Inicio</span></a>
                 </li>
                 <li>
                     <a href="<%= user_profile_path %>"><i class="fa fa-user"></i> <span class="nav-label">Mi perfil</span></a>
                 </li>    
-                <li class="active">
-                    <a href="<%= dashboard_path %>"><i class="fa fa-table"></i> <span class="nav-label">Dashboard</span></a>
-                </li>
                 <li>
                     <a href="<%= canchas_path %>"><i class="fa fa-futbol-o"></i> <span class="nav-label">Canchas</span></a>
                 </li>
@@ -41,7 +41,7 @@
                 <li>
                     <a href="<%= mis_reservas_path %>"><i class="fa fa-check-square-o"></i> <span class="nav-label">Mis reservas</span></a>
                 </li>
-                <% if current_usuario.admin == true %>
+                <% if current_usuario&.admin == true %>
                     <li>
                         <a href="<%= new_cancha_path %>"><i class="fa fa-edit"></i> <span class="nav-label">Nueva cancha</span></a>
                     </li>

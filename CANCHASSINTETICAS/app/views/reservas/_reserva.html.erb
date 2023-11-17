@@ -4,7 +4,9 @@
     <td><%= reserva.cancha.nombre%></td>
     <td><%= reserva.fecha%></td>
     <td><%= reserva.hora_inicio.try(:strftime, "%I:%M %p") %></td>
-    <td><%= reserva.hora_fin.strftime("%I:%M %p")%></td>
+    <td><%= reserva.hora_fin.try(:strftime, "%I:%M %p") %></td>
+    <td><%= reserva.estado.html_safe %></td>
+ 
     <td>
        <a href="<%= reserva_path(reserva) %>" class="btn btn-white btn-sm"><i class="fa fa-edit"></i> Reserva</a>
        <a href="<%= cancha_path(reserva.cancha) %>" class="btn btn-white btn-sm"><i class="fa fa-futbol-o"></i> Cancha</a>
