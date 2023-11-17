@@ -1,10 +1,26 @@
-class Reserva < ApplicationRecord
+class Reserva < ApplicationRecord 
   belongs_to :usuario
   belongs_to :cancha
+  default_scope { order(:id) }
   validate :hora_y_dia_no_repetidos, on: :create
   validate :validar_minutos
   validate :validar_horarios
+  validate :hora_inicio_no_igual_a_hora_fin, on: :create
   before_save :calcular_duracion_y_precio, :calcular_estado
+
+  def cumple_restricciones_horario?
+    return false if hora_inicio.present? &&
+                    (hora_inicio.hour < 8 || hora_inicio.hour >= 22 || hora_inicio.min != 0)
+    return false if hora_fin.present? &&
+                    (hora_fin.hour < 9 || hora_fin.hour > 22 || hora_fin.min != 0)
+    return false if hora_inicio == hora_fin
+    true
+  end
+
+  def actualizar_estado
+    calcular_estado
+    save!
+  end
 
   private
 
@@ -43,14 +59,24 @@ class Reserva < ApplicationRecord
     end
   end
 
-  def calcular_estado
+  def calcular_estado_con_estilo
     ahora = DateTime.now
-      self.estado = if fecha == ahora.to_date
-        'hoy'
-      elsif fecha > ahora.to_date || (fecha == ahora.to_date && hora_inicio > ahora)
-        'pendiente'
-      else
-        'pasado'
-      end
+
+    # Lógica para asignar el estado con estilo
+    self.estado = if fecha == ahora.to_date 
+                    '<span class="label label-warning-estado">Actualmente</span>'.html_safe
+                  elsif fecha > ahora.to_date || (fecha == ahora.to_date && hora_inicio > ahora)
+                    '<span class="label label-info-estado">En proceso</span>'.html_safe
+                  else
+                    '<small class="label label-danger-estado">finalizado</small>'.html_safe
+                  end
   end
+   
+  public :calcular_estado_con_estilo
+  def hora_inicio_no_igual_a_hora_fin
+    if hora_inicio == hora_fin
+      errors.add(:base, "La hora de inicio no puede ser igual a la hora de fin.")
+    end
+  end
+
 end

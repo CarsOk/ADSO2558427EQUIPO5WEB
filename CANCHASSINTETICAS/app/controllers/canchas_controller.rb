@@ -23,6 +23,7 @@ class CanchasController < ApplicationController
 
   def show
     @cancha = Cancha.find(params[:id])
+    @reservas = Reserva.where("fecha >= ?", Date.today)
   end
 
   def edit
@@ -57,7 +58,7 @@ class CanchasController < ApplicationController
   end
 
   def set_flash_now_alert
-    flash.now[:alert] = @reserva.errors.full_messages.join(', ')
+    flash.now[:alert] = @canchas.errors.full_messages.join(', ')
   end
 
   def verificar_admin

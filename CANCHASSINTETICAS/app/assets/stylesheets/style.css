@@ -1997,6 +1997,15 @@ button.dim:active:before {
   background-color: #b2e447;
   color: #FFFFFF;
 }
+.label-warning-estado{
+  background-color: #b2e447;
+  color: #FFFFFF;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  height: 25px;
+  width: 100%;
+}
 .label-warning-light,
 .badge-warning-light {
   background-color: #b2e447;
@@ -2007,10 +2016,28 @@ button.dim:active:before {
   background-color: #ed5565;
   color: #FFFFFF;
 }
+.label-danger-estado{
+  background-color: #ed5565;
+  color: #FFFFFF;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  height: 25px;
+  width: 100%;
+}
 .label-info,
 .badge-info {
   background-color: #398eb6;
   color: #FFFFFF;
+}
+.label-info-estado{
+  background-color: #398eb6;
+  color: #FFFFFF;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  height: 25px;
+  width: 100%;
 }
 .label-inverse,
 .badge-inverse {

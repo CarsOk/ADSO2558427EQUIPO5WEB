@@ -5,6 +5,7 @@ class ReservasController < ApplicationController
 
   def index
     @reservas = Reserva.all
+    @reservas.each(&:calcular_estado_con_estilo)
   end
 
   def new
