@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="col-lg-8">
+  <div class="col-lg-12">
     <div class="ibox-title">
       <div class="ibox product-detail">
         <div class="ibox-content">
@@ -46,24 +46,7 @@
       </div>
     </div>
   </div>
-  <div id='calendar'>
-     <%= render 'calendario' %>
-  </div>
 </div>
 
 
-
-$(document).ready(function () {
-  $('#calendar').fullCalendar({
-    events: [
-      <% @reservas.each do |reserva| %>
-        {
-          title: '<%= reserva.cancha.nombre %>', // Puedes personalizar esto según tus necesidades
-          start: '<%= reserva.fecha %>T<%= reserva.hora_inicio %>',
-          end: '<%= reserva.fecha %>T<%= reserva.hora_fin %>',
-        },
-      <% end %>
-    ],
-  });
-});
 
