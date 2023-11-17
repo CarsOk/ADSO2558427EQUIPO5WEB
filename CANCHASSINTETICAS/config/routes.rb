@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     sessions: 'usuarios/sessions',
     registrations: 'usuarios/registrations'
   }
+  get 'mis_reservas', to: 'usuarios#mis_reservas', as: 'mis_reservas'
   get '/usuarios', to: 'usuarios#index', as: 'usuarios_index'
   
   devise_scope :usuario do

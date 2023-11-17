@@ -7,16 +7,16 @@ class Usuarios::RegistrationsController < Devise::RegistrationsController
     @usuario = Usuario.new(usuario_params)
     if @usuario.save
       sign_in(@usuario)
-      redirect_to new_usuario_session_path
       flash[:notice] = "Se ha creado su usuario exitosamente."
     else
-      flash.now[:alert] = "Error al crear su usuario."
+      set_flash_now_alert
       render :new
     end
   end
   
   def show
     @usuario = current_usuario
+    @reservas_realizadas = @usuario.reservas.count
   end
 
   def edit
@@ -28,20 +28,20 @@ class Usuarios::RegistrationsController < Devise::RegistrationsController
     if @usuario.update(usuario_params)
       redirect_to user_profile_path, notice: "Se actualizado el perfil correctamente."
     else
-      flash.now[:alert] = "Error al editar su perfil."
+      set_flash_now_alert
       render :edit
     end
   end
 
   
     private
-  
-    def sign_up_params
-      params.require(:usuario).permit(:identificacion, :nombre, :apellido, :email, :password, :password_confirmation)
-    end
     
     def usuario_params
-      params.require(:usuario).permit(:identificacion, :nombre, :apellido, :email, :password, :password_confirmation)
+      params.require(:usuario).permit(:identificacion, :nombre, :apellido, :email, :password, :password_confirmation, :imagen)
+    end
+
+    def set_flash_now_alert
+      flash.now[:alert] = @reserva.errors.full_messages.join(', ')
     end
 
     def verificar_admin
@@ -49,9 +49,5 @@ class Usuarios::RegistrationsController < Devise::RegistrationsController
         flash[:alert] = "Sin permisos de administrador"
         redirect_to dashboard_path
       end
-    end
-
-    def after_sign_up_path_for(resource)
-      new_session_path(resource) # o la ruta que desees después del registro
     end
 end

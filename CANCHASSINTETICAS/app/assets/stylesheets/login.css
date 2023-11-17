@@ -18,7 +18,7 @@
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border: 1px solid #ddd;
-    height: 545px;
+    height: 580px;
   }
   .logo{
     width: 50px;
@@ -34,17 +34,18 @@
     width: 76px;
   }
   .logo-container-sign{
-    align-items: center;
     border: 2px solid #fff;
     display: flex;
     flex-direction: column;
     height: 40px;
     justify-content: center;
-    margin: auto;
+    margin: 0 auto;
+    margin-left: 120px;
     width: 65px;
   }
   .vh-100{
-    background: linear-gradient(to bottom, #37517e, #47b2e4);  
+    background: linear-gradient(to bottom, #37517e, #47b2e4); 
+    height: 115vh !important; 
   }
   /* Estilos para el encabezado */
   .titulo{
@@ -136,6 +137,11 @@
   .custom-link:hover {
     color: black; /* Cambia el color al pasar el cursor sobre el enlace */
   }
-  icono-container{
-    text-align: left;
+  .header-container {
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+  }
+  .bg-gra-01{
+    height: 600px;
   }

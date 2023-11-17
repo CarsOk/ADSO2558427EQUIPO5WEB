@@ -3,11 +3,10 @@
     <td><%= reserva.usuario&.identificacion %></td>
     <td><%= reserva.cancha.nombre%></td>
     <td><%= reserva.fecha%></td>
-    <td><%= reserva.hora_inicio.strftime("%I:%M %p") %></td>
-    <td><%= reserva.hora_fin.strftime("%I:%M %p") %></td>
+    <td><%= reserva.hora_inicio.try(:strftime, "%I:%M %p") %></td>
+    <td><%= reserva.hora_fin.strftime("%I:%M %p")%></td>
     <td>
        <a href="<%= reserva_path(reserva) %>" class="btn btn-white btn-sm"><i class="fa fa-edit"></i> Reserva</a>
-       <a href="<%= user_profile_path %>" class="btn btn-white btn-sm"><i class="fa fa-user-o"></i> Usuario</a>
        <a href="<%= cancha_path(reserva.cancha) %>" class="btn btn-white btn-sm"><i class="fa fa-futbol-o"></i> Cancha</a>
     </td>
 </tr>

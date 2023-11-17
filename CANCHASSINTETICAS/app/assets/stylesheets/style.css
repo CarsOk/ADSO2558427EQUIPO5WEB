@@ -1671,6 +1671,14 @@ button:focus {
   background: white;
   border: 1px solid #e7eaec;
 }
+
+.btn-default-mrs{
+  color: inherit;
+  background: white;
+  border: 1px solid #e7eaec;
+  width: 40px;
+  margin-left: 100px;
+}
 .btn-default:hover,
 .btn-default:focus,
 .btn-default:active,
@@ -1740,6 +1748,13 @@ fieldset[disabled] .btn-default.active {
   color: #fff;
   background-color: #ed5565;
   border-color: #ed5565;
+}
+.btn-danger-mrs{
+  color: #fff;
+  background-color: #ed5565;
+  border-color: #ed5565;
+  width: 90px;
+  height: 30px;
 }
 .btn-danger:hover,
 .btn-danger:focus,
@@ -4943,6 +4958,23 @@ code {
   -moz-border-radius: 3px 3px 0 0;
   border-radius: 2px 2px 0 0;
 }
+.ibox-title-mrs {
+  background-color: #ffffff;
+  border-color: #e7eaec;
+  border-image: none;
+  border-style: solid solid none;
+  border-width: 1px;
+  color: inherit;
+  margin-bottom: 0;
+  padding: 15px 10px 8px 15px;
+  min-height: 48px;
+  position: relative;
+  clear: both;
+  -webkit-border-radius: 3px 3px 0 0;
+  -moz-border-radius: 3px 3px 0 0;
+  border-radius: 2px 2px 0 0;
+}
+
 .ibox-content {
   background-color: #ffffff;
   color: inherit;
@@ -9840,4 +9872,23 @@ body.md-skin {
   #page-wrapper {
     margin: 0;
   }
+}
+.custom-date-field {
+  /* Estilos básicos para el campo de fecha */
+  appearance: none;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+/* Estilos adicionales para adaptar la apariencia en diferentes navegadores */
+.custom-date-field::-webkit-calendar-picker-indicator {
+  display: none;
+}
+
+.custom-date-field::-webkit-inner-spin-button,
+.custom-date-field::-webkit-clear-button {
+  -webkit-appearance: none;
+  margin: 0;
 }

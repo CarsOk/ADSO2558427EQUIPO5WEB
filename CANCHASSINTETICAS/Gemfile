@@ -63,3 +63,5 @@ gem 'actionmailer'
 
 gem 'bootstrap-datepicker-rails'
 
+gem 'validates_timeliness'
+
