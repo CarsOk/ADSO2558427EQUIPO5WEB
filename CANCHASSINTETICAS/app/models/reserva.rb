@@ -1,11 +1,13 @@
 class Reserva < ApplicationRecord
+  #Asociaciones
   belongs_to :usuario
   belongs_to :cancha
   validate :validar_minutos
   validate :validar_horarios
 
+  #Metodos
   private
-
+  
   def validar_minutos
     if hora_inicio.present? && hora_inicio.min != 0
       errors.add(:hora_inicio, "Los minutos deben ser '00'")
