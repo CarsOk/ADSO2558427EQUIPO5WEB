@@ -1,6 +1,11 @@
 class ComentariosController < ApplicationController
+  
   def index
-    @comentario = Comentario.all
+    @comentarios = Comentario.all
+  end
+
+  def new
+    @comentario = Comentario.new
   end
 
   def create
@@ -10,10 +15,7 @@ class ComentariosController < ApplicationController
     else
       set_flash_now_alert
       render :new
-  end
-  end
-  def new
-    @comentario = Comentario.new
+    end
   end
 
   def edit
@@ -32,10 +34,10 @@ class ComentariosController < ApplicationController
   private
   def comentario_params
     params.require(:comentario).permit(:calificacion, :contenido)
-    end
+  end
 
-    def set_flash_now_alert
-      flash.now[:alert] = @comentario.errors.full_messages.join(', ')
+  def set_flash_now_alert
+    flash.now[:alert] = @comentario.errors.full_messages.join(', ')
   end
 end
 

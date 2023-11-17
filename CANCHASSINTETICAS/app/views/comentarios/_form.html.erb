@@ -1,0 +1,43 @@
+<div class="col-lg-9 animated fadeInRight">
+    <div class="mail-box-header">
+                <div class="float-right tooltip-demo">
+                    <a href="mailbox.html" class="btn btn-white btn-sm" data-toggle="tooltip" data-placement="top" title="Move to draft folder"><i class="fa fa-pencil"></i> Draft</a>
+                    <a href="mailbox.html" class="btn btn-danger btn-sm" data-toggle="tooltip" data-placement="top" title="Discard email"><i class="fa fa-times"></i> Discard</a>
+                </div>
+                <h2>
+                    Compse mail
+                </h2>
+    </div>
+    <%= simple_form_for @comentario do |f| %>
+    <div class="mail-body">
+                        <div class="form-group row"><label class="col-sm-2 col-form-label">
+                           <%= f.label :usuario_id, "Usuario", class: "control-label col-sm-2" %>
+                        </label>
+                            <div class="col-sm-10">
+                                <%= f.text_field :usuario_id, value: @usuario_current&.identificacion, class: 'form-control', readonly: true %>
+                                <%= f.hidden_field :usuario_id, value: @usuario_current&.id %>
+                            </div>
+                        </div>
+                        <div class="form-group row"><label class="col-sm-2 col-form-label"> 
+                            <%= f.label :comentario, "Tipo", class: "control-label col-sm-2" %>
+                        </label>
+
+                            <div class="col-sm-10"><input type="text" class="form-control" value=""></div>
+                            
+                        </div>
+                        </form>
+
+    </div>
+
+                    <div class="mail-text h-200">
+
+                        <div class="summernote">
+                            <%= f.text_field :contenido, class: "form-control" %>
+                            <div class="form-group">
+                                <%= f.submit "Enviar", class: "btn btn-primary" %>
+                            </div>
+                       
+                        </div>
+                    </div>
+                    <% end %>
+</div>
