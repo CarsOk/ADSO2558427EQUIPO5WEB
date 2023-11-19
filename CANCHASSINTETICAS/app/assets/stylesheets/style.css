@@ -1820,6 +1820,14 @@ fieldset[disabled] .btn-link.active {
   color: inherit;
   background: white;
   border: 1px solid #e7eaec;
+  height: 25px;
+}
+.btn-white-reserva {
+  color: inherit;
+  background: white;
+  border: 1px solid #e7eaec;
+  display: flex;
+  align-items: center;
 }
 .btn-white:hover,
 .btn-white:focus,
@@ -1833,13 +1841,35 @@ fieldset[disabled] .btn-link.active {
   color: inherit;
   border: 1px solid #d2d2d2;
 }
+.btn-white-reserva:hover,
+.btn-white-reserva:focus,
+.btn-white-reserva:active,
+.btn-white-reserva.active,
+.open .dropdown-toggle.btn-white-reserva,
+.btn-white-reserva:active:focus,
+.btn-white-reserva:active:hover,
+.btn-white-reserva.active:hover,
+.btn-white-reserva.active:focus {
+  color: inherit;
+  border: 1px solid #d2d2d2;
+}
 .btn-white:active,
 .btn-white.active {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15) inset;
 }
+.btn-white-reserva:active,
+.btn-white-reserva.active {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15) inset;
+  text-decoration: none;
+}
 .btn-white:active,
 .btn-white.active,
 .open .dropdown-toggle.btn-white {
+  background-image: none;
+}
+.btn-white-reserva:active,
+.btn-white-reserva.active,
+.open .dropdown-toggle.btn-white-reserva {
   background-image: none;
 }
 .btn-white.disabled,
@@ -1857,6 +1887,23 @@ fieldset[disabled] .btn-white:hover,
 fieldset[disabled] .btn-white:focus,
 fieldset[disabled] .btn-white:active,
 fieldset[disabled] .btn-white.active {
+  color: #cacaca;
+}
+.btn-white-reserva.disabled,
+.btn-white-reserva.disabled:hover,
+.btn-white-reserva.disabled:focus,
+.btn-white.disabled:active,
+.btn-white-reserva.disabled.active,
+.btn-white-reserva[disabled],
+.btn-white-reserva[disabled]:hover,
+.btn-white-reserva[disabled]:focus,
+.btn-white-reserva[disabled]:active,
+.btn-white-reserva.active[disabled],
+fieldset[disabled] .btn-white-reserva,
+fieldset[disabled] .btn-white-reserva:hover,
+fieldset[disabled] .btn-white-reserva:focus,
+fieldset[disabled] .btn-white-reserva:active,
+fieldset[disabled] .btn-white-reserva.active {
   color: #cacaca;
 }
 .form-control,
@@ -4993,7 +5040,7 @@ code {
   border-width: 1px;
   color: inherit;
   margin-bottom: 0;
-  padding: 15px 10px 8px 15px;
+  padding: 15px 15px 8px 15px;
   min-height: 48px;
   position: relative;
   clear: both;
@@ -9918,4 +9965,10 @@ body.md-skin {
 .custom-date-field::-webkit-clear-button {
   -webkit-appearance: none;
   margin: 0;
+}
+
+.header-container-reservas{
+  display: flex;
+  align-items: center;
+  justify-content: left;
 }

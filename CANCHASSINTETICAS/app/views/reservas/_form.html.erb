@@ -1,6 +1,11 @@
 <div class="form-container">
   <div class="form-container2">
-    <h2 style="text-align: center;"><%= @titulo %></h2>
+    <div class="header-container-reserva" style="display: flex; align-items: center;">
+      <%= link_to :back, class: "btn btn-white-reservar btn-sm" do %>
+        <i class="fa fa-reply-all"></i>
+      <% end %>
+      <h2 style="text-align: center; margin-left: auto; margin-right: auto;"><%= @titulo %></h2>
+    </div>
     <%= simple_form_for @reserva do |f| %>
       <div class="form-group">
         <%= f.label :usuario_id, "Usuario", class: "control-label col-sm-2" %>

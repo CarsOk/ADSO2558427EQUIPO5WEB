@@ -17,8 +17,12 @@
           </div>
           <div class="ibox-content profile-content">
             <div class="col-md-8">
-              <h4><strong><%= @usuario.nombre %> <%= @usuario.apellido %></strong></h4>
-              <h4><strong><%= @usuario.identificacion %></strong></h4>
+            <% if @usuario %>
+            <h4><strong><%= @usuario.nombre %> <%= @usuario.apellido %></strong></h4>
+            <h4><strong><%= @usuario.identificacion %></strong></h4>
+              <% else %>
+                <p>Usuario no encontrado</p>
+              <% end %>
               <br>
                 <h5>
                   Sobre mi:

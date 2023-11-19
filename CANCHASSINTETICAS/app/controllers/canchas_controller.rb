@@ -24,6 +24,7 @@ class CanchasController < ApplicationController
   def show
     @cancha = Cancha.find(params[:id])
     @reservas = Reserva.where("fecha >= ?", Date.today)
+    @precio_cancha = @cancha.precio_ajustado
   end
 
   def edit

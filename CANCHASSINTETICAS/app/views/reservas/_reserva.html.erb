@@ -2,7 +2,7 @@
     <th scope="row"><%= reserva.id %></th>
     <td><%= reserva.usuario&.identificacion %></td>
     <td><%= reserva.cancha.nombre%></td>
-    <td><%= reserva.fecha%></td>
+    <td><%= reserva.fecha.strftime("%b %e %Y")%></td>
     <td><%= reserva.hora_inicio.try(:strftime, "%I:%M %p") %></td>
     <td><%= reserva.hora_fin.try(:strftime, "%I:%M %p") %></td>
     <td><%= reserva.estado.html_safe %></td>

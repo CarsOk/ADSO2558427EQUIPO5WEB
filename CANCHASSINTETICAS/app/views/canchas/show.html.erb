@@ -24,7 +24,8 @@
               <hr>
               <div>
                 <a href="<%= new_reserva_path %>" class="btn btn-primary float-right">Reservar</a>
-                <h1 class="product-main-price">$<%= @cancha.precio %></h1>
+                <h1 class="product-main-price">$<%= @cancha.precio.to_i %></h1>
+                <small class="text-muted">Fin de semana: $<%= @precio_cancha.to_i %></small>
               </div>
               <hr>
               <h4>Descripción:</h4>
