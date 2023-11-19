@@ -6,6 +6,7 @@ class Usuarios::RegistrationsController < Devise::RegistrationsController
   def create
     @usuario = Usuario.new(usuario_params)
     if @usuario.save
+     BienvenidoMailer.with(usuario: @usuario).usuario.deliver_now
        sign_in(@usuario)
   
       flash[:notice] = "Se ha creado su usuario exitosamente."
