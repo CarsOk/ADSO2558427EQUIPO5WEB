@@ -19,7 +19,12 @@ class Usuarios::RegistrationsController < Devise::RegistrationsController
   
   def show
     @usuario = current_usuario
-    @reservas_realizadas = @usuario.reservas.count
+
+    if @usuario
+      @reservas_realizadas = @usuario.reservas.count
+    else
+      # Manejar el caso en el que el usuario no está iniciado de sesión
+    end
   end
 
   def edit

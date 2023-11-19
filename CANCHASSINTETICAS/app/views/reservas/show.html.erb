@@ -33,7 +33,7 @@
                                   <dt>Fecha:</dt>
                               </div>
                               <div class="col-sm-8 text-sm-left">
-                                  <dd class="mb-1"><%= @reserva.fecha %></dd>
+                                  <dd class="mb-1"><%= @reserva.fecha.strftime("%b %e %Y") %></dd>
                               </div>
                           </dl>
                           <dl class="row mb-0">
@@ -57,7 +57,7 @@
                                   <dt>Precio:</dt>
                               </div>
                               <div class="col-sm-8 text-sm-left">
-                                  <dd class="mb-1"><%= @reserva.precio %></dd>
+                                  <dd class="mb-1">$<%= @reserva.precio.to_i %></dd>
                               </div>
                           </dl>
                       </div>

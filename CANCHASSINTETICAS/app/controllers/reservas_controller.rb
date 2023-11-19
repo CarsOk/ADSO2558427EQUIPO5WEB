@@ -5,7 +5,7 @@ class ReservasController < ApplicationController
 
   def index
     @reservas = Reserva.all
-    @reservas.each(&:calcular_estado_con_estilo)
+    @reservas.each(&:calcular_estado)
   end
 
   def new
@@ -77,4 +77,5 @@ class ReservasController < ApplicationController
   def set_usuario_current
     @usuario_current = current_usuario
   end
+  
 end
