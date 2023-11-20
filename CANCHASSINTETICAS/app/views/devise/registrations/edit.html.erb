@@ -1,7 +1,12 @@
-<div class="form-container-sign">
-  <h2 style="text-align: center;">Modificar Perfil de <%= @usuario.nombre %></h2>
+<div class="form-container-edit">
+  <div class="header-container-reserva" style="display: flex; align-items: center;">
+      <%= link_to :back, class: "btn btn-white-reservar btn-sm" do %>
+        <i class="fa fa-reply-all"></i>
+      <% end %>
+      <h2 style="text-align: center; margin-left: auto; margin-right: auto; margin-top: 20px; margin-bottom:15px">Modificar Perfil de <%= @usuario.nombre %></h2>
+    </div>
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-      <div class="form-inputs-sign">
+      <div class="form-inputs-edit">
         <label for="usuario_identificacion">Identificación:</label>
         <%= f.text_field :identificacion, required: true %>
 
@@ -14,15 +19,10 @@
         <label for="usuario_email">Correo electronico:</label>
         <%= f.text_field :email, required: true, autofocus: true, autocomplete: "email" %>
 
-        <label for="usuario_password">Contraseña:</label>
-        <%= f.password_field :password, required: true, autocomplete: "new-password" %>
-
-        <label for="usuario_password_confirmation">Confirmar contraseña:</label>
-        <%= f.password_field :password_confirmation, required: true, autocomplete: "new-password" %>
-
         <label for="usuario_imagen">Imagen:</label>
         <%= f.file_field :imagen %>
       </div>
+
       <div class="form-actions-edit">
         <%= f.submit "Update" %>
       </div>

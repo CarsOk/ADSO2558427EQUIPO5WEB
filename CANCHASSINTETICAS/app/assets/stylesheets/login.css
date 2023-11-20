@@ -20,6 +20,16 @@
     border: 1px solid #ddd;
     height: 580px;
   }
+  .form-container-edit {
+    width: 410px;
+    margin: auto;
+    padding: 10px 20px 10px 20px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ddd;
+    height: 500px;
+  }
   .logo{
     width: 50px;
   }
@@ -69,6 +79,12 @@
     margin-bottom: 5px;
     color: black;
   }
+
+  .form-inputs-edit label {
+    display: block;
+    margin-bottom: 5px;
+    color: black;
+  }
   
   .form-inputs input[type="text"],
   .form-inputs input[type="password"],
@@ -89,6 +105,17 @@
     border-radius: 5px;
     border: 1px solid gray;
     height: 30px;
+  }
+
+  .form-inputs-edit input[type="text"],
+  .form-inputs-edit input[type="password"],
+  .form-inputs-edit input[type="email"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid gray;
+    height: 35px;
   }
   
   /* Estilos para los botones */
@@ -115,6 +142,8 @@
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    clear: both;
+    margin-top: 10px;
   }
   .form-actions-edit input[type="submit"]:hover {
     background-color: #398eb6;

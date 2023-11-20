@@ -14,6 +14,7 @@ module CANCHASSINTETICAS
     config.assets.enabled = true
     config.assets.version = '1.0'
 
+    config.i18n.default_locale = :es
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files

@@ -16,5 +16,4 @@ class Usuario < ApplicationRecord
       end
         save
     end
-
 end

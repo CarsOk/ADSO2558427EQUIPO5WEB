@@ -10,19 +10,24 @@
         <% @reservas.each do |reserva| %>
             <div class="col-lg-4">
                 <div class="ibox">
-                    <div class="ibox-title">
-                        <h5>Reserva N° <%= reserva.id %></h5>
-                        <a href="<%= edit_reserva_path(reserva) %>" class="btn btn-default-mrs btn-sm btn-block"><i class="fa fa-pencil-square-o"></i></a>
+                <div class="ibox-title-mrs">
+                    <h5 style="float: left;">Reserva N° <%= reserva.id %></h5>
+                    <div class="text-right">
+                        <div class="btn-group">
+                            <a href="<%= edit_reserva_path(reserva) %>" class="btn btn-white btn-sm"><i class="fa fa-pencil-square-o"></i></a>
+                            <%= reserva.estado.html_safe %>
+                        </div>
                     </div>
+                </div>
                     <div class="ibox-content">
                         <h2>
                            <%= reserva.cancha.nombre %>
                         </h2>
                         <p>
                         Descripcion: <br>
-                        Fecha: <%= reserva.fecha %> <br>   
+                        Fecha: <%= reserva.fecha.strftime("%b %e %Y") %> <br>   
                         Hora de inicio: <%= reserva.hora_inicio.try(:strftime, "%I:%M %p") %> <br>
-                        Hora de Finalizacion: <%= reserva.hora_fin.strftime("%I:%M %p")%><br>        
+                        Hora de Finalizacion: <%= reserva.hora_fin.strftime("%I:%M %p")%><br>       
                         </p>
                     </div>
                 </div>
