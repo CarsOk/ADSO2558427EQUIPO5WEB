@@ -8,6 +8,7 @@ class Reserva < ApplicationRecord
   validate :hora_y_dia_no_repetidos, on: :create
   validate :validar_minutos
   validate :hora_inicio_no_igual_a_hora_fin, on: :create
+  validate :reserva_no_editable_despues_de_finalizado, on: :update
   before_save :calcular_duracion_y_precio, :calcular_estado
   before_save :ajustar_precio
 
@@ -92,6 +93,12 @@ class Reserva < ApplicationRecord
       duracion_en_horas * (precio_base_cancha + 10000)
     else
       duracion_en_horas * precio_base_cancha
+    end
+  end
+
+  def reserva_no_editable_despues_de_finalizado
+    if estado == '<small class="label label-danger-estado">finalizado</small>'.html_safe
+      errors.add(:base, "No se puede editar una reserva después de que ha sido finalizada.")
     end
   end
 
