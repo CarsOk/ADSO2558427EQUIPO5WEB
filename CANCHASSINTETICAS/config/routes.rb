@@ -17,5 +17,4 @@ Rails.application.routes.draw do
   get 'dashboard', to: 'home#dashboard'
   resources :canchas
   resources :reservas
-  end
 end
