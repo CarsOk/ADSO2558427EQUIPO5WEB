@@ -19,6 +19,7 @@ class ReservasController < ApplicationController
     @reserva.hora_fin = params[:reserva][:hora_fin]
     @reserva.cancha_id = params[:reserva][:cancha_id]
     if @reserva.save
+      ConfirmacionMailer.reserva(@reserva).deliver_now
       redirect_to reserva_path(@reserva), notice: 'Reserva creada exitosamente.'
     else
       set_flash_now_alert
