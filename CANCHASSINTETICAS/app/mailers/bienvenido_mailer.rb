@@ -5,8 +5,8 @@ class BienvenidoMailer < ApplicationMailer
   #
   #   en.bienvenido_mailer.usuario.subject
   #
-  def usuario
-    @usuario = params[:usuario] 
-    mail to: @usuario.email
+  def usuario(usuario)
+    @usuario = usuario
+    mail to: @usuario.email, subject: '¡Bienvenido!'
   end
 end
