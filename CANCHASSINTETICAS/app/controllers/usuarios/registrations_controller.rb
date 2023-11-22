@@ -6,6 +6,7 @@ class Usuarios::RegistrationsController < Devise::RegistrationsController
   def create
     @usuario = Usuario.new(usuario_params)
     if @usuario.save
+      BienvenidoMailer.usuario(@usuario).deliver_now
        sign_in(@usuario)
   
       flash[:notice] = "Se ha creado su usuario exitosamente."
@@ -54,10 +55,10 @@ class Usuarios::RegistrationsController < Devise::RegistrationsController
     end
 
     def set_flash_now_alert
-      if @reserva.nil?
-        flash.now[:alert] = "An error occurred, and @reserva is nil."
+      if @usuario.nil?
+        flash.now[:alert] = "Se produjo un error y el usuario es nulo."
       else
-        flash.now[:alert] = @reserva.errors.full_messages.join(', ')
+        flash.now[:alert] = @usuario.errors.full_messages.join(', ')
       end
     end
 

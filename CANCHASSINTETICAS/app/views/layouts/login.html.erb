@@ -22,6 +22,10 @@
             <div class="row d-flex align-items-center justify-content-center h-100">
                 <div class="col-md-6 col-lg-5 col-xl-4"> <!-- Se redujo el tamaño del contenedor -->
                     <%= yield %>
+                    <p class="notice"><%= notice %></p>
+                    <% if flash[:alert].present? %>
+                        <p class="alert"><%= flash[:alert] %></p>
+                    <% end %>
                 </div>
             </div>
         </div>
