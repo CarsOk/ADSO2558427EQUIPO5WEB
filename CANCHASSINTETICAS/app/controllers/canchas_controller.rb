@@ -21,10 +21,34 @@ class CanchasController < ApplicationController
     end
   end
 
+  def calendario
+    @cancha = Cancha.find(params[:cancha_id])
+
+    if @cancha.nil?
+      flash[:alert] = 'Cancha no encontrada.'
+      redirect_to root_path
+      return
+    end
+
+    @eventos = @cancha.reservas&.map do |reserva|
+      {
+        id: reserva.id,
+        title: "#{reserva.hora_inicio.strftime('%I:%M %p')} - #{reserva.hora_fin.strftime('%I:%M %p')}",
+        start: reserva.fecha.strftime('%Y-%m-%dT%H:%M:%S'),
+        end: reserva.fecha.strftime('%Y-%m-%dT%H:%M:%S')
+      }
+    end || []
+
+    puts "DEBUG: Cancha ID: #{params[:id]}"
+    puts "DEBUG: Cancha: #{@cancha.inspect}"
+    puts "DEBUG: Reservas: #{@eventos.inspect}"
+  end
+
   def show
     @cancha = Cancha.find(params[:id])
     @reservas = Reserva.where("fecha >= ?", Date.today)
     @precio_cancha = @cancha.precio_ajustado
+    @eventos = @cancha.reservas.map { |reserva| { id: reserva.id, title: 'Reservado', start: reserva.fecha.strftime('%Y-%m-%dT%H:%M:%S') } }
   end
 
   def edit
@@ -67,6 +91,14 @@ class CanchasController < ApplicationController
       flash[:alert] = "Sin permisos de administrador"
       redirect_to dashboard_path
     end
+  end
+
+  def set_cancha
+    @cancha = Cancha.find(params[:id])
+  rescue ActiveRecord::RecordNotFound
+    # Redirigir a una página de error 404 si la Cancha no se encuentra
+    flash[:alert] = 'Cancha no encontrada.'
+    redirect_to root_path
   end
 
 end

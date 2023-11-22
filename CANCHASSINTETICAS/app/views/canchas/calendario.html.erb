@@ -1,0 +1,19 @@
+<div id="calendario"></div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var eventos = <%= raw @eventos.to_json %>;
+
+    $('#calendario').fullCalendar({
+      events: eventos,
+      header: {
+        left: 'prev,next today',
+        center: 'title',
+        right: 'month,agendaWeek,agendaDay'
+      },
+      eventRender: function(event, element) {
+        element.find('.fc-title').html(event.title);
+      }
+    });
+  });
+</script>
