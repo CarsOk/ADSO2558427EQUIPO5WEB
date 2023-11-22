@@ -9,8 +9,9 @@
                     </div>
                     <div class="product-desc">
                         <span class="product-price">
-                        $<%= cancha.precio.to_i %>
+                          $<%= cancha.precio.to_i %>
                         </span>
+                        <%= link_to "Ver Reservas", cancha_reservas_path(cancha) %>
                         <small class="text-muted">Codigo <%= cancha.id %></small>
                         <a href="<%= cancha_path(cancha) %>" class="product-name"><%= cancha.nombre %></a>
                         <div class="small m-t-xs">

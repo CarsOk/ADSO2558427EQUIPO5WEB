@@ -210,6 +210,8 @@ GEM
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2)
     semantic_range (3.0.0)
+    simple_calendar (3.0.2)
+      rails (>= 6.1)
     simple_form (5.2.0)
       actionpack (>= 5.2)
       activemodel (>= 5.2)
@@ -277,6 +279,7 @@ DEPENDENCIES
   rake (= 13.1.0)
   sass-rails (>= 6)
   selenium-webdriver (>= 4.0.0.rc1)
+  simple_calendar
   simple_form
   spring
   turbolinks (~> 5)
