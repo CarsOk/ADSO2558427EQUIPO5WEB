@@ -10,8 +10,11 @@ mount_uploader :image, ImageUploader
         else
           precio
         end
-      end
+    end
       
+    def precio_finde
+      precio + 10000
+    end
 
   private 
 
