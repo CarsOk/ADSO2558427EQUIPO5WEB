@@ -35,6 +35,7 @@ class ComentariosController < ApplicationController
   def set_flash_now_alert
     flash.now[:alert] = @comentario.errors.full_messages.join(', ')
   end
+end
 
 
 
