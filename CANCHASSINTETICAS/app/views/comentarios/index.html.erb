@@ -1,12 +1,23 @@
 <div class="wrapper wrapper-content animated fadeIn">
+<%= form_with(model: @comentario, url: comentarios_path, method: :post) do |f| %>
+    <div class="form-group">
+      <!-- Otros campos del formulario aquí -->
+      <h3>Comentario</h3>
+      <a href="<%= new_comentario_path %>" class="boton">Enviar un Comentario</a>
+
+
+    </div>
+  <% end %>
 
 <div class="row">
     <div class="col-lg-6">
         <div class="tabs-container">
             <ul class="nav nav-tabs" role="tablist">
                 <li><a class="nav-link active" data-toggle="tab" href="#tab-1"> Comentario</a></li>
+
                 <li><a class="nav-link" data-toggle="tab" href="#tab-2">Editar Comentario</a></li>
             </ul>
+
             <div class="tab-content">
                 <div role="tabpanel" id="tab-1" class="tab-pane active">
                     <div class="panel-body">
@@ -26,7 +37,7 @@
                     </div>
                 </div>
             </div>
-
+              
 
         </div>
     </div>

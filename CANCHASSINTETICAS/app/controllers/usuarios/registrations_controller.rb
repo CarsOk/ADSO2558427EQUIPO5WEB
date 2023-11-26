@@ -42,6 +42,7 @@ class Usuarios::RegistrationsController < Devise::RegistrationsController
 
     def set_flash_now_alert
       flash.now[:alert] = @reserva.errors.full_messages.join(', ')
+
     end
 
     def verificar_admin
