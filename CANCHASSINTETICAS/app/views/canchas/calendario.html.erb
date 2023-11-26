@@ -24,9 +24,7 @@
             <div id="calendario"></div>
         </div>
     </div>
-</div>
-
-<script>
+    <script>
   document.addEventListener('DOMContentLoaded', function() {
     var eventos = <%= raw @eventos.to_json %>;
 
@@ -43,5 +41,8 @@
     });
   });
 </script>
+</div>
+
+
  
 
