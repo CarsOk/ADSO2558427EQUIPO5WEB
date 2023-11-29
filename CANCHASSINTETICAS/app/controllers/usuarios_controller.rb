@@ -5,10 +5,6 @@ class UsuariosController < ApplicationController
   
     def index
       @usuarios = Usuario.all
-      respond_to do |format|
-        format.html {render :index}
-        format.json { render json: @usuarios } # Responderá en formato JSON si la solicitud lo solicita explícitamente
-      end
     end
 
     def mis_reservas

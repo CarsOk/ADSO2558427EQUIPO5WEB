@@ -17,11 +17,5 @@ Rails.application.routes.draw do
   get 'dashboard', to: 'home#dashboard'
   resources :canchas
   resources :reservas
-
-  namespace 'api' do
-      resources :canchas, only: [:index]
-  end
-  
-  # Mantén la ruta para HTML
-  resources :usuarios, only: [:index, :show, :create, :update, :destroy]
+  resources :usuarios
 end
