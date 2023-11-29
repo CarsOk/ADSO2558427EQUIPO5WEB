@@ -15,7 +15,12 @@ Rails.application.routes.draw do
   
   root to: "home#landing_page"
   get 'dashboard', to: 'home#dashboard'
-  resources :canchas
+  resources :canchas do
+    collection do
+      get 'calendario/:cancha_id', to: 'canchas#calendario', as: :calendario
+    end
+  end
+  
   resources :reservas
   resources :usuarios
 end

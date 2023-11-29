@@ -41,7 +41,7 @@
               <div class="user-button">
                 <div class="row">
                   <div class="col-md-6">
-                    <a href="#" data-method="delete" data-confirm="¿Estás seguro de que deseas eliminar este cliente?" class="btn btn-primary btn-sm btn-block"><i class="fa fa-exclamation-circle"></i> Eliminar perfil</a>
+                    <a href="<%= destroy_usuario_session_path %>" data-method="delete" data-confirm="¿Estás seguro de que deseas eliminar este cliente?" data-turbolinks="false" class="btn btn-primary btn-sm btn-block"><i class="fa fa-exclamation-circle"></i> Eliminar perfil</a>
                   </div>
                   <div class="col-md-6">
                     <a href="<%= edit_usuario_registration_path %>" class="btn btn-default btn-sm btn-block"><i class="fa fa-pencil-square-o"></i> Modificar perfil</a>
