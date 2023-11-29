@@ -22,4 +22,5 @@ Rails.application.routes.draw do
   end
   
   resources :reservas
+  resources :usuarios
 end
