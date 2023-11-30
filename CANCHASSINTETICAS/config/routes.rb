@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   devise_for :usuarios, controllers: {
     sessions: 'usuarios/sessions',
     registrations: 'usuarios/registrations'
@@ -23,4 +24,5 @@ Rails.application.routes.draw do
   
   resources :reservas
   resources :usuarios
+  resources :comentarios
 end

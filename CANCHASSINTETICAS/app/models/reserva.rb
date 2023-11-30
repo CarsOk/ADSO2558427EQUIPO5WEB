@@ -1,4 +1,5 @@
-class Reserva < ApplicationRecord 
+class Reserva < ApplicationRecord
+  #Asociaciones
   belongs_to :usuario
   belongs_to :cancha
 
@@ -26,8 +27,10 @@ class Reserva < ApplicationRecord
     save!
   end
 
+  #Metodos
   private
   
+<<<<<<< HEAD
   # Fecha 
   def validar_horarios
     if hora_inicio.present? && (hora_inicio.hour < 8 || hora_inicio.hour >= 22 || hora_inicio.min != 0)

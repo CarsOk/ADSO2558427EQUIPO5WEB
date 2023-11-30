@@ -1,0 +1,36 @@
+<div class="wrapper wrapper-content animated fadeIn">
+  <div class="row">
+   <% if @comentarios.present? %>
+    <% @comentarios.each do |comentario| %>
+        <div class="col-lg-6">
+            <div class="tabs-container">
+                <ul class="nav nav-tabs" role="tablist">
+                    <li><a class="nav-link active" data-toggle="tab" href="#tab-1"> Comentario</a></li>
+                    <li><a class="nav-link" data-toggle="tab" href="#tab-2">Editar Comentario</a></li>
+                </ul>
+                <div class="tab-content">
+                    <div role="tabpanel" id="tab-1" class="tab-pane active">
+                        <div class="panel-body">
+                            <strong>Reseña:</strong>
+                            <p></p>
+                            <p></p>
+                        </div>
+               </div>
+                    <div role="tabpanel" id="tab-2" class="tab-pane">
+                        <div class="panel-body">
+                            <strong>Editar</strong>
+    
+                            <p></p>
+                            <p></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      <% end %>
+    <% else %>
+        <p>No hay comentarios disponibles.</p>
+    <% end %>
+  </div>
+</div>
+        

@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema[7.0].define(version: 2023_11_16_092301) do
+=======
+ActiveRecord::Schema[7.0].define(version: 2023_11_17_210214) do
+>>>>>>> c7d7368b10065d87400ec6c06d00550a81ad792c
   # These are extensions that must be enabled in order to support this database
   enable_extension "adminpack"
   enable_extension "autoinc"
@@ -74,6 +78,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_16_092301) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "calificacion"
+    t.string "tipo"
+    t.bigint "usuario_id", null: false
+    t.index ["usuario_id"], name: "index_comentarios_on_usuario_id"
   end
 
   create_table "layer", primary_key: ["topology_id", "layer_id"], force: :cascade do |t|
@@ -136,6 +143,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_16_092301) do
     t.index ["reset_password_token"], name: "index_usuarios_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "comentarios", "usuarios"
   add_foreign_key "layer", "topology", name: "layer_topology_id_fkey"
   add_foreign_key "reservas", "canchas"
 end
