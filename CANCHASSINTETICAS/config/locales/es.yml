@@ -1,0 +1,28 @@
+es:
+  hello: "Hola mundo"
+  goodbye: "Adiós mundo"
+
+  devise:
+    sessions:
+      usuario:
+        signed_in: 'Sesión iniciada correctamente.'
+        signed_out: 'Sesión cerrada correctamente.'
+
+  activerecord:
+    errors:
+      models:
+        usuario:  # Reemplaza "usuario" con el nombre de tu modelo
+          attributes:
+            email:
+              taken: 'ya está en uso'
+            password_confirmation:
+              confirmation: 'no coincide con la contraseña'
+        comentario:
+          attributes:
+            usuario:
+              required: "debe estar presente"
+
+  errors:
+    messages:
+      taken: 'ya está en uso'
+      confirmation: 'no coincide con la contraseña'

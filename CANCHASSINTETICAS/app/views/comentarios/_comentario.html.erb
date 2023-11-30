@@ -1,36 +1,40 @@
-<div class="wrapper wrapper-content animated fadeIn">
-  <div class="row">
-   <% if @comentarios.present? %>
-    <% @comentarios.each do |comentario| %>
-        <div class="col-lg-6">
-            <div class="tabs-container">
-                <ul class="nav nav-tabs" role="tablist">
-                    <li><a class="nav-link active" data-toggle="tab" href="#tab-1"> Comentario</a></li>
-                    <li><a class="nav-link" data-toggle="tab" href="#tab-2">Editar Comentario</a></li>
-                </ul>
-                <div class="tab-content">
-                    <div role="tabpanel" id="tab-1" class="tab-pane active">
-                        <div class="panel-body">
-                            <strong>Reseña:</strong>
-                            <p></p>
-                            <p></p>
-                        </div>
-               </div>
-                    <div role="tabpanel" id="tab-2" class="tab-pane">
-                        <div class="panel-body">
-                            <strong>Editar</strong>
-    
-                            <p></p>
-                            <p></p>
-                        </div>
+<div class="faq-item">
+        
+            <div class="row">
+            <% @comentarios.each do |comentario| %>
+                <div class="col-md-5">
+                    <a data-toggle="collapse" href="#faq1" class="faq-question"><%= comentario.tipo %></a>
+                    <small>Agregado por <strong><%= comentario.usuario.nombre %> <%= comentario.usuario.apellido %></strong> </small>
+                </div>
+                <div class="col-md-3">
+                    <span class="small font-bold">Fecha y hora</span>
+                    <div class="tag-list">
+                        <span class="tag-item"><i class="fa fa-clock-o"></i> <%= comentario.created_at.strftime("%b %e %Y, %I:%M %p") %></span>
+                    </div>
+                </div>
+                <div class="col-md-2 text-right">
+                    <span class="small font-bold">Calificación</span><br/>
+                    <%= comentario.calificacion %>
+                </div>
+                <div class="col-md-2 text-right">
+                    <span class="small font-bold">Opciones</span><br/>
+                    <div class="tag-list">
+                    <a href="<%= edit_comentario_path(comentario) %>" class="comentario-link">Editar</i> </a>
                     </div>
                 </div>
             </div>
-        </div>
-      <% end %>
-    <% else %>
-        <p>No hay comentarios disponibles.</p>
-    <% end %>
-  </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div id="faq1" class="panel-collapse collapse ">
+                        <div class="faq-answer">
+                            <p><%= comentario.contenido %></p>
+                        </div>
+                    </div>
+                </div>
+                <% end %>
+            </div>
+        
 </div>
+
+
         

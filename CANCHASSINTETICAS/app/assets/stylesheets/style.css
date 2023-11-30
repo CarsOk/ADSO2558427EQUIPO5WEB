@@ -9892,3 +9892,11 @@ body.md-skin {
   -webkit-appearance: none;
   margin: 0;
 }
+.header-container-reservas{
+  display: flex;
+  align-items: center;
+  justify-content: left;
+}
+.comentario-link{
+  text-decoration: none;
+}

@@ -23,6 +23,9 @@
                       SW
                   </div>
               </li>
+                <li class="active">
+                    <a href="<%= dashboard_path %>"><i class="fa fa-table"></i> <span class="nav-label">Dashboard</span></a>
+                </li>
                 <li>
                     <a href="<%= root_path %>"><i class="fa fa-mail-reply-all"></i> <span class="nav-label">Inicio</span></a>
                 </li>
@@ -38,10 +41,12 @@
                 <li>
                     <a href="<%= new_reserva_path %>"><i class="fa fa-check-square-o"></i> <span class="nav-label">Reservar</span></a>
                 </li>
-                <li>
-                <a href="<%= comentarios_path %>"><i class="fa fa-check-square-o"></i> <span class="nav-label"> Realizar un Comentario</span></a>
+                <li >
+                    <a href="<%= mis_reservas_path %>"><i class="fa fa-calendar-o"></i> <span class="nav-label">Mis reservas</span></a>
                 </li>
-
+                <li>
+                    <a href="<%= comentarios_path %>"><i class="fa fa-check-square-o"></i> <span class="nav-label">Comentarios</span></a>
+                </li>
                 <% if current_usuario.admin == true %>
                     <li>
                         <a href="<%= new_cancha_path %>"><i class="fa fa-edit"></i> <span class="nav-label">Nueva cancha</span></a>
@@ -49,15 +54,10 @@
                     <li>
                         <a href="<%= reservas_path %>"><i class="fa fa-envelope"></i> <span class="nav-label">Reservas</span></a>
                     </li>
-                    <li>
+                    <li> 
                         <a href=" <%= usuarios_index_path %>"><i class="fa fa-group"></i> <span class="nav-label">Usuarios</span></a>
                     </li>
-                    <li>
-                        <a href="<%= comentarios_path %>"><i class="fa fa-check-square-o"></i> <span class="nav-label">Comentarios de los Clientes</span></a>
-                    </li>
-                    
-                <% end %>
-                
+                <% end %>  
           </ul>
       </div>
   </nav>

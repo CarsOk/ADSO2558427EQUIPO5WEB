@@ -39,6 +39,16 @@ class CanchasController < ApplicationController
       render :edit
     end
   end
+  
+    def create
+      @cancha = Cancha.new(cancha_params)
+      if @cancha.save
+        redirect_to cancha_path(@cancha), notice: "Cancha creada correctamente."
+      else
+        set_flash_now_alert
+        render :new
+      end
+    end
 
   def destroy
     @cancha = Cancha.find(params[:id])
