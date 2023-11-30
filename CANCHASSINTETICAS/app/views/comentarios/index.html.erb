@@ -1,0 +1,24 @@
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-sm-4">
+        <h2>Comentarios</h2>
+    </div>
+    <div class="col-sm-8">
+        <div class="title-action">
+            <a href="<%= new_comentario_path %>" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i> Agregar un comentario</a>
+        </div>
+    </div>
+</div>
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox-content m-b-sm border-bottom">
+                <div class="text-center p-lg">
+                    <h2>¡Tu opinión es invaluable! Queremos mejorar continuamente para brindarte la mejor experiencia posible.!</h2>
+                </div>
+            </div>
+            <div>
+               <%= render 'comentario' %>
+            </div>
+        </div>
+    </div>
+</div>

@@ -38,8 +38,11 @@
                 <li>
                     <a href="<%= new_reserva_path %>"><i class="fa fa-check-square-o"></i> <span class="nav-label">Reservar</span></a>
                 </li>
+                <li >
+                    <a href="<%= mis_reservas_path %>"><i class="fa fa-calendar-o"></i> <span class="nav-label">Mis reservas</span></a>
+                </li>
                 <li>
-                    <a href="<%= mis_reservas_path %>"><i class="fa fa-check-square-o"></i> <span class="nav-label">Mis reservas</span></a>
+                    <a href="<%= comentarios_path %>"><i class="fa fa-check-square-o"></i> <span class="nav-label">Comentarios</span></a>
                 </li>
                 <% if current_usuario&.admin == true %>
                     <li>
@@ -48,10 +51,10 @@
                     <li>
                         <a href="<%= reservas_path %>"><i class="fa fa-envelope"></i> <span class="nav-label">Reservas</span></a>
                     </li>
-                    <li>
+                    <li> 
                         <a href=" <%= usuarios_index_path %>"><i class="fa fa-group"></i> <span class="nav-label">Usuarios</span></a>
                     </li>
-                <% end %>
+                <% end %>  
           </ul>
       </div>
   </nav>

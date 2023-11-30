@@ -17,6 +17,10 @@ es:
               taken: 'ya está en uso'
             password_confirmation:
               confirmation: 'no coincide con la contraseña'
+        comentario:
+          attributes:
+            usuario:
+              required: "debe estar presente"
 
   errors:
     messages:

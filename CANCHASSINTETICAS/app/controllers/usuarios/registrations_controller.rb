@@ -55,6 +55,7 @@ class Usuarios::RegistrationsController < Devise::RegistrationsController
     end
 
     def set_flash_now_alert
+      flash.now[:alert] = @reserva.errors.full_messages.join(', ')
       if @usuario.nil?
         flash.now[:alert] = "Se produjo un error y el usuario es nulo."
       else

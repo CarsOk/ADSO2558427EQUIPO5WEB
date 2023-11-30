@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   devise_for :usuarios, controllers: {
     sessions: 'usuarios/sessions',
     registrations: 'usuarios/registrations'
@@ -8,7 +9,7 @@ Rails.application.routes.draw do
   
   devise_scope :usuario do
     get '/usuarios/sign_out', to: 'devise/sessions#destroy'
-    get '/user_profile', to: 'usuarios/registrations#show', as: :user_profile
+    get '/mi_perfil', to: 'usuarios/registrations#show', as: :user_profile
     get '/user_profile/edit', to: 'usuarios/registrations#edit', as: :edit_user_profile
     put '/user_profile', to: 'usuarios/registrations#update', as: :update_user_profile
   end
@@ -22,5 +23,9 @@ Rails.application.routes.draw do
   end
   
   resources :reservas
+  resources :usuarios, only: [:show] do
+    get 'profile', on: :member
+  end
+  resources :comentarios
   resources :usuarios
 end

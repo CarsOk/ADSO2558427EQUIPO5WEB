@@ -1,0 +1,57 @@
+<div class="wrapper wrapper-content">
+  <div class="row animated fadeInRight">
+    <div class="col-md-12">
+      <div class="ibox ">
+        <div class="ibox-title">
+          <h2><i class="fa fa-user-o"></i> Mi perfil</h2>
+        </div>
+        <div>
+          <div class="ibox-content no-padding border-left-right">
+            <div class="col-md-4">
+            <% if @usuario_current.present? %>
+            <%= image_tag @usuario_current.imagen.url, alt: "Imagen de perfil" %>
+            <% else %>
+            <img alt="image" class="rounded-circle" src="/assets/imgdf-619faad72b3d25d1c8762ad9df8aa51ab40dd234a9556285be9f96de68328f9c.png"/>
+            <% end %>
+            </div>
+          </div>
+          <div class="ibox-content profile-content">
+            <div class="col-md-8">
+            <% if @usuario %>
+            <h4><strong><%= @usuario.nombre %> <%= @usuario.apellido %></strong></h4>
+            <h4><strong><%= @usuario.identificacion %></strong></h4>
+              <% else %>
+                <p>Usuario no encontrado</p>
+              <% end %>
+              <br>
+                <h5>
+                  Sobre mi:
+                </h5>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitat.
+                </p>
+              <div class="row m-t-lg">
+                <div class="col-md-6">
+                  <h5><strong><%= @reservas_realizadas %></strong> Reservas</h5>
+                </div>
+                <div class="col-md-6">
+                  <h5><strong>28</strong> Comentarios</h5>
+                </div>
+              </div>
+              <div class="user-button">
+                <div class="row">
+                  <div class="col-md-6">
+                    <a href="<%= destroy_usuario_session_path %>" data-method="delete" data-confirm="¿Estás seguro de que deseas eliminar este cliente?" data-turbolinks="false" class="btn btn-primary btn-sm btn-block"><i class="fa fa-exclamation-circle"></i> Eliminar perfil</a>
+                  </div>
+                  <div class="col-md-6">
+                    <a href="<%= edit_usuario_registration_path %>" class="btn btn-default btn-sm btn-block"><i class="fa fa-pencil-square-o"></i> Modificar perfil</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

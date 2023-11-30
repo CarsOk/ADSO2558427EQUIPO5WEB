@@ -1,4 +1,5 @@
-class Reserva < ApplicationRecord 
+class Reserva < ApplicationRecord
+  #Asociaciones
   belongs_to :usuario
   belongs_to :cancha
 
@@ -26,6 +27,7 @@ class Reserva < ApplicationRecord
     save!
   end
 
+  #Metodos
   private
   
   # Fecha 
@@ -47,7 +49,7 @@ class Reserva < ApplicationRecord
 
   def calcular_estado
     ahora = DateTime.now
-
+ 
     self.estado = if fecha == ahora.to_date 
                     '<span class="label label-warning-estado">Actualmente</span>'.html_safe
                   elsif fecha > ahora.to_date || (fecha == ahora.to_date && hora_inicio > ahora)

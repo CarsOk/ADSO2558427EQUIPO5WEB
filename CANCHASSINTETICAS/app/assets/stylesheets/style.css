@@ -9972,3 +9972,6 @@ body.md-skin {
   align-items: center;
   justify-content: left;
 }
+.comentario-link{
+  text-decoration: none;
+}

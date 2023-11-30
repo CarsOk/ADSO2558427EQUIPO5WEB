@@ -263,6 +263,7 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
+  actionmailer
   bootsnap (>= 1.4.4)
   bootstrap-datepicker-rails
   byebug

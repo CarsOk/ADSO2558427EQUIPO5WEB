@@ -54,6 +54,7 @@ class CanchasController < ApplicationController
       set_flash_now_alert
       render :edit
     end
+  end
   
     def create
       @cancha = Cancha.new(cancha_params)
@@ -65,15 +66,15 @@ class CanchasController < ApplicationController
       end
     end
 
-    def destroy
-      @cancha = Cancha.find(params[:id])
-      if @cancha.destroy
-      redirect_to cancha_path, notice: "Cancha eliminado correctamente."
-      else 
-        set_flash_now_alert
-        render :new
-      end   
-    end
+  def destroy
+    @cancha = Cancha.find(params[:id])
+    if @cancha.destroy
+    redirect_to cancha_path, notice: "Cancha eliminado correctamente."
+    else 
+      set_flash_now_alert
+      render :new
+    end   
+  end
   
     private
   
