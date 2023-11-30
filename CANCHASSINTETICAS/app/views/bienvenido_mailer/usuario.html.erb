@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>¡Bienvenido!</title>
+  <style>
+        body {
+          font-family: 'Arial', sans-serif;
+          margin: 0;
+          padding: 0;
+          background-color: #ffffff;
+        }
+        .container {
+          max-width: 600px; 
+          margin: 0 auto; 
+          padding: 20px; 
+          border: 3px solid #ddd; 
+          border-radius: 10px;  
+          background-color: #ffffff; 
+          color: #020202;
+        }
+        .container-header{
+          background-color: #37517e; 
+          padding: 20px; 
+          text-align: center; 
+          display: flex; 
+          align-items: center; 
+          justify-content: center; 
+          border: 1px solid #ddd; 
+          border-radius: 10px;
+        }
+        .logo{
+          width: 100px; 
+          height: 85px; 
+          margin-right: 10px;
+        }
+        .titulo{
+          font-family: 'sinfonn'; 
+          font-size: 40px; 
+          font-weight: bold; 
+          color: #020202;
+        }
+        h2{
+            color: #47b2e4;
+        }
+    </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="container-header">
+        <img src="/assets/Logo-CS.png" alt="Logo de la Empresa" class="logo">
+        <div class="titulo">SPORT WORLD</div>
+    </div>
+
+    <h2>¡Bienvenido(a), <%= @usuario.nombre %>!</h2>
+
+    <p>Estamos emocionados de tenerte como parte de nuestra comunidad. En Sport World, puedes reservar fácilmente canchas sintéticas para tus partidos y disfrutar del deporte que amas.</p>
+
+    <p>Explora nuestras pagina web y reserva las canchas que más te gusten a través de nuestro sistema en línea.</p>
+
+    <p>Gracias por unirte a nosotros. Si tienes alguna pregunta o necesitas ayuda, no dudes en ponerte en contacto con nosotros:</p>
+
+    <div style="font-size: 15px;"> 
+        <p>Teléfonos: 3241708963 - 3044387986</p>
+        <p>Correo Electrónico: Sportw737@gmail.com</p>
+    </div>
+    <strong>¡Que tengas excelentes partidos!</strong>
+
+    <p style="font-size: 0.8em; color: #888;">Este correo electrónico es generado automáticamente, por favor no respondas a este correo.</p>
+
+  </div>
+
+</body>
+</html>

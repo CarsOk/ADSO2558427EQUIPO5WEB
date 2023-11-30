@@ -1,0 +1,22 @@
+SPORT WORLD
+
+¡Tu reserva ha sido confirmada!
+Estimado(a) usuario.
+
+Confirmamos que hemos recibido tu reserva para el <%= @reserva.fecha.strftime("%e de %b %Y") %> Aquí están los detalles:
+  Codigo: <%= @reserva.id %>
+  Hora: Desde las <%= @reserva.hora_inicio.strftime("%I:%M %p") %> hasta las  <%= @reserva.hora_fin.strftime("%I:%M %p") %>
+  Cancha: <%= @reserva.cancha.id %> - <%= @reserva.cancha.nombre %> - <%= @reserva.cancha.jugadores %> jugadores
+  Dirección de las instalaciones: xxx-xxxx
+
+Precio a Pagar: $<%= @reserva.precio.to_i %>
+El pago se realizará en las instalaciones directamente.
+
+¡Prepárate para disfrutar de un gran tiempo en nuestras instalaciones!
+Algunas sugerencias para hacer de tu experiencia aún mejor:
+  Llega unos minutos antes para prepararte adecuadamente.
+  ¡No olvides tu equipo deportivo!
+  Si necesitas ayuda, nuestro personal estará encantado de asistirte.
+
+¡Gracias por elegirnos! Si tienes alguna pregunta, no dudes en contactarnos.
+Atentamente, Sport World.
