@@ -1,7 +1,7 @@
 class UsuariosController < ApplicationController
     before_action :authenticate_usuario!
     before_action :verificar_admin, only: :index
-  
+
     def index
       @usuarios = Usuario.all
     end
@@ -14,6 +14,7 @@ class UsuariosController < ApplicationController
     def profile
       @usuario = Usuario.find(params[:id])
       @reservas_realizadas = @usuario.reservas.count
+      @comentarios_realizados = @usuario.comentarios.count
     end
 
     private

@@ -3,7 +3,7 @@
             <div class="row">
             <% @comentarios.each do |comentario| %>
                 <div class="col-md-5">
-                    <a data-toggle="collapse" href="#faq1" class="faq-question"><%= comentario.tipo %></a>
+                    <a data-toggle="collapse" href="#faq1" class="faq-question"><%= comentario.id %>. <%= comentario.tipo %></a>
                     <small>Agregado por <strong><%= comentario.usuario.nombre %> <%= comentario.usuario.apellido %></strong> </small>
                 </div>
                 <div class="col-md-3">
@@ -15,12 +15,6 @@
                 <div class="col-md-2 text-right">
                     <span class="small font-bold">Calificación</span><br/>
                     <%= comentario.calificacion %>
-                </div>
-                <div class="col-md-2 text-right">
-                    <span class="small font-bold">Opciones</span><br/>
-                    <div class="tag-list">
-                    <a href="<%= edit_comentario_path(comentario) %>" class="comentario-link">Editar</i> </a>
-                    </div>
                 </div>
             </div>
             <div class="row">
