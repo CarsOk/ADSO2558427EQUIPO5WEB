@@ -14,6 +14,7 @@
                                 <div class="btn-group">
                                     <%= link_to '<i class="fa fa-mail-reply"></i> Regresar'.html_safe, :back, class: 'btn btn-white btn-sm' %>
                                     <a href="<%= edit_reserva_path(@reserva) %>" class="btn btn-white btn-xs float-right"><i class="fa fa-pencil-square-o"></i> Editar reserva</a>
+                                    <%= button_to "Cancelar", @reserva, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-white btn-xs float-right" %>
                                 </div>
                             </div>
                         </div>

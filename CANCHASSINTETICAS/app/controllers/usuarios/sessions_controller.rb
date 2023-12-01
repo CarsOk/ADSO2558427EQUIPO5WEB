@@ -17,7 +17,7 @@ class Usuarios::SessionsController < Devise::SessionsController
   end
 
   def destroy
-    super
+     super
   end
 
   # protected

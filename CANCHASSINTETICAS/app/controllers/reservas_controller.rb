@@ -49,14 +49,27 @@ class ReservasController < ApplicationController
   end
 
   def destroy
-    @reserva = Reserva.find(params[:id])
-    if @reserva.destroy
-    redirect_to reserva_path, notice: "Reserva eliminada correctamente."
-    else 
-      set_flash_now_alert
-      render :new 
-    end   
+    begin
+      @reserva = Reserva.find(params[:id])
+      if @reserva.destroy
+        respond_to do |format|
+          format.html { redirect_to reservas_path, notice: "Reserva cancelada exitosamente" }
+        end
+      else
+        set_flash_now_alert
+        render :show
+      end
+    end
   end
+
+  # app/controllers/reservas_controller.rb
+
+  def actualizar_estado
+    @reserva = Reserva.find(params[:id])
+    @reserva.actualizar_estado
+    render json: { estado: @reserva.estado }
+  end
+
 
   private
 

@@ -23,8 +23,12 @@ class Reserva < ApplicationRecord
   end
 
   def actualizar_estado
-    calcular_estado
-    save!
+    begin
+      return unless calcular_estado
+      save
+    rescue ActiveRecord::RecordInvalid => e
+      puts "Error saving record: #{e.message}"
+    end
   end
 
   #Metodos
@@ -48,7 +52,7 @@ class Reserva < ApplicationRecord
 
   def calcular_estado
     ahora = DateTime.now
- 
+
     self.estado = if fecha == ahora.to_date 
                     '<span class="label label-warning-estado">Actualmente</span>'.html_safe
                   elsif fecha > ahora.to_date || (fecha == ahora.to_date && hora_inicio > ahora)
@@ -56,6 +60,8 @@ class Reserva < ApplicationRecord
                   else
                     '<small class="label label-danger-estado">finalizado</small>'.html_safe
                   end
+
+    puts "Calculated estado: #{self.estado}"
   end
    
   public :calcular_estado

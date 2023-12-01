@@ -17,6 +17,20 @@ class UsuariosController < ApplicationController
       @comentarios_realizados = @usuario.comentarios.count
     end
 
+    def destroy
+      begin
+        @usuario = Usuario.find(params[:id])
+        if @usuario.destroy
+          respond_to do |format|
+            format.html { redirect_to root_path, notice: "Reserva cancelada exitosamente" }
+          end
+        else
+          set_flash_now_alert
+          render :show
+        end
+      end
+    end
+
     private
 
     def verificar_admin
@@ -25,5 +39,4 @@ class UsuariosController < ApplicationController
           redirect_to dashboard_path
         end
     end
-
 end
