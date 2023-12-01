@@ -6376,7 +6376,7 @@ dd.project-people {
   display: block;
 }
 .faq-question:hover {
-  color: #179d82;
+  color: #020202;
 }
 .faq-answer {
   margin-top: 10px;
@@ -9971,4 +9971,7 @@ body.md-skin {
   display: flex;
   align-items: center;
   justify-content: left;
+}
+.comentario-link{
+  text-decoration: none;
 }

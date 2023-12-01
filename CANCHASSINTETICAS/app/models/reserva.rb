@@ -29,8 +29,6 @@ class Reserva < ApplicationRecord
 
   #Metodos
   private
-  
-<<<<<<< HEAD
   # Fecha 
   def validar_horarios
     if hora_inicio.present? && (hora_inicio.hour < 8 || hora_inicio.hour >= 22 || hora_inicio.min != 0)
@@ -50,7 +48,7 @@ class Reserva < ApplicationRecord
 
   def calcular_estado
     ahora = DateTime.now
-
+ 
     self.estado = if fecha == ahora.to_date 
                     '<span class="label label-warning-estado">Actualmente</span>'.html_safe
                   elsif fecha > ahora.to_date || (fecha == ahora.to_date && hora_inicio > ahora)

@@ -1,26 +1,41 @@
 <div class="col-lg-9 animated fadeInRight">
     <div class="mail-box-header">
-        <div class="float-right tooltip-demo">
-            <a href="mailbox.html" class="btn btn-white btn-sm" data-toggle="tooltip" data-placement="top" title="Move to draft folder"><i class="fa fa-pencil"></i> Draft</a>
-            <a href="mailbox.html" class="btn btn-danger btn-sm" data-toggle="tooltip" data-placement="top" title="Discard email"><i class="fa fa-times"></i> Discard</a>
-        </div>
-        <h2>Comentario</h2>
-    </div>        
-    <div class="mail-body">
-        <form method="get">
-            <div class="form-group row"><label class="col-sm-2 col-form-label">Correo:</label>
-                <div class="col-sm-10"><input type="text" class="form-control"></div>
-            </div>
-            <div class="form-group row"><label class="col-sm-2 col-form-label">Titulo:</label>
-                <div class="col-sm-10"><input type="text" class="form-control" value=""></div>
-            </div>
-            <div class="mail-text h-200">
-                <div class="summernote">
-                    <h3>Hello! </h3>
-                    <strong></strong> 
-                    <br/>
+        <h2>Nuevo comentario</h2>
+    </div>
+    <div class="mail-box">
+        <div class="mail-body">
+            <%= simple_form_for @comentario do |f| %>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">To:</label>
+                    <div class="col-sm-10">
+                        <%= f.input :usuario_id, input_html: { value: current_usuario.identificacion, class: "form-control" }, label: false %>
+                    </div>
                 </div>
-            </div>
-        </form>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">Calificación:</label>
+                    <div class="col-sm-10">
+                        <%= f.input :calificacion, as: :select, collection: 1..5, input_html: { class: "form-control" }, label: false %>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">Tipo:</label>
+                    <div class="col-sm-10">
+                        <%= f.input :tipo, as: :select, collection: ['Sugerencia', 'Reclamo', 'Comentario positivo'], input_html: { class: "form-control" }, label: false %>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">Contenido:</label>
+                    <div class="summernote">
+                        <%= f.input :contenido, as: :text, input_html: { class: "form-control", rows: 8 }, label: false %>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-sm-7 offset-sm-2">
+                        <%= f.button :submit, "Enviar Comentario", class: "btn btn-sm btn-primary" %>
+                    </div>
+                </div>
+            <% end %>
+        </div>
     </div>
 </div>
+
