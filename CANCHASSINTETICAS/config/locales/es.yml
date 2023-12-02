@@ -7,14 +7,19 @@ es:
       usuario:
         signed_in: 'Sesión iniciada correctamente.'
         signed_out: 'Sesión cerrada correctamente.'
+    failure:
+      usuario:
+        already_authenticated: 'Usuario ya autenticado.'
+        not_authenticated: 'No autenticado.'
 
   activerecord:
     errors:
       models:
-        usuario:  # Reemplaza "usuario" con el nombre de tu modelo
+        usuario: 
           attributes:
             email:
               taken: 'ya está en uso'
+              invalid: 'no es válido'
             password_confirmation:
               confirmation: 'no coincide con la contraseña'
         comentario:
@@ -26,3 +31,7 @@ es:
     messages:
       taken: 'ya está en uso'
       confirmation: 'no coincide con la contraseña'
+      invalid: 'no es válido'
+      blank: "no puede estar en blanco"
+      present: "debe estar presente"
+      record_invalid: "No se pudo guardar el registro debido a errores de validación"

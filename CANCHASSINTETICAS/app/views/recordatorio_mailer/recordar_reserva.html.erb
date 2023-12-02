@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Confirmación de Reserva</title>
+    <title>Recordatorio</title>
     <style>
         body {
           font-family: 'Arial', sans-serif;
@@ -74,32 +74,21 @@
           <img src="/assets/Logo-CS.png" alt="Logo de la Empresa" class="logo">
           <div class="titulo">SPORT WORLD</div>
       </div>
-        <h2>¡Tu reserva ha sido confirmada!</h2>
+        <h2>¡Recordatorio de Reserva!</h2>
         <p>Estimado(a) usuario.</p>
 
         <div class="reservation-details">
-            <p>Confirmamos que hemos recibido tu reserva para el <span class="highlight"><%= @reserva.fecha.strftime("%e de %b %Y") %></span>. Aquí están los detalles:</p>
-            <ul>
-              <li><strong>Codigo:</strong> <span class="highlight"><%= @reserva.id %></span></li>
-              <li><strong>Hora:</strong> Desde las <span class="highlight"><%= @reserva.hora_inicio.strftime("%I:%M %p") %></span> hasta las <span class="highlight"> <%= @reserva.hora_fin.strftime("%I:%M %p") %></span></li>
-              <li><strong>Cancha:</strong> <span class="highlight"><%= @reserva.cancha.id %> - <%= @reserva.cancha.nombre %> - <%= @reserva.cancha.jugadores %> jugadores</span></li>
-              <li><strong>Dirección de las instalaciones:</strong> <span class="highlight">xxx-xxxx</span></li>
-            </ul>
+            <p>Queremos recordarte que tienes una reserva programada para el <span class="highlight"><%= @reserva.fecha.strftime("%e de %b %Y") %></span>  Desde las <span class="highlight"><%= @reserva.hora_inicio.strftime("%I:%M %p") %></span> hasta las <span class="highlight"> <%= @reserva.hora_fin.strftime("%I:%M %p") %>. </p>
+            <p><strong>Dirección de las instalaciones:</strong> <span class="highlight">xxx-xxxx</span><p>
         </div>
 
         <div class="payment-details">
-            <p><strong>Precio Estimado:</strong> $<%= @reserva.precio.to_i %></p>
-            <p>El pago se realizará en las instalaciones directamente.</p>
+          <p><strong>Precio Estimado:</strong> $<%= @reserva.precio.to_i %></p>
+          <p>Recuerda que el pago se realizará en las instalaciones directamente.</p>
         </div>
 
         <div class="suggestions">
-            <p>¡Prepárate para disfrutar de un gran tiempo en nuestras instalaciones!</p>
-            <p>Algunas sugerencias para hacer de tu experiencia aún mejor:</p>
-            <ul>
-                <li>Llega unos minutos antes para prepararte adecuadamente.</li>
-                <li>¡No olvides tu equipo deportivo!</li>
-                <li>Si necesitas ayuda, nuestro personal estará encantado de asistirte.</li>
-            </ul>
+          <p>¡Esperamos que disfrutes de tu tiempo en nuestras instalaciones!</p>
         </div>
 
         <div class="footer">

@@ -6,7 +6,6 @@
           <div class="ibox-tools">
             <a href="<%= edit_cancha_path(@cancha) %>" class="btn btn-white btn-sm"><i class="fa fa-cogs"></i></a>
             <a href="<%= calendario_canchas_path(@cancha) %>" class="btn btn-white btn-sm"><i class="fa fa-calendar"></i></a>
-            <a href="<%= calendario_canchas_path(@cancha) %>" class="btn btn-white btn-sm"><i class="fa fa-trash-o"></i></a>
           </div>
           <div class="row">
             <div class="col-md-5">
@@ -41,6 +40,7 @@
                   <div class="btn-group">
                     <%= link_to '<i class="fa fa-mail-reply"></i> Regresar'.html_safe, :back, class: 'btn btn-white btn-sm' %>
                     <a href="#" target="_blank" class="btn btn-white btn-sm"><i class="fa fa-comments"></i> Comentarios </a>
+                    <%= button_to "Eliminar", @cancha, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger btn-xs float-right ml-2" %>
                   </div>
                 </div>
             </div>

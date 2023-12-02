@@ -1,7 +1,9 @@
 class Usuario < ApplicationRecord
   has_many :reservas
-  has_and_belongs_to_many :canchas
   has_many :comentarios
+
+  default_scope { order(:id) }
+  
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,

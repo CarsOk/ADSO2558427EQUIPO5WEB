@@ -20,6 +20,7 @@ class ReservasController < ApplicationController
     @reserva.cancha_id = params[:reserva][:cancha_id]
     if @reserva.save
       ConfirmacionMailer.reserva(@reserva).deliver_now
+      EnviarRecordatorioJob.set(wait_until: @reserva.fecha_recordatorio.to_datetime).perform_later(@reserva.id)
       redirect_to reserva_path(@reserva), notice: 'Reserva creada exitosamente.'
     else
       set_flash_now_alert
@@ -29,6 +30,7 @@ class ReservasController < ApplicationController
 
   def show
     @reserva = Reserva.find(params[:id])
+    @usuario = @reserva.usuario
   end
 
   def edit
@@ -36,11 +38,13 @@ class ReservasController < ApplicationController
     @usuario_current = current_usuario
     @titulo = 'Modificar reserva'
   end
-
   def update
     @reserva = Reserva.find(params[:id])
     @usuario_current = current_usuario
     if @reserva.update(reserva_params)
+      EditarMailer.reserva_modificada(@reserva).deliver_now
+      
+      EnviarRecordatorioJob.set(wait_until: @reserva.fecha_recordatorio.to_datetime).perform_later(@reserva.id)
       redirect_to reserva_path(@reserva), notice: "Reserva editada correctamente."
     else
       set_flash_now_alert
@@ -50,12 +54,17 @@ class ReservasController < ApplicationController
 
   def destroy
     @reserva = Reserva.find(params[:id])
-    if @reserva.destroy
-    redirect_to reserva_path, notice: "Reserva eliminada correctamente."
-    else 
-      set_flash_now_alert
-      render :new 
-    end   
+
+    begin
+      if @reserva.destroy
+        respond_to do |format|
+          format.html { redirect_to reservas_path, notice: "Reserva cancelada exitosamente" }
+        end
+      else
+        set_flash_now_alert
+        render :show
+      end
+    end
   end
 
   private
@@ -67,7 +76,7 @@ class ReservasController < ApplicationController
   def verificar_admin
     if current_usuario.admin == false
       flash[:alert] = "Sin permisos de administrador"
-      redirect_to dashboard_path
+      redirect_back(fallback_location: root_path)
     end
   end
 
@@ -77,6 +86,5 @@ class ReservasController < ApplicationController
 
   def set_usuario_current
     @usuario_current = current_usuario
-  end
-  
+  end 
 end
