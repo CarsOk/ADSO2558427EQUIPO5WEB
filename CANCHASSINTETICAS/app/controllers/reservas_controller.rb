@@ -67,6 +67,10 @@ class ReservasController < ApplicationController
     end
   end
 
+  def seguridad_salud
+    # No necesitas lógica adicional para esta vista
+  end
+
   private
 
   def reserva_params
