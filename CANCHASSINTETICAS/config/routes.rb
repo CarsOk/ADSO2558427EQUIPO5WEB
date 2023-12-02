@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     get '/mi_perfil', to: 'usuarios/registrations#show', as: :user_profile
     get '/user_profile/edit', to: 'usuarios/registrations#edit', as: :edit_user_profile
     put '/user_profile', to: 'usuarios/registrations#update', as: :update_user_profile
+    delete '/usuarios/:id', to: 'usuarios/registrations#destroy', as: :eliminar_usuario
   end
 
   root to: "home#landing_page"
@@ -24,12 +25,7 @@ Rails.application.routes.draw do
   get '/usuarios', to: 'usuarios#index', as: 'usuarios_index'
 
   resources :comentarios
-  
-  resources :reservas do
-    member do
-      patch 'actualizar_estado'
-    end
-  end
+  resources :reservas
   
   resources :usuarios, only: [:show] do
     get 'profile', on: :member

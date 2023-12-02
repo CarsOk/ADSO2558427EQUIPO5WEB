@@ -38,6 +38,20 @@ class Usuarios::RegistrationsController < Devise::RegistrationsController
     end
   end
 
+  def destroy
+    begin
+      @usuario = current_usuario
+      if @usuario.destroy
+        respond_to do |format|
+          format.html { redirect_to root_path, notice: "Cuenta eliminada exitosamente" }
+        end
+      else
+        set_flash_now_alert
+        render :show
+      end
+    end
+  end
+
     private
 
     def usuario_params
@@ -61,7 +75,7 @@ class Usuarios::RegistrationsController < Devise::RegistrationsController
     def verificar_admin
       if current_usuario.admin == false
         flash[:alert] = "Sin permisos de administrador"
-        redirect_to dashboard_path
+        redirect_back(fallback_location: root_path)
       end
     end
 end

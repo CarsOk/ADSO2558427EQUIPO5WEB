@@ -1,0 +1,15 @@
+SPORT WORLD
+
+¡Recordatorio de Reserva!
+Estimado(a) usuario.
+
+Queremos recordarte que tienes una reserva programada para el <%= @reserva.fecha.strftime("%e de %b %Y") %>  Desde las <%= @reserva.hora_inicio.strftime("%I:%M %p") %> hasta las <%= @reserva.hora_fin.strftime("%I:%M %p") %>.
+ Dirección de las instalaciones: xxx-xxxx
+
+Precio a Pagar: $<%= @reserva.precio.to_i %>
+Recuerda que el pago se realizará en las instalaciones directamente.
+
+¡Esperamos que disfrutes de tu tiempo en nuestras instalaciones!
+
+¡Gracias por elegirnos! Si tienes alguna pregunta, no dudes en contactarnos.
+Atentamente, Sport World.

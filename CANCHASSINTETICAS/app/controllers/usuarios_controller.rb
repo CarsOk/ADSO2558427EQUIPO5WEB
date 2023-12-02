@@ -34,9 +34,9 @@ class UsuariosController < ApplicationController
     private
 
     def verificar_admin
-        if current_usuario.admin == false
-          flash[:alert] = "Sin permisos de administrador"
-          redirect_to dashboard_path
-        end
+      if current_usuario.admin == false
+        flash[:alert] = "Sin permisos de administrador"
+        redirect_back(fallback_location: root_path)
+      end
     end
 end

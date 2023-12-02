@@ -68,7 +68,7 @@
                                     <dt>Identificación del usuario:</dt>
                                 </div>
                                 <div class="col-sm-7 text-sm-left">
-                                    <dd class="mb-1"><a href="<%= user_profile_path %>" class="text-navy"><%=@reserva.usuario.identificacion%></a></dd>
+                                    <dd class="mb-1"><a href="<%= profile_usuario_path(@usuario)%>" class="text-navy"><%= @usuario.identificacion %></a></dd>
                                 </div>
                             </dl>
                             <dl class="row mb-0">

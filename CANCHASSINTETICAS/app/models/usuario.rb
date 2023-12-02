@@ -1,6 +1,5 @@
 class Usuario < ApplicationRecord
   has_many :reservas
-  has_and_belongs_to_many :canchas
   has_many :comentarios
 
   default_scope { order(:id) }

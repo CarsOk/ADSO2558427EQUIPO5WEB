@@ -23,12 +23,14 @@ class Reserva < ApplicationRecord
   end
 
   def actualizar_estado
-    begin
-      return unless calcular_estado
-      save
-    rescue ActiveRecord::RecordInvalid => e
-      puts "Error saving record: #{e.message}"
-    end
+      calcular_estado
+      save!
+  end
+
+  def fecha_recordatorio
+    # Aquí puedes personalizar la lógica según tus necesidades
+    # En este ejemplo, estamos asumiendo que el recordatorio se enviará un día antes de la fecha de la reserva
+    fecha - 1.day
   end
 
   #Metodos
@@ -107,6 +109,12 @@ class Reserva < ApplicationRecord
     if estado == '<small class="label label-danger-estado">finalizado</small>'.html_safe
       errors.add(:base, "No se puede editar una reserva después de que ha sido finalizada.")
     end
+  end
+
+  def cancelable?
+    # Verificar si la reserva se puede cancelar un día antes de la fecha
+    # Por ejemplo, si la fecha de reserva es mañana o después, puede cancelarse hoy.
+    fecha_reserva >= Date.current + 1.day
   end
 
 end

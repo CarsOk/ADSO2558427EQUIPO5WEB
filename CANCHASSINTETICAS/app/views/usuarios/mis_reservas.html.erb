@@ -27,8 +27,7 @@
                         Descripcion: <br>
                         Fecha: <%= reserva.fecha.strftime("%b %e %Y") %> <br>   
                         Hora de inicio: <%= reserva.hora_inicio.try(:strftime, "%I:%M %p") %> <br>
-                        Hora de Finalizacion: <%= reserva.hora_fin.strftime("%I:%M %p")%><br> 
-                        <%= button_to "Cancelar", @reserva, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-white btn-xs" %>      
+                        Hora de Finalizacion: <%= reserva.hora_fin.strftime("%I:%M %p")%><br>
                         </p>
                     </div>
                 </div>

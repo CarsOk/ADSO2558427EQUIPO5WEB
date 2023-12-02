@@ -41,7 +41,7 @@
               <div class="user-button">
                 <div class="row">
                   <div class="col-md-6">
-                    <a href="<%= destroy_usuario_session_path %>" data-method="delete" data-confirm="¿Estás seguro de que deseas eliminar tu cuenta?" data-turbolinks="false" class="btn btn-primary btn-sm btn-block"><i class="fa fa-exclamation-circle"></i> Eliminar cuenta</a>
+                  <%= button_to "Eliminar cuenta", @usuario, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger btn-xs float-right ml-2" %>
                   </div>
                   <div class="col-md-6">
                     <a href="<%= edit_usuario_registration_path %>" class="btn btn-default btn-sm btn-block"><i class="fa fa-pencil-square-o"></i> Modificar perfil</a>

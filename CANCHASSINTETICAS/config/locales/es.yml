@@ -10,8 +10,7 @@ es:
     failure:
       usuario:
         already_authenticated: 'Usuario ya autenticado.'
-        already_authenticated: 'Ya autenticado.'
-         not_authenticated: 'No autenticado.'
+        not_authenticated: 'No autenticado.'
 
   activerecord:
     errors:
@@ -30,9 +29,9 @@ es:
 
   errors:
     messages:
-       taken: 'ya está en uso'
-        confirmation: 'no coincide con la contraseña'
-        invalid: 'no es válido'
-        blank: "no puede estar en blanco"
-        present: "debe estar presente"
-        record_invalid: "No se pudo guardar el registro debido a errores de validación"
+      taken: 'ya está en uso'
+      confirmation: 'no coincide con la contraseña'
+      invalid: 'no es válido'
+      blank: "no puede estar en blanco"
+      present: "debe estar presente"
+      record_invalid: "No se pudo guardar el registro debido a errores de validación"

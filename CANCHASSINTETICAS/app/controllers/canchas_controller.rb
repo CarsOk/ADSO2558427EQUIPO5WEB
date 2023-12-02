@@ -66,15 +66,20 @@ class CanchasController < ApplicationController
       end
     end
 
-  def destroy
-    @cancha = Cancha.find(params[:id])
-    if @cancha.destroy
-    redirect_to cancha_path, notice: "Cancha eliminado correctamente."
-    else 
-      set_flash_now_alert
-      render :new
-    end   
-  end
+    def destroy
+      @cancha = Cancha.find(params[:id])
+  
+      begin
+        if @cancha.destroy
+          respond_to do |format|
+            format.html { redirect_to canchas_path, notice: "Cancha eliminada exitosamente" }
+          end
+        else
+          set_flash_now_alert
+          render :show
+        end
+      end
+    end
   
     private
   
@@ -89,7 +94,7 @@ class CanchasController < ApplicationController
     def verificar_admin
       if current_usuario.admin == false
         flash[:alert] = "Sin permisos de administrador"
-        redirect_to dashboard_path
+        redirect_back(fallback_location: root_path)
       end
     end
   
