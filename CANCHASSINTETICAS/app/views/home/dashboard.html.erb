@@ -4,35 +4,35 @@
     </div>
 </div>
     <div class="row">
-        <div class="col-lg-4">
+        <div class="col-lg-3">
             <div class="ibox ">
                 <div class="ibox-title">
                     <h5>Canchas Disponibles</h5>
                 </div>
                 <div class="ibox-content">
                     <h1 class="no-margins"><%= @cantidad_canchas %></h1>
-                    <div class="stat-percent font-bold text-success">5% <i class="fa fa-bolt"></i></div>
+                    <div class="stat-percent font-bold text-danger">5% <i class="fa fa-bolt"></i></div>
                     <small>Total de Canchas</small>
                 </div>
             </div>
         </div>
-        <div class="col-lg-4">
+        <div class="col-lg-3">
             <div class="ibox ">
                 <div class="ibox-title">
-                    <h5>Clientes Registrados</h5>
+                    <h5>Reservas Realizadas</h5>
                 </div>
                 <div class="ibox-content">
-                    <h1 class="no-margins"><%= @cantidad_usuarios %></h1>
-                    <div class="stat-percent font-bold text-info">20% <i class="fa fa-level-up"></i></div>
-                    <small>Total de Clientes</small>
+                    <h1 class="no-margins"><%= @cantidad_reservas %></h1>
+                    <div class="stat-percent font-bold text-warning">20% <i class="fa fa-level-up"></i></div>
+                    <small>Total de reservas</small>
                 </div>
             </div>
         </div>
-        <div class="col-lg-4">
+        <div class="col-lg-3">
             <div class="ibox ">
                 <div class="ibox-title">
                     <div class="ibox-tools">
-                        <span class="label label-primary float-right">Por hora</span>
+                        <span class="label label-danger float-right">Por hora</span>
                     </div>
                     <h5>Precios</h5>
                 </div>
@@ -43,9 +43,21 @@
                 </div>
             </div>
         </div>
+        <div class="col-lg-3">
+            <div class="ibox ">
+                <div class="ibox-title">
+                    <h5>Medidas de seguridad</h5>
+                </div>
+                <div class="ibox-content">  
+                    <a href="<%= reservas_seguridad_salud_path %>" class="btn btn-primary btn-block mt-3">
+                        Ver Medidas de Seguridad
+                    </a>
+                </div>
+            </div>
+        </div>
     </div>
     <div class="row">
-        <div class="col-lg-4">  
+        <div class="col-lg-5">  
             <div class="ibox ">
                 <div class="ibox-title">
                     <h5>Informacion que te puede interesar:)</h5><i class="fa fa-hand-o-down "></i>
@@ -102,30 +114,13 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-8"> 
+        <div class="col-lg-7"> 
             <div class="ibox ">
                 <div class="ibox-title">
-                    <h5>Animation and Caption</h5>
-                    <div class="ibox-tools">
-                        <a class="collapse-link">
-                            <i class="fa fa-chevron-up"></i>
-                        </a>
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                            <i class="fa fa-wrench"></i>
-                        </a>
-                        <ul class="dropdown-menu dropdown-user">
-                            <li><a href="#" class="dropdown-item">Config option 1</a>
-                            </li>
-                            <li><a href="#" class="dropdown-item">Config option 2</a>
-                            </li>
-                        </ul>
-                        <a class="close-link">
-                            <i class="fa fa-times"></i>
-                        </a>
-                    </div>
+                    <h5>Canchas Estrella: Un Collage de Popularidad</h5>
                 </div>
             </div>
-            <div class="ibox-content ">
+            <div class="ibox-content">
                 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                     <ol class="carousel-indicators">
                         <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -134,21 +129,21 @@
                     </ol>
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <img class="d-block w-100" src="#" alt="First slide">
+                            <img class="d-block w-100" src="/uploads/cancha/image/1/camp.jpg" alt="First slide">
                             <div class="carousel-caption d-none d-md-block">
-                                <p>This is simple caption 1</p>
+                               <p>Camp Nou</p>
                             </div>
                         </div>
                         <div class="carousel-item">
-                            <img class="d-block w-100" src="img/p_big3.jpg" alt="Second slide">
+                            <img class="d-block w-100" src="/uploads/cancha/image/4/fireball.jpeg" alt="Second slide">
                             <div class="carousel-caption d-none d-md-block">
-                                <p>This is simple caption 2</p>
+                                <p>Fireball</p>
                             </div>
                         </div>
                         <div class="carousel-item">
-                            <img class="d-block w-100" src="img/p_big2.jpg" alt="Third slide">
+                            <img class="d-block w-100" src="/uploads/cancha/image/13/campo.jpg" alt="Third slide">
                             <div class="carousel-caption d-none d-md-block">
-                                <p>This is simple caption 3</p>
+                                <p>Campo</p>
                             </div>
                         </div>
                     </div>
@@ -164,3 +159,5 @@
             </div>
         </div>  
     </div>
+    <br>
+    <br>

@@ -18,18 +18,12 @@
           <div class="ibox-content profile-content">
             <div class="col-md-8">
             <% if @usuario %>
-            <h4><strong><%= @usuario.nombre %> <%= @usuario.apellido %></strong></h4>
-            <h4><strong><%= @usuario.identificacion %></strong></h4>
+            <h3><strong>Nombre Completo:</strong></h3> <h5><%= @usuario.nombre %> <%= @usuario.apellido %></h5>
+            <h3><strong>Idenificacion:</strong></h3> <h5><%= @usuario.identificacion %></h5>
+            <h3><strong>Correo electronico:</strong></h3> <h5><%= @usuario.email %></h5>
               <% else %>
                 <p>Usuario no encontrado</p>
               <% end %>
-              <br>
-                <h5>
-                  Sobre mi:
-                </h5>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitat.
-                </p>
               <div class="row m-t-lg">
                 <div class="col-md-6">
                   <h5><strong><%= @reservas_realizadas %></strong> Reservas</h5>
@@ -55,3 +49,5 @@
     </div>
   </div>
 </div>
+<br>
+<br>

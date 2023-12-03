@@ -7,10 +7,13 @@ es:
       usuario:
         signed_in: 'Sesión iniciada correctamente.'
         signed_out: 'Sesión cerrada correctamente.'
+        already_signed_out: "La sesión del usuario ya ha sido cerrada."
     failure:
       usuario:
         already_authenticated: 'Usuario ya autenticado.'
         not_authenticated: 'No autenticado.'
+        invalid: "Usuario o contraseña no válidos."
+        unauthenticated: "Usuario no autenticado. Inicia sesión para continuar."
 
   activerecord:
     errors:

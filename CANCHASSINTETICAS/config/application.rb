@@ -26,6 +26,7 @@ module CANCHASSINTETICAS
     # config.eager_load_paths << Rails.root.join("extras")
     config.to_prepare do
       Devise::SessionsController.layout "login"
+      Devise::RegistrationsController.layout proc{ |controller| usuario_signed_in? && controller.resource.valid? ? "application" : "login" }
       Devise::ConfirmationsController.layout "login"
       Devise::UnlocksController.layout "login"            
       Devise::PasswordsController.layout "login"

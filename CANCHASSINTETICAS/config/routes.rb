@@ -23,6 +23,7 @@ Rails.application.routes.draw do
 
   get 'mis_reservas', to: 'usuarios#mis_reservas', as: 'mis_reservas'
   get '/usuarios', to: 'usuarios#index', as: 'usuarios_index'
+  get 'reservas/seguridad_salud'
 
   resources :comentarios
   resources :reservas
