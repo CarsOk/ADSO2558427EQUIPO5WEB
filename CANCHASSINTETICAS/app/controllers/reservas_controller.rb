@@ -1,6 +1,6 @@
 class ReservasController < ApplicationController
   before_action :authenticate_usuario!
-  before_action :verificar_admin, only: :index
+  before_action :verificar_admin, only: [:index, :destroy]
   before_action :set_usuario_current, only: [:new, :create]
 
   def index

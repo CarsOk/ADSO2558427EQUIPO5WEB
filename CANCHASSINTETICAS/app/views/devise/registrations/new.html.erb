@@ -12,13 +12,13 @@
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <div class="form-inputs-sign">
         <label for="usuario_identificacion">Identificación:</label>
-        <%= f.text_field :identificacion, required: true %>
+        <%= f.text_field :identificacion, required: true,  pattern: "[0-9]*" %>
 
         <label for="usuario_nombre">Nombre:</label>
-        <%= f.text_field :nombre %>
+        <%= f.text_field :nombre, required: true, autofocus: true, autocomplete: "nombre" %>
 
         <label for="usuario_apellido">Apellido:</label>
-        <%= f.text_field :apellido %>
+        <%= f.text_field :apellido, required: true, autofocus: true, autocomplete: "apllido" %>
 
         <label for="usuario_email">Correo electronico:</label>
         <%= f.text_field :email, required: true, autofocus: true, autocomplete: "email" %>
@@ -38,6 +38,8 @@
     <% end %>
   </div>
 </main>
+<br>
+<br>
 
 
 

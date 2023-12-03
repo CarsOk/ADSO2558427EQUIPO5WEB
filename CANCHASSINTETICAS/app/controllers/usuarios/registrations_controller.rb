@@ -13,8 +13,8 @@ class Usuarios::RegistrationsController < Devise::RegistrationsController
 
       redirect_to after_sign_up_path_for(@usuario)
     else
-      set_flash_now_alert
-      render :new
+      flash[:alert] = "Datos ingresados no validos"
+      redirect_back(fallback_location: root_path)
     end
   end
 

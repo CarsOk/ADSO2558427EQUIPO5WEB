@@ -6374,9 +6374,10 @@ dd.project-people {
   font-weight: 600;
   color: #47b2e4;
   display: block;
+  text-decoration: none;
 }
 .faq-question:hover {
-  color: #020202;
+  color: inherit;
 }
 .faq-answer {
   margin-top: 10px;
@@ -6736,6 +6737,18 @@ table.shoping-cart-table tr td:last-child {
   text-align: center;
   padding: 20px 0;
   height: 350px;
+}
+.image-imitation-cancha {
+  background-color: #f8f8f9;
+  text-align: center;
+  height: 350px;
+  width: 90px;
+}
+.image-imitation-canchas {
+  background-color: #f8f8f9;
+  text-align: center;
+  height: 245px;
+  width: 304px;
 }
 .product-main-price small {
   font-size: 10px;
