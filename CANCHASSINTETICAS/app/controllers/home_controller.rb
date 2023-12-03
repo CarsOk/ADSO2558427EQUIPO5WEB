@@ -4,7 +4,7 @@ class HomeController < ApplicationController
 
   def dashboard
     @cantidad_canchas = Cancha.all.size
-    @cantidad_usuarios = Usuario.all.size
+    @cantidad_reservas = Reserva.all.size
   end
 
   def landing_page

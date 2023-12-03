@@ -1,33 +1,31 @@
 <div class="faq-item">
-        
-            <div class="row">
-            <% @comentarios.each do |comentario| %>
-                <div class="col-md-5">
-                    <a data-toggle="collapse" href="#faq1" class="faq-question"><%= comentario.id %>. <%= comentario.tipo %></a>
-                    <small>Agregado por <strong><%= comentario.usuario.nombre %> <%= comentario.usuario.apellido %></strong> </small>
-                </div>
-                <div class="col-md-3">
-                    <span class="small font-bold">Fecha y hora</span>
-                    <div class="tag-list">
-                        <span class="tag-item"><i class="fa fa-clock-o"></i> <%= comentario.created_at.strftime("%b %e %Y, %I:%M %p") %></span>
-                    </div>
-                </div>
-                <div class="col-md-2 text-right">
-                    <span class="small font-bold">Calificación</span><br/>
-                    <%= comentario.calificacion %>
+    <div class="row">
+        <% @comentarios.each do |comentario| %>
+        <div class="col-md-6">
+            <a data-toggle="collapse" href="#faq1" class="faq-question"><%= comentario.id %>. <%= comentario.tipo %></a>
+            <small>Agregado por <strong><%= comentario.usuario.nombre %> <%= comentario.usuario.apellido %></strong> </small>
+        </div>
+        <div class="col-md-3">
+            <span class="small font-bold">Fecha y hora</span>
+            <div class="tag-list">
+                <span class="tag-item"><i class="fa fa-clock-o"></i> <%= comentario.created_at.strftime("%b %e %Y, %I:%M %p") %></span>
+            </div>
+        </div>
+        <div class="col-md-3 text-right">
+            <span class="small font-bold">Calificación</span><br/>
+            <%= comentario.calificacion %>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <div id="faq1" class="panel-collapse collapse ">
+                <div class="faq-answer">
+                    <p><%= comentario.contenido %></p>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <div id="faq1" class="panel-collapse collapse ">
-                        <div class="faq-answer">
-                            <p><%= comentario.contenido %></p>
-                        </div>
-                    </div>
-                </div>
-                <% end %>
-            </div>
-        
+        </div>
+        <% end %>
+    </div>    
 </div>
 
 
