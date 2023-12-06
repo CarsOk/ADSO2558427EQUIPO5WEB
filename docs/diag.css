@@ -19,6 +19,8 @@ main{
     margin: 0 auto;
     /* width: 1200px; */
     height: 100%;
+    background: rgba(40, 58, 90, 0.9);
+    color: #000000;
     /* box-shadow: 0px 0px 5px 1px black; */ 
    /*  border: 3px solid red; */
 
@@ -26,7 +28,7 @@ main{
 .row{
     /* border: 1px solid red; */
     width: 1400px;
-    
+
 }
 .logocolegio{
     display: flex;
@@ -41,7 +43,7 @@ main{
 }
 .text{
     font-family: 'Courier New', Courier, monospace;
-
+    
 }
 .titulo1{
     text-align: center;
@@ -63,12 +65,19 @@ main{
     margin-top: 20px;
     margin-left: 20px;
     height: 450px;
+    
 }
 #inicio{
     margin-right: 10px;
+    color: #37517e;
 }
 #docum{
     margin-right: 10px;
+    color: #37517e;
+}
+#diag{
+    margin-right: 10px;
+    color: #37517e;
 }
 .img-gallery{
     width: 275px;
@@ -119,7 +128,7 @@ main{
     max-width: 700px;
 }
 .fondograf{
-
+    
     height: 100%;
 }
 footer{
