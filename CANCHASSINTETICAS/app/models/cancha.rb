@@ -1,5 +1,5 @@
 class Cancha < ApplicationRecord
-has_many :reservas
+has_many :reservas, dependent: :destroy
 
 default_scope { order(:id) }
 

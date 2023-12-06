@@ -1,5 +1,6 @@
 es:
   hello: "Hola mundo"
+  welcome: "Bienvenido"
   goodbye: "Adiós mundo"
 
   devise:
@@ -13,7 +14,8 @@ es:
         already_authenticated: 'Usuario ya autenticado.'
         not_authenticated: 'No autenticado.'
         invalid: "Usuario o contraseña no válidos."
-        unauthenticated: "Usuario no autenticado. Inicia sesión para continuar."
+        unauthenticated: "Inicia sesión para continuar."
+        not_found_in_database: "El usuario no se encuentra registrado."
 
   activerecord:
     errors:

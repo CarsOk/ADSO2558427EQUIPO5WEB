@@ -1,6 +1,6 @@
 class Usuario < ApplicationRecord
-  has_many :reservas
-  has_many :comentarios
+  has_many :reservas, dependent: :destroy
+  has_many :comentarios, dependent: :destroy
 
   validates :identificacion, presence: { message: "no puede ser un campo vacio" }
   validates :identificacion, numericality: { only_integer: true, message: "no valida" }
