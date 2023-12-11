@@ -12,6 +12,7 @@ class Reserva < ApplicationRecord
   validate :reserva_no_editable_despues_de_finalizado, on: :update
   before_save :calcular_duracion_y_precio, :calcular_estado
   before_save :ajustar_precio
+  before_validation :validar_fecha_reserva, on: :create
 
   def cumple_restricciones_horario?
     return false if hora_inicio.present? &&
@@ -115,6 +116,15 @@ class Reserva < ApplicationRecord
     # Verificar si la reserva se puede cancelar un día antes de la fecha
     # Por ejemplo, si la fecha de reserva es mañana o después, puede cancelarse hoy.
     fecha_reserva >= Date.current + 1.day
+  end
+
+
+  def validar_fecha_reserva
+    ahora = DateTime.now
+
+    if fecha.present? && (fecha < ahora.to_date || (fecha == ahora.to_date && hora_inicio <= ahora.strftime('%H:%M:%S')))
+      errors.add(:fecha, 'no puede ser en el pasado')
+    end
   end
 
 end

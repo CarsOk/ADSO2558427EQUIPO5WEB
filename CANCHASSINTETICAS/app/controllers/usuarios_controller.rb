@@ -4,7 +4,7 @@ class UsuariosController < ApplicationController
 
     def index
       @usuarios = Usuario.all
-    end
+    end 
 
     def mis_reservas
       @usuario_reservas = current_usuario # O cualquier lógica para obtener el usuario actual
