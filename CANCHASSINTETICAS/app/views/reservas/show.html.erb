@@ -68,7 +68,11 @@
                                     <dt>Identificación del usuario:</dt>
                                 </div>
                                 <div class="col-sm-7 text-sm-left">
-                                    <dd class="mb-1"><a href="<%= profile_usuario_path(@usuario)%>" class="text-navy"><%= @usuario.identificacion %></a></dd>
+                                 <% if @usuario %>
+                                 <dd class="mb-1"><a href="<%= profile_usuario_path(@usuario) %>" class="text-navy"><%= @usuario.identificacion %></a></dd>
+                                 <% else %>
+                                 <!-- Manejo para el caso en que @usuario es nulo -->
+                                 <% end %>
                                 </div>
                             </dl>
                             <dl class="row mb-0">
