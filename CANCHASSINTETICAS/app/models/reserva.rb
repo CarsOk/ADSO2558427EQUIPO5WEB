@@ -7,12 +7,17 @@ class Reserva < ApplicationRecord
 
   validate :validar_horarios
   validate :hora_y_dia_no_repetidos, on: :create
+  validate :hora_y_dia_no_repetidos, on: :update
   validate :validar_minutos
   validate :hora_inicio_no_igual_a_hora_fin, on: :create
+  validate :hora_inicio_no_igual_a_hora_fin, on: :update
+  validate :verificar_superposicion_reservas, on: :create
+  validate :verificar_superposicion_reservas, on: :update
   validate :reserva_no_editable_despues_de_finalizado, on: :update
   before_save :calcular_duracion_y_precio, :calcular_estado
   before_save :ajustar_precio
   before_validation :validar_fecha_reserva, on: :create
+  before_validation :validar_fecha_reserva, on: :update
 
   def cumple_restricciones_horario?
     return false if hora_inicio.present? &&
@@ -32,6 +37,15 @@ class Reserva < ApplicationRecord
     # Aquí puedes personalizar la lógica según tus necesidades
     # En este ejemplo, estamos asumiendo que el recordatorio se enviará un día antes de la fecha de la reserva
     fecha - 1.day
+  end
+
+  def validar_y_procesar_fecha
+    if fecha.present?
+
+    else
+      puts "Es necesario seleccionar una fecha para la reserva."
+      # Agrega aquí cualquier acción que debas realizar cuando la fecha no está presente
+    end
   end
 
   #Metodos
@@ -99,7 +113,7 @@ class Reserva < ApplicationRecord
   def ajustar_precio
     precio_base_cancha = cancha.precio
 
-    if fecha.saturday? || fecha.sunday?
+    if fecha.present? && (fecha.saturday? || fecha.sunday?)
       duracion_en_horas * (precio_base_cancha + 10000)
     else
       duracion_en_horas * precio_base_cancha
@@ -121,10 +135,25 @@ class Reserva < ApplicationRecord
 
   def validar_fecha_reserva
     ahora = DateTime.now
-
-    if fecha.present? && (fecha < ahora.to_date || (fecha == ahora.to_date && hora_inicio <= ahora.strftime('%H:%M:%S')))
+  
+    if fecha.present? && (fecha < ahora.to_date || (fecha == ahora.to_date && "#{fecha} #{hora_inicio}" <= ahora.strftime('%Y-%m-%d %H:%M:%S')))
       errors.add(:fecha, 'no puede ser en el pasado')
     end
   end
+
+  def verificar_superposicion_reservas
+    if Reserva.exists?([
+         'cancha_id = ? AND fecha = ? AND (hora_inicio < ? AND hora_fin > ? OR hora_inicio <= ? AND hora_fin >= ?)',
+         cancha_id,
+         fecha,
+         hora_fin,
+         hora_inicio,
+         hora_inicio,
+         hora_fin
+       ])
+      errors.add(:base, "Reserva existente para esta cancha en el mismo rango de tiempo.")
+    end
+  end
+
 
 end
