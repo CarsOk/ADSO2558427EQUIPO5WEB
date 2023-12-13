@@ -137,7 +137,7 @@ class Reserva < ApplicationRecord
     ahora = DateTime.now
   
     if fecha.present? && (fecha < ahora.to_date || (fecha == ahora.to_date && "#{fecha} #{hora_inicio}" <= ahora.strftime('%Y-%m-%d %H:%M:%S')))
-      errors.add(:fecha, 'no puede ser en el pasado')
+      errors.add(:fecha, 'la fecha no es valida')
     end
   end
 

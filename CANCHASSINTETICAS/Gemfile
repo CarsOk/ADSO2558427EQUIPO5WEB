@@ -72,4 +72,4 @@ gem 'i18n'
 
 gem 'rack-cors'
 
-
+gem 'wdm'

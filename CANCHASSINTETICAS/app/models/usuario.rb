@@ -2,11 +2,11 @@ class Usuario < ApplicationRecord
   has_many :reservas, dependent: :destroy
   has_many :comentarios, dependent: :destroy
 
-  validates :identificacion, presence: { message: "no puede ser un campo vacio" }
+  validates :identificacion, presence: { message: "No puede ser un campo vacio" }
   validates :identificacion, numericality: { only_integer: true, message: "no valida" }
-  validates :nombre, presence: { message: "no puede ser un campo vacio" }
-  validates :apellido, presence: { message: "no puede ser un campo vacio" }
-  validates :email, presence: { message: "no puede ser un campo vacio" }, format: { with: /\A\S+@\S+\.com\z/, message: "Formato de email no válido" }
+  validates :nombre, presence: { message: "No puede ser un campo vacio" }
+  validates :apellido, presence: { message: "No puede ser un campo vacio" }
+  validates :email, presence: { message: "No puede ser un campo vacio" }, format: { with: /\A\S+@\S+\.com\z/, message: "Formato de email no válido" }
 
   default_scope { order(:id) }
   
